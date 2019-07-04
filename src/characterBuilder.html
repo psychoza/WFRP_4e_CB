@@ -1,0 +1,47 @@
+<template>
+  <require from="./characteristicRow"></require>
+  
+  <h1>Character Builder</h1>
+
+  <div>
+    <input type="button" click.delegate="CreateCharacter()" value="Create Character"/>
+  </div>
+
+  <h2>Name: ${character.Name}</h2>
+
+  <h3>Species: ${character.Species.Description}</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Characteristic
+        </th>
+        <th>
+          Rolled Score
+        </th>
+        <th>
+          Species Bonus
+        </th>
+        <th>
+          Total Score
+        </th>
+        <th>
+          Bonus
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr as-element="characteristic-row" characteristic.bind="character.WeaponSkill"></tr>
+      <tr as-element="characteristic-row" characteristic.bind="character.BallisticSkill"></tr>
+      <tr as-element="characteristic-row" characteristic.bind="character.Strength"></tr>
+      <tr as-element="characteristic-row" characteristic.bind="character.Toughness"></tr>
+      <tr as-element="characteristic-row" characteristic.bind="character.Initiative"></tr>
+      <tr as-element="characteristic-row" characteristic.bind="character.Agility"></tr>
+      <tr as-element="characteristic-row" characteristic.bind="character.Dexterity"></tr>
+      <tr as-element="characteristic-row" characteristic.bind="character.Intelligence"></tr>
+      <tr as-element="characteristic-row" characteristic.bind="character.Willpower"></tr>
+      <tr as-element="characteristic-row" characteristic.bind="character.Fellowship"></tr>
+    </tbody>
+  </table>
+</template>
