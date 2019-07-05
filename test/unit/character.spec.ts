@@ -61,8 +61,15 @@ describe('Character - ', () => {
     expect(character.Species.Description).toBe('Wood Elf');
   });
 
+  it('has the species score roll stored so the user can see their rng', () => {
+    setFakePercentileDiceResult(1);
+    character.rollANewCharacter();
+    expect(character.SpeciesRoll).toBe(1);
+  });
+
   it('has characteristics all set to 10 by default the average of 5 + 5, plus 20 for being a human', () => {
     setFakeSumDicResult(10);
+    setFakePercentileDiceResult(1);
     character.rollANewCharacter();
     expect(character.WeaponSkill.GetTotalScore()).toBe(30);
     expect(character.BallisticSkill.GetTotalScore()).toBe(30);
