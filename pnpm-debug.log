@@ -1,0 +1,2940 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": null
+  },
+  "1 debug pnpm": {
+    "isCaseSensitive": false,
+    "store": "D:\\.pnpm-store\\2"
+  },
+  "2 debug pnpm:package-json": {
+    "initial": {
+      "name": "bowling",
+      "description": "An Aurelia client application.",
+      "version": "0.1.0",
+      "repository": {
+        "type": "???",
+        "url": "???"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "aurelia-animator-css": "^1.0.2",
+        "aurelia-bootstrapper": "^2.1.1",
+        "bluebird": "^3.4.1",
+        "http-server": "^0.11.1",
+        "requirejs": "^2.3.2",
+        "text": "github:requirejs/text#latest"
+      },
+      "peerDependencies": {},
+      "devDependencies": {
+        "@types/jasmine": "^2.2.0",
+        "@types/node": "^6.0.45",
+        "aurelia-cli": "^0.32.0",
+        "aurelia-testing": "^1.0.0-beta.3.0.1",
+        "aurelia-tools": "^1.0.0",
+        "browser-sync": "^2.13.0",
+        "connect-history-api-fallback": "^1.2.0",
+        "debounce": "^1.0.2",
+        "event-stream": "^3.3.3",
+        "gulp": "github:gulpjs/gulp#4.0",
+        "gulp-changed-in-place": "^2.0.3",
+        "gulp-notify": "^2.2.0",
+        "gulp-plumber": "^1.1.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sourcemaps": "^2.0.0-alpha",
+        "gulp-tslint": "^5.0.0",
+        "gulp-typescript": "^3.1.4",
+        "gulp-watch": "^4.3.11",
+        "jasmine-core": "^2.4.1",
+        "karma": "^0.13.22",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-jasmine": "^1.0.2",
+        "karma-sourcemap-loader": "^0.3.7",
+        "karma-typescript-preprocessor": "^0.2.1",
+        "minimatch": "^3.0.2",
+        "through2": "^2.0.1",
+        "tslint": "^3.11.0",
+        "typescript": ">=1.9.0-dev || ^2.0.0",
+        "uglify-js": "^3.0.19",
+        "vinyl-fs": "^2.4.3"
+      }
+    },
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "D:\\Source\\WFRP_4e_CB",
+    "stage": "resolution_started"
+  },
+  "4 warn pnpm": {
+    "message": "Moving @types/jasmine that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "5 warn pnpm": {
+    "message": "Moving @types/node that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "6 warn pnpm": {
+    "message": "Moving aurelia-cli that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "7 warn pnpm": {
+    "message": "Moving aurelia-testing that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "8 warn pnpm": {
+    "message": "Moving aurelia-tools that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "9 warn pnpm": {
+    "message": "Moving browser-sync that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "10 warn pnpm": {
+    "message": "Moving connect-history-api-fallback that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "11 warn pnpm": {
+    "message": "Moving debounce that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "12 warn pnpm": {
+    "message": "Moving event-stream that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "13 warn pnpm": {
+    "message": "Moving gulp that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "14 warn pnpm": {
+    "message": "Moving gulp-changed-in-place that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "15 warn pnpm": {
+    "message": "Moving gulp-notify that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "16 warn pnpm": {
+    "message": "Moving gulp-plumber that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "17 warn pnpm": {
+    "message": "Moving gulp-rename that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "18 warn pnpm": {
+    "message": "Moving gulp-sourcemaps that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "19 warn pnpm": {
+    "message": "Moving gulp-tslint that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "20 warn pnpm": {
+    "message": "Moving gulp-typescript that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "21 warn pnpm": {
+    "message": "Moving gulp-watch that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "22 warn pnpm": {
+    "message": "Moving jasmine-core that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "23 warn pnpm": {
+    "message": "Moving karma that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "24 warn pnpm": {
+    "message": "Moving karma-chrome-launcher that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "25 warn pnpm": {
+    "message": "Moving karma-jasmine that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "26 warn pnpm": {
+    "message": "Moving karma-sourcemap-loader that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "27 warn pnpm": {
+    "message": "Moving karma-typescript-preprocessor that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "28 warn pnpm": {
+    "message": "Moving minimatch that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "29 warn pnpm": {
+    "message": "Moving through2 that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "30 warn pnpm": {
+    "message": "Moving tslint that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "31 warn pnpm": {
+    "message": "Moving typescript that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "32 warn pnpm": {
+    "message": "Moving uglify-js that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "33 warn pnpm": {
+    "message": "Moving vinyl-fs that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "34 warn pnpm": {
+    "message": "Moving aurelia-animator-css that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "35 warn pnpm": {
+    "message": "Moving aurelia-bootstrapper that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "36 warn pnpm": {
+    "message": "Moving bluebird that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "37 warn pnpm": {
+    "message": "Moving http-server that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "38 warn pnpm": {
+    "message": "Moving requirejs that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "39 warn pnpm": {
+    "message": "Moving text that was installed by a different package manager to \"node_modules/.ignored",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "40 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/jasmine/2.8.16",
+    "wanted": {
+      "name": "@types/jasmine",
+      "rawSpec": "@types/jasmine@^2.2.0"
+    }
+  },
+  "41 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/jasmine/2.8.16",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "42 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/connect-history-api-fallback/1.6.0",
+    "wanted": {
+      "name": "connect-history-api-fallback",
+      "rawSpec": "connect-history-api-fallback@^1.2.0"
+    }
+  },
+  "43 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/connect-history-api-fallback/1.6.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "44 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/debounce/1.2.0",
+    "wanted": {
+      "name": "debounce",
+      "rawSpec": "debounce@^1.0.2"
+    }
+  },
+  "45 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/debounce/1.2.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "46 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/gulp-rename/1.4.0",
+    "wanted": {
+      "name": "gulp-rename",
+      "rawSpec": "gulp-rename@^1.2.2"
+    }
+  },
+  "47 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-rename/1.4.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "48 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "wanted": {
+      "name": "gulp-typescript",
+      "rawSpec": "gulp-typescript@^3.1.4"
+    }
+  },
+  "49 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "50 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/@types/jasmine/2.8.16",
+    "size": 7737,
+    "status": "started"
+  },
+  "51 debug pnpm:fetching-progress": {
+    "downloaded": 731,
+    "packageId": "registry.npmjs.org/@types/jasmine/2.8.16",
+    "status": "in_progress"
+  },
+  "52 debug pnpm:fetching-progress": {
+    "downloaded": 2100,
+    "packageId": "registry.npmjs.org/@types/jasmine/2.8.16",
+    "status": "in_progress"
+  },
+  "53 debug pnpm:fetching-progress": {
+    "downloaded": 3469,
+    "packageId": "registry.npmjs.org/@types/jasmine/2.8.16",
+    "status": "in_progress"
+  },
+  "54 debug pnpm:fetching-progress": {
+    "downloaded": 4838,
+    "packageId": "registry.npmjs.org/@types/jasmine/2.8.16",
+    "status": "in_progress"
+  },
+  "55 debug pnpm:fetching-progress": {
+    "downloaded": 6207,
+    "packageId": "registry.npmjs.org/@types/jasmine/2.8.16",
+    "status": "in_progress"
+  },
+  "56 debug pnpm:fetching-progress": {
+    "downloaded": 7576,
+    "packageId": "registry.npmjs.org/@types/jasmine/2.8.16",
+    "status": "in_progress"
+  },
+  "57 debug pnpm:fetching-progress": {
+    "downloaded": 7737,
+    "packageId": "registry.npmjs.org/@types/jasmine/2.8.16",
+    "status": "in_progress"
+  },
+  "58 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/connect-history-api-fallback/1.6.0",
+    "size": 4680,
+    "status": "started"
+  },
+  "59 debug pnpm:fetching-progress": {
+    "downloaded": 737,
+    "packageId": "registry.npmjs.org/connect-history-api-fallback/1.6.0",
+    "status": "in_progress"
+  },
+  "60 debug pnpm:fetching-progress": {
+    "downloaded": 2106,
+    "packageId": "registry.npmjs.org/connect-history-api-fallback/1.6.0",
+    "status": "in_progress"
+  },
+  "61 debug pnpm:fetching-progress": {
+    "downloaded": 3381,
+    "packageId": "registry.npmjs.org/connect-history-api-fallback/1.6.0",
+    "status": "in_progress"
+  },
+  "62 debug pnpm:fetching-progress": {
+    "downloaded": 4680,
+    "packageId": "registry.npmjs.org/connect-history-api-fallback/1.6.0",
+    "status": "in_progress"
+  },
+  "63 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/gulp-plumber/1.2.1",
+    "wanted": {
+      "name": "gulp-plumber",
+      "rawSpec": "gulp-plumber@^1.1.0"
+    }
+  },
+  "64 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-plumber/1.2.1",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "65 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/debounce/1.2.0",
+    "size": 3337,
+    "status": "started"
+  },
+  "66 debug pnpm:fetching-progress": {
+    "downloaded": 736,
+    "packageId": "registry.npmjs.org/debounce/1.2.0",
+    "status": "in_progress"
+  },
+  "67 debug pnpm:fetching-progress": {
+    "downloaded": 2105,
+    "packageId": "registry.npmjs.org/debounce/1.2.0",
+    "status": "in_progress"
+  },
+  "68 debug pnpm:fetching-progress": {
+    "downloaded": 3337,
+    "packageId": "registry.npmjs.org/debounce/1.2.0",
+    "status": "in_progress"
+  },
+  "69 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "wanted": {
+      "name": "aurelia-testing",
+      "rawSpec": "aurelia-testing@^1.0.0-beta.3.0.1"
+    }
+  },
+  "70 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "71 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "wanted": {
+      "name": "aurelia-tools",
+      "rawSpec": "aurelia-tools@^1.0.0"
+    }
+  },
+  "72 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "73 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/gulp-changed-in-place/2.3.0",
+    "wanted": {
+      "name": "gulp-changed-in-place",
+      "rawSpec": "gulp-changed-in-place@^2.0.3"
+    }
+  },
+  "74 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-changed-in-place/2.3.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "75 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/event-stream/3.3.5",
+    "wanted": {
+      "name": "event-stream",
+      "rawSpec": "event-stream@^3.3.3"
+    }
+  },
+  "76 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "77 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/gulp-rename/1.4.0",
+    "size": 2761,
+    "status": "started"
+  },
+  "78 debug pnpm:fetching-progress": {
+    "downloaded": 2761,
+    "packageId": "registry.npmjs.org/gulp-rename/1.4.0",
+    "status": "in_progress"
+  },
+  "79 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/gulp-notify/2.2.0",
+    "wanted": {
+      "name": "gulp-notify",
+      "rawSpec": "gulp-notify@^2.2.0"
+    }
+  },
+  "80 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "81 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "size": 18267,
+    "status": "started"
+  },
+  "82 debug pnpm:fetching-progress": {
+    "downloaded": 736,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "83 debug pnpm:fetching-progress": {
+    "downloaded": 2105,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "84 debug pnpm:fetching-progress": {
+    "downloaded": 3474,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "85 debug pnpm:fetching-progress": {
+    "downloaded": 4843,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "86 debug pnpm:fetching-progress": {
+    "downloaded": 6212,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "87 debug pnpm:fetching-progress": {
+    "downloaded": 7581,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "88 debug pnpm:fetching-progress": {
+    "downloaded": 8950,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "89 debug pnpm:fetching-progress": {
+    "downloaded": 10319,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "90 debug pnpm:fetching-progress": {
+    "downloaded": 11688,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "91 debug pnpm:fetching-progress": {
+    "downloaded": 13057,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "92 debug pnpm:fetching-progress": {
+    "downloaded": 14426,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "93 debug pnpm:fetching-progress": {
+    "downloaded": 15795,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "94 debug pnpm:fetching-progress": {
+    "downloaded": 17164,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "95 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/gulp-watch/4.3.11",
+    "wanted": {
+      "name": "gulp-watch",
+      "rawSpec": "gulp-watch@^4.3.11"
+    }
+  },
+  "96 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-watch/4.3.11",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "97 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/jasmine-core/2.99.1",
+    "wanted": {
+      "name": "jasmine-core",
+      "rawSpec": "jasmine-core@^2.4.1"
+    }
+  },
+  "98 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "99 debug pnpm:fetching-progress": {
+    "downloaded": 18267,
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "status": "in_progress"
+  },
+  "100 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/jasmine/2.8.16",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "101 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/connect-history-api-fallback/1.6.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "102 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "size": 141353,
+    "status": "started"
+  },
+  "103 debug pnpm:fetching-progress": {
+    "downloaded": 734,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "104 debug pnpm:fetching-progress": {
+    "downloaded": 2103,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "105 debug pnpm:fetching-progress": {
+    "downloaded": 3472,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "106 debug pnpm:fetching-progress": {
+    "downloaded": 4841,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "107 debug pnpm:fetching-progress": {
+    "downloaded": 6210,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "108 debug pnpm:fetching-progress": {
+    "downloaded": 7579,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "109 debug pnpm:fetching-progress": {
+    "downloaded": 8948,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "110 debug pnpm:fetching-progress": {
+    "downloaded": 10317,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "111 debug pnpm:fetching-progress": {
+    "downloaded": 11686,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "112 debug pnpm:fetching-progress": {
+    "downloaded": 13055,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "113 debug pnpm:fetching-progress": {
+    "downloaded": 14424,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "114 debug pnpm:fetching-progress": {
+    "downloaded": 15793,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "115 debug pnpm:fetching-progress": {
+    "downloaded": 17162,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "116 debug pnpm:fetching-progress": {
+    "downloaded": 18531,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "117 debug pnpm:fetching-progress": {
+    "downloaded": 19900,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "118 debug pnpm:fetching-progress": {
+    "downloaded": 21269,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "119 debug pnpm:fetching-progress": {
+    "downloaded": 22638,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "120 debug pnpm:fetching-progress": {
+    "downloaded": 24007,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "121 debug pnpm:fetching-progress": {
+    "downloaded": 25376,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "122 debug pnpm:fetching-progress": {
+    "downloaded": 26745,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "123 debug pnpm:fetching-progress": {
+    "downloaded": 28114,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "124 debug pnpm:fetching-progress": {
+    "downloaded": 29483,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "125 debug pnpm:fetching-progress": {
+    "downloaded": 30852,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "126 debug pnpm:fetching-progress": {
+    "downloaded": 32133,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "127 debug pnpm:fetching-progress": {
+    "downloaded": 33502,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "128 debug pnpm:fetching-progress": {
+    "downloaded": 34871,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "129 debug pnpm:fetching-progress": {
+    "downloaded": 36240,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "130 debug pnpm:fetching-progress": {
+    "downloaded": 37609,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "131 debug pnpm:fetching-progress": {
+    "downloaded": 38978,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "132 debug pnpm:fetching-progress": {
+    "downloaded": 40347,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "133 debug pnpm:fetching-progress": {
+    "downloaded": 41716,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "134 debug pnpm:fetching-progress": {
+    "downloaded": 43085,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "135 debug pnpm:fetching-progress": {
+    "downloaded": 47314,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "136 debug pnpm:fetching-progress": {
+    "downloaded": 51543,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "137 debug pnpm:fetching-progress": {
+    "downloaded": 55772,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "138 debug pnpm:fetching-progress": {
+    "downloaded": 60001,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "139 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/gulp-plumber/1.2.1",
+    "size": 3051,
+    "status": "started"
+  },
+  "140 debug pnpm:fetching-progress": {
+    "downloaded": 736,
+    "packageId": "registry.npmjs.org/gulp-plumber/1.2.1",
+    "status": "in_progress"
+  },
+  "141 debug pnpm:fetching-progress": {
+    "downloaded": 2105,
+    "packageId": "registry.npmjs.org/gulp-plumber/1.2.1",
+    "status": "in_progress"
+  },
+  "142 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "size": 30791,
+    "status": "started"
+  },
+  "143 debug pnpm:fetching-progress": {
+    "downloaded": 735,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "144 debug pnpm:fetching-progress": {
+    "downloaded": 2104,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "145 debug pnpm:fetching-progress": {
+    "downloaded": 3473,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "146 debug pnpm:fetching-progress": {
+    "downloaded": 4842,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "147 debug pnpm:fetching-progress": {
+    "downloaded": 6211,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "148 debug pnpm:fetching-progress": {
+    "downloaded": 7580,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "149 debug pnpm:fetching-progress": {
+    "downloaded": 8949,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "150 debug pnpm:fetching-progress": {
+    "downloaded": 10318,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "151 debug pnpm:fetching-progress": {
+    "downloaded": 11687,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "152 debug pnpm:fetching-progress": {
+    "downloaded": 13056,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "153 debug pnpm:fetching-progress": {
+    "downloaded": 14425,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "154 debug pnpm:fetching-progress": {
+    "downloaded": 15794,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "155 debug pnpm:fetching-progress": {
+    "downloaded": 17163,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "156 debug pnpm:fetching-progress": {
+    "downloaded": 18532,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "157 debug pnpm:fetching-progress": {
+    "downloaded": 19901,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "158 debug pnpm:fetching-progress": {
+    "downloaded": 21270,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "159 debug pnpm:fetching-progress": {
+    "downloaded": 22639,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "160 debug pnpm:fetching-progress": {
+    "downloaded": 24008,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "161 debug pnpm:fetching-progress": {
+    "downloaded": 25377,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "162 debug pnpm:fetching-progress": {
+    "downloaded": 26746,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "163 debug pnpm:fetching-progress": {
+    "downloaded": 28115,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "164 debug pnpm:fetching-progress": {
+    "downloaded": 29484,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "165 debug pnpm:fetching-progress": {
+    "downloaded": 30791,
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "status": "in_progress"
+  },
+  "166 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/gulp-changed-in-place/2.3.0",
+    "size": 3091,
+    "status": "started"
+  },
+  "167 debug pnpm:fetching-progress": {
+    "downloaded": 738,
+    "packageId": "registry.npmjs.org/gulp-changed-in-place/2.3.0",
+    "status": "in_progress"
+  },
+  "168 debug pnpm:fetching-progress": {
+    "downloaded": 2107,
+    "packageId": "registry.npmjs.org/gulp-changed-in-place/2.3.0",
+    "status": "in_progress"
+  },
+  "169 debug pnpm:fetching-progress": {
+    "downloaded": 3091,
+    "packageId": "registry.npmjs.org/gulp-changed-in-place/2.3.0",
+    "status": "in_progress"
+  },
+  "170 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "size": 55691,
+    "status": "started"
+  },
+  "171 debug pnpm:fetching-progress": {
+    "downloaded": 3260,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "172 debug pnpm:fetching-progress": {
+    "downloaded": 7489,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "173 debug pnpm:fetching-progress": {
+    "downloaded": 11718,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "174 debug pnpm:fetching-progress": {
+    "downloaded": 15947,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "175 debug pnpm:fetching-progress": {
+    "downloaded": 20176,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "176 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/gulp-watch/4.3.11",
+    "size": 4972,
+    "status": "started"
+  },
+  "177 debug pnpm:fetching-progress": {
+    "downloaded": 737,
+    "packageId": "registry.npmjs.org/gulp-watch/4.3.11",
+    "status": "in_progress"
+  },
+  "178 debug pnpm:fetching-progress": {
+    "downloaded": 2106,
+    "packageId": "registry.npmjs.org/gulp-watch/4.3.11",
+    "status": "in_progress"
+  },
+  "179 debug pnpm:fetching-progress": {
+    "downloaded": 3475,
+    "packageId": "registry.npmjs.org/gulp-watch/4.3.11",
+    "status": "in_progress"
+  },
+  "180 debug pnpm:fetching-progress": {
+    "downloaded": 4844,
+    "packageId": "registry.npmjs.org/gulp-watch/4.3.11",
+    "status": "in_progress"
+  },
+  "181 debug pnpm:fetching-progress": {
+    "downloaded": 4972,
+    "packageId": "registry.npmjs.org/gulp-watch/4.3.11",
+    "status": "in_progress"
+  },
+  "182 debug pnpm:fetching-progress": {
+    "downloaded": 24405,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "183 debug pnpm:fetching-progress": {
+    "downloaded": 28634,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "184 debug pnpm:fetching-progress": {
+    "downloaded": 32863,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "185 debug pnpm:fetching-progress": {
+    "downloaded": 36028,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "186 debug pnpm:fetching-progress": {
+    "downloaded": 40257,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "187 debug pnpm:fetching-progress": {
+    "downloaded": 44486,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "188 debug pnpm:fetching-progress": {
+    "downloaded": 48715,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "189 debug pnpm:fetching-progress": {
+    "downloaded": 52944,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "190 debug pnpm:fetching-progress": {
+    "downloaded": 55691,
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "status": "in_progress"
+  },
+  "191 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/node/6.14.6",
+    "wanted": {
+      "name": "@types/node",
+      "rawSpec": "@types/node@^6.0.45"
+    }
+  },
+  "192 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "193 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "size": 13880,
+    "status": "started"
+  },
+  "194 debug pnpm:fetching-progress": {
+    "downloaded": 735,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "status": "in_progress"
+  },
+  "195 debug pnpm:fetching-progress": {
+    "downloaded": 2104,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "status": "in_progress"
+  },
+  "196 debug pnpm:fetching-progress": {
+    "downloaded": 3473,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "status": "in_progress"
+  },
+  "197 debug pnpm:fetching-progress": {
+    "downloaded": 4842,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "status": "in_progress"
+  },
+  "198 debug pnpm:fetching-progress": {
+    "downloaded": 6211,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "status": "in_progress"
+  },
+  "199 debug pnpm:fetching-progress": {
+    "downloaded": 7580,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "status": "in_progress"
+  },
+  "200 debug pnpm:fetching-progress": {
+    "downloaded": 8949,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "status": "in_progress"
+  },
+  "201 debug pnpm:fetching-progress": {
+    "downloaded": 10318,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "status": "in_progress"
+  },
+  "202 debug pnpm:fetching-progress": {
+    "downloaded": 11687,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "status": "in_progress"
+  },
+  "203 debug pnpm:fetching-progress": {
+    "downloaded": 13056,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "status": "in_progress"
+  },
+  "204 debug pnpm:fetching-progress": {
+    "downloaded": 13880,
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "status": "in_progress"
+  },
+  "205 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-rename/1.4.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "206 debug pnpm:fetching-progress": {
+    "downloaded": 64230,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "207 debug pnpm:fetching-progress": {
+    "downloaded": 64901,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "208 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "wanted": {
+      "name": "gulp-sourcemaps",
+      "rawSpec": "gulp-sourcemaps@^2.0.0-alpha"
+    }
+  },
+  "209 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "210 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/aurelia-cli/0.32.0",
+    "wanted": {
+      "name": "aurelia-cli",
+      "rawSpec": "aurelia-cli@^0.32.0"
+    }
+  },
+  "211 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-cli/0.32.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "212 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/debounce/1.2.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "213 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "size": 73348,
+    "status": "started"
+  },
+  "214 debug pnpm:fetching-progress": {
+    "downloaded": 735,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "215 debug pnpm:fetching-progress": {
+    "downloaded": 2104,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "216 debug pnpm:fetching-progress": {
+    "downloaded": 3473,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "217 debug pnpm:fetching-progress": {
+    "downloaded": 4842,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "218 debug pnpm:fetching-progress": {
+    "downloaded": 6211,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "219 debug pnpm:fetching-progress": {
+    "downloaded": 7580,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "220 debug pnpm:fetching-progress": {
+    "downloaded": 8949,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "221 debug pnpm:fetching-progress": {
+    "downloaded": 10318,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "222 debug pnpm:fetching-progress": {
+    "downloaded": 11687,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "223 debug pnpm:fetching-progress": {
+    "downloaded": 12288,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "224 debug pnpm:fetching-progress": {
+    "downloaded": 13657,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "225 debug pnpm:fetching-progress": {
+    "downloaded": 15026,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "226 debug pnpm:fetching-progress": {
+    "downloaded": 16395,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "227 debug pnpm:fetching-progress": {
+    "downloaded": 17764,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "228 debug pnpm:fetching-progress": {
+    "downloaded": 19133,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "229 debug pnpm:fetching-progress": {
+    "downloaded": 23362,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "230 debug pnpm:fetching-progress": {
+    "downloaded": 27591,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "231 debug pnpm:fetching-progress": {
+    "downloaded": 31820,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "232 debug pnpm:fetching-progress": {
+    "downloaded": 36049,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "233 debug pnpm:fetching-progress": {
+    "downloaded": 40278,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "234 debug pnpm:fetching-progress": {
+    "downloaded": 44507,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "235 debug pnpm:fetching-progress": {
+    "downloaded": 45056,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "236 debug pnpm:fetching-progress": {
+    "downloaded": 49285,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "237 debug pnpm:fetching-progress": {
+    "downloaded": 53514,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "238 debug pnpm:fetching-progress": {
+    "downloaded": 57743,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "239 debug pnpm:fetching-progress": {
+    "downloaded": 61972,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "240 debug pnpm:fetching-progress": {
+    "downloaded": 66201,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "241 debug pnpm:fetching-progress": {
+    "downloaded": 70430,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "242 debug pnpm:fetching-progress": {
+    "downloaded": 73348,
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "status": "in_progress"
+  },
+  "243 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-watch/4.3.11",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "244 debug pnpm:fetching-progress": {
+    "downloaded": 69130,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "245 debug pnpm:fetching-progress": {
+    "downloaded": 73359,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "246 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-changed-in-place/2.3.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "247 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-tools/1.0.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "248 debug pnpm:fetching-progress": {
+    "downloaded": 77588,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "249 debug pnpm:fetching-progress": {
+    "downloaded": 81817,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "250 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/karma-chrome-launcher/2.2.0",
+    "wanted": {
+      "name": "karma-chrome-launcher",
+      "rawSpec": "karma-chrome-launcher@^2.2.0"
+    }
+  },
+  "251 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/karma-chrome-launcher/2.2.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "252 debug pnpm:fetching-progress": {
+    "downloaded": 86046,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "253 debug pnpm:fetching-progress": {
+    "downloaded": 90275,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "254 debug pnpm:fetching-progress": {
+    "downloaded": 94504,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "255 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/gulp-tslint/5.0.0",
+    "wanted": {
+      "name": "gulp-tslint",
+      "rawSpec": "gulp-tslint@^5.0.0"
+    }
+  },
+  "256 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-tslint/5.0.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "257 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-typescript/3.2.4",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "258 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "size": 32634,
+    "status": "started"
+  },
+  "259 debug pnpm:fetching-progress": {
+    "downloaded": 731,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "260 debug pnpm:fetching-progress": {
+    "downloaded": 2100,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "261 debug pnpm:fetching-progress": {
+    "downloaded": 3469,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "262 debug pnpm:fetching-progress": {
+    "downloaded": 4838,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "263 debug pnpm:fetching-progress": {
+    "downloaded": 6207,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "264 debug pnpm:fetching-progress": {
+    "downloaded": 7576,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "265 debug pnpm:fetching-progress": {
+    "downloaded": 8945,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "266 debug pnpm:fetching-progress": {
+    "downloaded": 10314,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "267 debug pnpm:fetching-progress": {
+    "downloaded": 11683,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "268 debug pnpm:fetching-progress": {
+    "downloaded": 13052,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "269 debug pnpm:fetching-progress": {
+    "downloaded": 14421,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "270 debug pnpm:fetching-progress": {
+    "downloaded": 18650,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "271 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "size": 9369,
+    "status": "started"
+  },
+  "272 debug pnpm:fetching-progress": {
+    "downloaded": 736,
+    "packageId": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "status": "in_progress"
+  },
+  "273 debug pnpm:fetching-progress": {
+    "downloaded": 2105,
+    "packageId": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "status": "in_progress"
+  },
+  "274 debug pnpm:fetching-progress": {
+    "downloaded": 3474,
+    "packageId": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "status": "in_progress"
+  },
+  "275 debug pnpm:fetching-progress": {
+    "downloaded": 4843,
+    "packageId": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "status": "in_progress"
+  },
+  "276 debug pnpm:fetching-progress": {
+    "downloaded": 6212,
+    "packageId": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "status": "in_progress"
+  },
+  "277 debug pnpm:fetching-progress": {
+    "downloaded": 7581,
+    "packageId": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "status": "in_progress"
+  },
+  "278 debug pnpm:fetching-progress": {
+    "downloaded": 8950,
+    "packageId": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "status": "in_progress"
+  },
+  "279 debug pnpm:fetching-progress": {
+    "downloaded": 9369,
+    "packageId": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "status": "in_progress"
+  },
+  "280 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/karma-sourcemap-loader/0.3.7",
+    "wanted": {
+      "name": "karma-sourcemap-loader",
+      "rawSpec": "karma-sourcemap-loader@^0.3.7"
+    }
+  },
+  "281 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/karma-sourcemap-loader/0.3.7",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "282 debug pnpm:fetching-progress": {
+    "downloaded": 22879,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "283 debug pnpm:fetching-progress": {
+    "downloaded": 27108,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "284 debug pnpm:fetching-progress": {
+    "downloaded": 31337,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "285 debug pnpm:fetching-progress": {
+    "downloaded": 32130,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "286 debug pnpm:fetching-progress": {
+    "downloaded": 32634,
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "status": "in_progress"
+  },
+  "287 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-notify/2.2.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "288 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/event-stream/3.3.5",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "289 debug pnpm:fetching-progress": {
+    "downloaded": 97669,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "290 debug pnpm:fetching-progress": {
+    "downloaded": 101898,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "291 debug pnpm:fetching-progress": {
+    "downloaded": 106127,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "292 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/karma-typescript-preprocessor/0.2.1",
+    "wanted": {
+      "name": "karma-typescript-preprocessor",
+      "rawSpec": "karma-typescript-preprocessor@^0.2.1"
+    }
+  },
+  "293 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/karma-typescript-preprocessor/0.2.1",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "294 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/node/6.14.6",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "295 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-sourcemaps/2.6.5",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "296 debug pnpm:fetching-progress": {
+    "downloaded": 110356,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "297 debug pnpm:fetching-progress": {
+    "downloaded": 114585,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "298 debug pnpm:fetching-progress": {
+    "downloaded": 118814,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "299 debug pnpm:fetching-progress": {
+    "downloaded": 123043,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "300 debug pnpm:fetching-progress": {
+    "downloaded": 127272,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "301 debug pnpm:fetching-progress": {
+    "downloaded": 130437,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "302 debug pnpm:fetching-progress": {
+    "downloaded": 134666,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "303 debug pnpm:fetching-progress": {
+    "downloaded": 138895,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "304 debug pnpm:fetching-progress": {
+    "downloaded": 141353,
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "status": "in_progress"
+  },
+  "305 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/jasmine-core/2.99.1",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "306 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/karma-chrome-launcher/2.2.0",
+    "size": 7164,
+    "status": "started"
+  },
+  "307 debug pnpm:fetching-progress": {
+    "downloaded": 3598,
+    "packageId": "registry.npmjs.org/karma-chrome-launcher/2.2.0",
+    "status": "in_progress"
+  },
+  "308 debug pnpm:fetching-progress": {
+    "downloaded": 7164,
+    "packageId": "registry.npmjs.org/karma-chrome-launcher/2.2.0",
+    "status": "in_progress"
+  },
+  "309 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/through2/2.0.5",
+    "wanted": {
+      "name": "through2",
+      "rawSpec": "through2@^2.0.1"
+    }
+  },
+  "310 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/through2/2.0.5",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "311 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/karma-chrome-launcher/2.2.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "312 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-testing/1.0.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "313 debug pnpm:fetching-progress": {
+    "downloaded": 3051,
+    "packageId": "registry.npmjs.org/gulp-plumber/1.2.1",
+    "status": "in_progress"
+  },
+  "314 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/gulp-tslint/5.0.0",
+    "size": 6700,
+    "status": "started"
+  },
+  "315 debug pnpm:fetching-progress": {
+    "downloaded": 3598,
+    "packageId": "registry.npmjs.org/gulp-tslint/5.0.0",
+    "status": "in_progress"
+  },
+  "316 debug pnpm:fetching-progress": {
+    "downloaded": 6700,
+    "packageId": "registry.npmjs.org/gulp-tslint/5.0.0",
+    "status": "in_progress"
+  },
+  "317 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-plumber/1.2.1",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "318 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-tslint/5.0.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "319 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/karma-sourcemap-loader/0.3.7",
+    "size": 2600,
+    "status": "started"
+  },
+  "320 debug pnpm:fetching-progress": {
+    "downloaded": 2600,
+    "packageId": "registry.npmjs.org/karma-sourcemap-loader/0.3.7",
+    "status": "in_progress"
+  },
+  "321 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/karma-sourcemap-loader/0.3.7",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "322 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/vinyl-fs/2.4.4",
+    "wanted": {
+      "name": "vinyl-fs",
+      "rawSpec": "vinyl-fs@^2.4.3"
+    }
+  },
+  "323 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vinyl-fs/2.4.4",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "324 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/karma-typescript-preprocessor/0.2.1",
+    "size": 9965,
+    "status": "started"
+  },
+  "325 debug pnpm:fetching-progress": {
+    "downloaded": 9965,
+    "packageId": "registry.npmjs.org/karma-typescript-preprocessor/0.2.1",
+    "status": "in_progress"
+  },
+  "326 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/karma-typescript-preprocessor/0.2.1",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "327 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/aurelia-bootstrapper/2.3.3",
+    "wanted": {
+      "name": "aurelia-bootstrapper",
+      "rawSpec": "aurelia-bootstrapper@^2.1.1"
+    }
+  },
+  "328 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-bootstrapper/2.3.3",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "329 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "wanted": {
+      "name": "aurelia-animator-css",
+      "rawSpec": "aurelia-animator-css@^1.0.2"
+    }
+  },
+  "330 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "331 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/uglify-js/3.6.0",
+    "wanted": {
+      "name": "uglify-js",
+      "rawSpec": "uglify-js@^3.0.19"
+    }
+  },
+  "332 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "333 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/http-server/0.11.1",
+    "wanted": {
+      "name": "http-server",
+      "rawSpec": "http-server@^0.11.1"
+    }
+  },
+  "334 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/http-server/0.11.1",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "335 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/requirejs/2.3.6",
+    "wanted": {
+      "name": "requirejs",
+      "rawSpec": "requirejs@^2.3.2"
+    }
+  },
+  "336 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "337 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/through2/2.0.5",
+    "size": 4060,
+    "status": "started"
+  },
+  "338 debug pnpm:fetching-progress": {
+    "downloaded": 736,
+    "packageId": "registry.npmjs.org/through2/2.0.5",
+    "status": "in_progress"
+  },
+  "339 debug pnpm:fetching-progress": {
+    "downloaded": 2105,
+    "packageId": "registry.npmjs.org/through2/2.0.5",
+    "status": "in_progress"
+  },
+  "340 debug pnpm:fetching-progress": {
+    "downloaded": 3474,
+    "packageId": "registry.npmjs.org/through2/2.0.5",
+    "status": "in_progress"
+  },
+  "341 debug pnpm:fetching-progress": {
+    "downloaded": 4060,
+    "packageId": "registry.npmjs.org/through2/2.0.5",
+    "status": "in_progress"
+  },
+  "342 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/through2/2.0.5",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "343 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/vinyl-fs/2.4.4",
+    "size": 23984,
+    "status": "started"
+  },
+  "344 debug pnpm:fetching-progress": {
+    "downloaded": 3596,
+    "packageId": "registry.npmjs.org/vinyl-fs/2.4.4",
+    "status": "in_progress"
+  },
+  "345 debug pnpm:fetching-progress": {
+    "downloaded": 7825,
+    "packageId": "registry.npmjs.org/vinyl-fs/2.4.4",
+    "status": "in_progress"
+  },
+  "346 debug pnpm:fetching-progress": {
+    "downloaded": 12054,
+    "packageId": "registry.npmjs.org/vinyl-fs/2.4.4",
+    "status": "in_progress"
+  },
+  "347 debug pnpm:fetching-progress": {
+    "downloaded": 16283,
+    "packageId": "registry.npmjs.org/vinyl-fs/2.4.4",
+    "status": "in_progress"
+  },
+  "348 debug pnpm:fetching-progress": {
+    "downloaded": 20512,
+    "packageId": "registry.npmjs.org/vinyl-fs/2.4.4",
+    "status": "in_progress"
+  },
+  "349 debug pnpm:fetching-progress": {
+    "downloaded": 23984,
+    "packageId": "registry.npmjs.org/vinyl-fs/2.4.4",
+    "status": "in_progress"
+  },
+  "350 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/gulp-util/3.0.8",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/gulp-typescript/3.2.4",
+      "name": "gulp-util",
+      "rawSpec": "gulp-util@~3.0.7"
+    }
+  },
+  "351 debug pnpm:deprecation": {
+    "deprecated": "gulp-util is deprecated - replace it, following the guidelines at https://medium.com/gulpjs/gulp-util-ca3b1f9f9ac5",
+    "depth": 1,
+    "pkgId": "registry.npmjs.org/gulp-util/3.0.8",
+    "pkgName": "gulp-util",
+    "pkgVersion": "3.0.8",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "352 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-util/3.0.8",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "353 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/through2/2.0.5",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/gulp-typescript/3.2.4",
+      "name": "through2",
+      "rawSpec": "through2@~2.0.1"
+    }
+  },
+  "354 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/aurelia-bootstrapper/2.3.3",
+    "size": 16164,
+    "status": "started"
+  },
+  "355 debug pnpm:fetching-progress": {
+    "downloaded": 3597,
+    "packageId": "registry.npmjs.org/aurelia-bootstrapper/2.3.3",
+    "status": "in_progress"
+  },
+  "356 debug pnpm:fetching-progress": {
+    "downloaded": 7826,
+    "packageId": "registry.npmjs.org/aurelia-bootstrapper/2.3.3",
+    "status": "in_progress"
+  },
+  "357 debug pnpm:fetching-progress": {
+    "downloaded": 12055,
+    "packageId": "registry.npmjs.org/aurelia-bootstrapper/2.3.3",
+    "status": "in_progress"
+  },
+  "358 debug pnpm:fetching-progress": {
+    "downloaded": 16164,
+    "packageId": "registry.npmjs.org/aurelia-bootstrapper/2.3.3",
+    "status": "in_progress"
+  },
+  "359 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "size": 55044,
+    "status": "started"
+  },
+  "360 debug pnpm:fetching-progress": {
+    "downloaded": 3597,
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "status": "in_progress"
+  },
+  "361 debug pnpm:fetching-progress": {
+    "downloaded": 7826,
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "status": "in_progress"
+  },
+  "362 debug pnpm:fetching-progress": {
+    "downloaded": 12055,
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "status": "in_progress"
+  },
+  "363 debug pnpm:fetching-progress": {
+    "downloaded": 16284,
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "status": "in_progress"
+  },
+  "364 debug pnpm:fetching-progress": {
+    "downloaded": 20513,
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "status": "in_progress"
+  },
+  "365 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vinyl-fs/2.4.4",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "366 debug pnpm:fetching-progress": {
+    "downloaded": 24742,
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "status": "in_progress"
+  },
+  "367 debug pnpm:fetching-progress": {
+    "downloaded": 28971,
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "status": "in_progress"
+  },
+  "368 debug pnpm:fetching-progress": {
+    "downloaded": 32136,
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "status": "in_progress"
+  },
+  "369 debug pnpm:fetching-progress": {
+    "downloaded": 48520,
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "status": "in_progress"
+  },
+  "370 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/browser-sync/2.26.7",
+    "wanted": {
+      "name": "browser-sync",
+      "rawSpec": "browser-sync@^2.13.0"
+    }
+  },
+  "371 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "372 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/vinyl-fs/2.4.4",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/gulp-typescript/3.2.4",
+      "name": "vinyl-fs",
+      "rawSpec": "vinyl-fs@~2.4.3"
+    }
+  },
+  "373 debug pnpm:fetching-progress": {
+    "downloaded": 55044,
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "status": "in_progress"
+  },
+  "374 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "size": 153505,
+    "status": "started"
+  },
+  "375 debug pnpm:fetching-progress": {
+    "downloaded": 3379,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "376 debug pnpm:fetching-progress": {
+    "downloaded": 7608,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "377 debug pnpm:fetching-progress": {
+    "downloaded": 11837,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "378 debug pnpm:fetching-progress": {
+    "downloaded": 16066,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "379 debug pnpm:fetching-progress": {
+    "downloaded": 20295,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "380 debug pnpm:fetching-progress": {
+    "downloaded": 24524,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "381 debug pnpm:fetching-progress": {
+    "downloaded": 28753,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "382 debug pnpm:fetching-progress": {
+    "downloaded": 32982,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "383 debug pnpm:fetching-progress": {
+    "downloaded": 36147,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "384 debug pnpm:fetching-progress": {
+    "downloaded": 40376,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "385 debug pnpm:fetching-progress": {
+    "downloaded": 44605,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "386 debug pnpm:fetching-progress": {
+    "downloaded": 48834,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "387 debug pnpm:fetching-progress": {
+    "downloaded": 53063,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "388 debug pnpm:fetching-progress": {
+    "downloaded": 57292,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "389 debug pnpm:fetching-progress": {
+    "downloaded": 61521,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "390 debug pnpm:fetching-progress": {
+    "downloaded": 65750,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "391 debug pnpm:fetching-progress": {
+    "downloaded": 68915,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "392 debug pnpm:fetching-progress": {
+    "downloaded": 73144,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "393 debug pnpm:fetching-progress": {
+    "downloaded": 89528,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "394 debug pnpm:fetching-progress": {
+    "downloaded": 101683,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "395 debug pnpm:fetching-progress": {
+    "downloaded": 118067,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "396 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-bootstrapper/2.3.3",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "397 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/karma/0.13.22",
+    "wanted": {
+      "name": "karma",
+      "rawSpec": "karma@^0.13.22"
+    }
+  },
+  "398 warn pnpm:install-check": {
+    "message": "Unsupported engine for registry.npmjs.org/karma/0.13.22: wanted: {\"node\":\"0.10 || 0.12 || 4 || 5\"} (current: {\"node\":\"v12.3.1\",\"pnpm\":\"3.5.3\"})",
+    "prefix": "D:\\Source\\WFRP_4e_CB"
+  },
+  "399 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "400 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/http-server/0.11.1",
+    "size": 5419,
+    "status": "started"
+  },
+  "401 debug pnpm:fetching-progress": {
+    "downloaded": 3596,
+    "packageId": "registry.npmjs.org/http-server/0.11.1",
+    "status": "in_progress"
+  },
+  "402 debug pnpm:fetching-progress": {
+    "downloaded": 5419,
+    "packageId": "registry.npmjs.org/http-server/0.11.1",
+    "status": "in_progress"
+  },
+  "403 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "size": 254418,
+    "status": "started"
+  },
+  "404 debug pnpm:fetching-progress": {
+    "downloaded": 3594,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "405 debug pnpm:fetching-progress": {
+    "downloaded": 7823,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "406 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-animator-css/1.0.4",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "407 debug pnpm:fetching-progress": {
+    "downloaded": 12052,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "408 debug pnpm:fetching-progress": {
+    "downloaded": 16281,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "409 debug pnpm:fetching-progress": {
+    "downloaded": 20510,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "410 debug pnpm:fetching-progress": {
+    "downloaded": 24739,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "411 debug pnpm:fetching-progress": {
+    "downloaded": 28968,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "412 debug pnpm:fetching-progress": {
+    "downloaded": 32133,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "413 debug pnpm:fetching-progress": {
+    "downloaded": 36362,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "414 debug pnpm:fetching-progress": {
+    "downloaded": 40591,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "415 debug pnpm:fetching-progress": {
+    "downloaded": 44820,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "416 debug pnpm:fetching-progress": {
+    "downloaded": 49049,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "417 debug pnpm:fetching-progress": {
+    "downloaded": 53278,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "418 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/http-server/0.11.1",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "419 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tslint/3.15.1",
+    "wanted": {
+      "name": "tslint",
+      "rawSpec": "tslint@^3.11.0"
+    }
+  },
+  "420 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "421 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/through2/2.0.5",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/gulp-plumber/1.2.1",
+      "name": "through2",
+      "rawSpec": "through2@^2.0.3"
+    }
+  },
+  "422 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/source-map/0.5.7",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/gulp-typescript/3.2.4",
+      "name": "source-map",
+      "rawSpec": "source-map@~0.5.3"
+    }
+  },
+  "423 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/source-map/0.5.7",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "424 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/gulp-util/3.0.8",
+    "size": 5486,
+    "status": "started"
+  },
+  "425 debug pnpm:fetching-progress": {
+    "downloaded": 3597,
+    "packageId": "registry.npmjs.org/gulp-util/3.0.8",
+    "status": "in_progress"
+  },
+  "426 debug pnpm:fetching-progress": {
+    "downloaded": 5486,
+    "packageId": "registry.npmjs.org/gulp-util/3.0.8",
+    "status": "in_progress"
+  },
+  "427 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/bluebird/3.5.5",
+    "wanted": {
+      "name": "bluebird",
+      "rawSpec": "bluebird@^3.4.1"
+    }
+  },
+  "428 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "429 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/karma-jasmine/1.1.2",
+    "wanted": {
+      "name": "karma-jasmine",
+      "rawSpec": "karma-jasmine@^1.0.2"
+    }
+  },
+  "430 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/karma-jasmine/1.1.2",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "431 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "size": 131509,
+    "status": "started"
+  },
+  "432 debug pnpm:fetching-progress": {
+    "downloaded": 3379,
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "status": "in_progress"
+  },
+  "433 debug pnpm:fetching-progress": {
+    "downloaded": 19763,
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "status": "in_progress"
+  },
+  "434 debug pnpm:fetching-progress": {
+    "downloaded": 36147,
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "status": "in_progress"
+  },
+  "435 debug pnpm:fetching-progress": {
+    "downloaded": 134451,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "436 debug pnpm:fetching-progress": {
+    "downloaded": 52531,
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "status": "in_progress"
+  },
+  "437 debug pnpm:fetching-progress": {
+    "downloaded": 68915,
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "status": "in_progress"
+  },
+  "438 debug pnpm:fetching-progress": {
+    "downloaded": 85299,
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "status": "in_progress"
+  },
+  "439 debug pnpm:fetching-progress": {
+    "downloaded": 101683,
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "status": "in_progress"
+  },
+  "440 debug pnpm:fetching-progress": {
+    "downloaded": 118067,
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "status": "in_progress"
+  },
+  "441 debug pnpm:fetching-progress": {
+    "downloaded": 131509,
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "status": "in_progress"
+  },
+  "442 debug pnpm:fetching-progress": {
+    "downloaded": 150835,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "443 debug pnpm:fetching-progress": {
+    "downloaded": 153505,
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "status": "in_progress"
+  },
+  "444 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gulp-util/3.0.8",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "445 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/chalk/1.1.3",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/gulp-plumber/1.2.1",
+      "name": "chalk",
+      "rawSpec": "chalk@^1.1.3"
+    }
+  },
+  "446 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/chalk/1.1.3",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "447 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/fancy-log/1.3.3",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/gulp-plumber/1.2.1",
+      "name": "fancy-log",
+      "rawSpec": "fancy-log@^1.3.2"
+    }
+  },
+  "448 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/fancy-log/1.3.3",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "449 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/uglify-js/3.6.0",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "450 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "size": 101791,
+    "status": "started"
+  },
+  "451 debug pnpm:fetching-progress": {
+    "downloaded": 7354,
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "status": "in_progress"
+  },
+  "452 debug pnpm:fetching-progress": {
+    "downloaded": 23738,
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "status": "in_progress"
+  },
+  "453 debug pnpm:fetching-progress": {
+    "downloaded": 39521,
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "status": "in_progress"
+  },
+  "454 debug pnpm:fetching-progress": {
+    "downloaded": 43617,
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "status": "in_progress"
+  },
+  "455 debug pnpm:fetching-progress": {
+    "downloaded": 47713,
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "status": "in_progress"
+  },
+  "456 debug pnpm:fetching-progress": {
+    "downloaded": 64097,
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "status": "in_progress"
+  },
+  "457 debug pnpm:fetching-progress": {
+    "downloaded": 80481,
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "status": "in_progress"
+  },
+  "458 debug pnpm:fetching-progress": {
+    "downloaded": 96865,
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "status": "in_progress"
+  },
+  "459 debug pnpm:fetching-progress": {
+    "downloaded": 101791,
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "status": "in_progress"
+  },
+  "460 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/plugin-error/0.1.2",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/gulp-plumber/1.2.1",
+      "name": "plugin-error",
+      "rawSpec": "plugin-error@^0.1.2"
+    }
+  },
+  "461 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/plugin-error/0.1.2",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "462 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/minimatch/3.0.4",
+    "wanted": {
+      "name": "minimatch",
+      "rawSpec": "minimatch@^3.0.2"
+    }
+  },
+  "463 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/minimatch/3.0.4",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "464 debug pnpm:fetching-progress": {
+    "downloaded": 57507,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "465 debug pnpm:fetching-progress": {
+    "downloaded": 61736,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "466 debug pnpm:fetching-progress": {
+    "downloaded": 64901,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "467 debug pnpm:fetching-progress": {
+    "downloaded": 69130,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "468 debug pnpm:fetching-progress": {
+    "downloaded": 73359,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "469 debug pnpm:fetching-progress": {
+    "downloaded": 77588,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "470 debug pnpm:fetching-progress": {
+    "downloaded": 81817,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "471 debug pnpm:fetching-progress": {
+    "downloaded": 86046,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "472 debug pnpm:fetching-progress": {
+    "downloaded": 90275,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "473 debug pnpm:fetching-progress": {
+    "downloaded": 94504,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "474 debug pnpm:fetching-progress": {
+    "downloaded": 97669,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "475 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/karma/0.13.22",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "476 debug pnpm:fetching-progress": {
+    "downloaded": 101898,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "477 debug pnpm:fetching-progress": {
+    "downloaded": 106127,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "478 debug pnpm:fetching-progress": {
+    "downloaded": 110356,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "479 debug pnpm:fetching-progress": {
+    "downloaded": 114585,
+    "packageId": "registry.npmjs.org/requirejs/2.3.6",
+    "status": "in_progress"
+  },
+  "480 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "size": 141582,
+    "status": "started"
+  },
+  "481 debug pnpm:fetching-progress": {
+    "downloaded": 3258,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "482 debug pnpm:fetching-progress": {
+    "downloaded": 7487,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "483 debug pnpm:fetching-progress": {
+    "downloaded": 11716,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "484 debug pnpm:fetching-progress": {
+    "downloaded": 15945,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "485 debug pnpm:fetching-progress": {
+    "downloaded": 20174,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "486 debug pnpm:fetching-progress": {
+    "downloaded": 24403,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "487 debug pnpm:fetching-progress": {
+    "downloaded": 28632,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "488 debug pnpm:fetching-progress": {
+    "downloaded": 32861,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "489 debug pnpm:fetching-progress": {
+    "downloaded": 36026,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "490 debug pnpm:fetching-progress": {
+    "downloaded": 40255,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "491 debug pnpm:fetching-progress": {
+    "downloaded": 44484,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "492 debug pnpm:fetching-progress": {
+    "downloaded": 48713,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "493 debug pnpm:fetching-progress": {
+    "downloaded": 52942,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "494 debug pnpm:fetching-progress": {
+    "downloaded": 57171,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "495 debug pnpm:fetching-progress": {
+    "downloaded": 61400,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "496 debug pnpm:fetching-progress": {
+    "downloaded": 65629,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "497 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/browser-sync/2.26.7",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "498 debug pnpm:fetching-progress": {
+    "downloaded": 68794,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "499 debug pnpm:fetching-progress": {
+    "downloaded": 73023,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "500 debug pnpm:fetching-progress": {
+    "downloaded": 77252,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "501 debug pnpm:fetching-progress": {
+    "downloaded": 81481,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "502 debug pnpm:fetching-progress": {
+    "downloaded": 85710,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "503 debug pnpm:fetching-progress": {
+    "downloaded": 89939,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "504 debug pnpm:fetching-progress": {
+    "downloaded": 94168,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "505 debug pnpm:fetching-progress": {
+    "downloaded": 98397,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "506 debug pnpm:fetching-progress": {
+    "downloaded": 101562,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "507 debug pnpm:fetching-progress": {
+    "downloaded": 105791,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "508 debug pnpm:fetching-progress": {
+    "downloaded": 110020,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "509 debug pnpm:fetching-progress": {
+    "downloaded": 114249,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "510 debug pnpm:fetching-progress": {
+    "downloaded": 118478,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "511 debug pnpm:fetching-progress": {
+    "downloaded": 122707,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "512 debug pnpm:fetching-progress": {
+    "downloaded": 126936,
+    "packageId": "registry.npmjs.org/tslint/3.15.1",
+    "status": "in_progress"
+  },
+  "513 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "size": 136508,
+    "status": "started"
+  },
+  "514 debug pnpm:fetching-progress": {
+    "downloaded": 3595,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "515 debug pnpm:fetching-progress": {
+    "downloaded": 7824,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "516 debug pnpm:fetching-progress": {
+    "downloaded": 12053,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "517 debug pnpm:fetching-progress": {
+    "downloaded": 16282,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "518 debug pnpm:fetching-progress": {
+    "downloaded": 20511,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "519 debug pnpm:fetching-progress": {
+    "downloaded": 24740,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "520 debug pnpm:fetching-progress": {
+    "downloaded": 28969,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "521 debug pnpm:fetching-progress": {
+    "downloaded": 32134,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "522 debug pnpm:fetching-progress": {
+    "downloaded": 36363,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "523 debug pnpm:fetching-progress": {
+    "downloaded": 40592,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "524 debug pnpm:fetching-progress": {
+    "downloaded": 44821,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "525 debug pnpm:fetching-progress": {
+    "downloaded": 49050,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "526 debug pnpm:fetching-progress": {
+    "downloaded": 53279,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "527 debug pnpm:fetching-progress": {
+    "downloaded": 57508,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "528 debug pnpm:fetching-progress": {
+    "downloaded": 61737,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "529 debug pnpm:fetching-progress": {
+    "downloaded": 64902,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "530 debug pnpm:fetching-progress": {
+    "downloaded": 69131,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "531 debug pnpm:fetching-progress": {
+    "downloaded": 73360,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "532 debug pnpm:fetching-progress": {
+    "downloaded": 77589,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "533 debug pnpm:fetching-progress": {
+    "downloaded": 81818,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "534 debug pnpm:fetching-progress": {
+    "downloaded": 86047,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "535 debug pnpm:fetching-progress": {
+    "downloaded": 90276,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "536 debug pnpm:fetching-progress": {
+    "downloaded": 94505,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "537 debug pnpm:fetching-progress": {
+    "downloaded": 97670,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "538 debug pnpm:fetching-progress": {
+    "downloaded": 101899,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "539 debug pnpm:fetching-progress": {
+    "downloaded": 106128,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "540 debug pnpm:fetching-progress": {
+    "downloaded": 110357,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "541 debug pnpm:fetching-progress": {
+    "downloaded": 114586,
+    "packageId": "registry.npmjs.org/bluebird/3.5.5",
+    "status": "in_progress"
+  },
+  "542 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/karma-jasmine/1.1.2",
+    "size": 8098,
+    "status": "started"
+  },
+  "543 debug pnpm:fetching-progress": {
+    "downloaded": 3596,
+    "packageId": "registry.npmjs.org/karma-jasmine/1.1.2",
+    "status": "in_progress"
+  },
+  "544 debug pnpm:fetching-progress": {
+    "downloaded": 8098,
+    "packageId": "registry.npmjs.org/karma-jasmine/1.1.2",
+    "status": "in_progress"
+  },
+  "545 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/karma-jasmine/1.1.2",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "fetched"
+  },
+  "546 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/aurelia-logging/1.5.2",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/aurelia-testing/1.0.0",
+      "name": "aurelia-logging",
+      "rawSpec": "aurelia-logging@^1.0.0"
+    }
+  },
+  "547 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-logging/1.5.2",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "548 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/through2/2.0.5",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/aurelia-tools/1.0.0",
+      "name": "through2",
+      "rawSpec": "through2@^2.0.0"
+    }
+  },
+  "549 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/chalk/1.1.3",
+    "size": 5236,
+    "status": "started"
+  },
+  "550 debug pnpm:fetching-progress": {
+    "downloaded": 5236,
+    "packageId": "registry.npmjs.org/chalk/1.1.3",
+    "status": "in_progress"
+  },
+  "551 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/aurelia-dependency-injection/1.4.2",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/aurelia-testing/1.0.0",
+      "name": "aurelia-dependency-injection",
+      "rawSpec": "aurelia-dependency-injection@^1.0.0"
+    }
+  },
+  "552 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-dependency-injection/1.4.2",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "553 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/through2/2.0.5",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/gulp-changed-in-place/2.3.0",
+      "name": "through2",
+      "rawSpec": "through2@^2.0.0"
+    }
+  },
+  "554 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/aurelia-templating/1.10.2",
+    "wanted": {
+      "dependentId": "registry.npmjs.org/aurelia-testing/1.0.0",
+      "name": "aurelia-templating",
+      "rawSpec": "aurelia-templating@^1.0.0"
+    }
+  },
+  "555 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/aurelia-templating/1.10.2",
+    "requester": "D:\\Source\\WFRP_4e_CB",
+    "status": "resolved"
+  },
+  "556 error pnpm": {
+    "message": {},
+    "err": {
+      "name": "Error",
+      "message": "Could not resolve 4.0 to a commit of git://github.com/gulpjs/gulp.git.",
+      "stack": "Error: Could not resolve 4.0 to a commit of git://github.com/gulpjs/gulp.git.\n    at resolveRefFromRefs (C:\\Users\\jesse.hutchison\\AppData\\Roaming\\npm\\pnpm-global\\2\\node_modules\\.registry.npmjs.org\\pnpm\\3.5.3\\node_modules\\pnpm\\lib\\node_modules\\@pnpm\\git-resolver\\lib\\index.js:75:19)\n    at resolveRef (C:\\Users\\jesse.hutchison\\AppData\\Roaming\\npm\\pnpm-global\\2\\node_modules\\.registry.npmjs.org\\pnpm\\3.5.3\\node_modules\\pnpm\\lib\\node_modules\\@pnpm\\git-resolver\\lib\\index.js:66:12)\n    at processTicksAndRejections (internal/process/task_queues.js:89:5)\n    at async resolveGit (C:\\Users\\jesse.hutchison\\AppData\\Roaming\\npm\\pnpm-global\\2\\node_modules\\.registry.npmjs.org\\pnpm\\3.5.3\\node_modules\\pnpm\\lib\\node_modules\\@pnpm\\git-resolver\\lib\\index.js:11:24)\n    at async Object.resolve (C:\\Users\\jesse.hutchison\\AppData\\Roaming\\npm\\pnpm-global\\2\\node_modules\\.registry.npmjs.org\\pnpm\\3.5.3\\node_modules\\pnpm\\lib\\node_modules\\@pnpm\\default-resolver\\lib\\index.js:13:20)\n    at async run (C:\\Users\\jesse.hutchison\\AppData\\Roaming\\npm\\pnpm-global\\2\\node_modules\\.registry.npmjs.org\\pnpm\\3.5.3\\node_modules\\pnpm\\lib\\node_modules\\p-queue\\dist\\index.js:142:29)"
+    }
+  }
+}

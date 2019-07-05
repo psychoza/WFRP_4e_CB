@@ -12,17 +12,17 @@ export class Character {
 
     Name:string = "Bob";
     Species:Species = null;
-    SpeciesRoll:number = 0;
-    WeaponSkill:Characteristic = new Characteristic('',0,0);
-    BallisticSkill:Characteristic= new Characteristic('',0,0);
-    Strength:Characteristic= new Characteristic('',0,0);
-    Toughness:Characteristic= new Characteristic('',0,0);
-    Initiative:Characteristic= new Characteristic('',0,0);
-    Agility:Characteristic= new Characteristic('',0,0);
-    Dexterity:Characteristic= new Characteristic('',0,0);
-    Intelligence:Characteristic= new Characteristic('',0,0);
-    Willpower:Characteristic= new Characteristic('',0,0);
-    Fellowship:Characteristic= new Characteristic('',0,0);
+
+    WeaponSkill:Characteristic = new Characteristic(0,0);
+    BallisticSkill:Characteristic= new Characteristic(0,0);
+    Strength:Characteristic= new Characteristic(0,0);
+    Toughness:Characteristic= new Characteristic(0,0);
+    Initiative:Characteristic= new Characteristic(0,0);
+    Agility:Characteristic= new Characteristic(0,0);
+    Dexterity:Characteristic= new Characteristic(0,0);
+    Intelligence:Characteristic= new Characteristic(0,0);
+    Willpower:Characteristic= new Characteristic(0,0);
+    Fellowship:Characteristic= new Characteristic(0,0);
 
     constructor() {
       this.dicer = new Dicer();
@@ -54,16 +54,16 @@ export class Character {
     }
 
     rollSpecies():Species{
-      this.SpeciesRoll = this.rollPercentile();
-      if(this.SpeciesRoll >= 1 && this.SpeciesRoll <= 90)
+      let dieResult = this.rollPercentile();
+      if(dieResult >= 1 && dieResult <= 90)
         return new Human();
-      else if(this.SpeciesRoll >= 91 && this.SpeciesRoll <= 94)
+      else if(dieResult >= 91 && dieResult <= 94)
         return new Halfling();
-      else if(this.SpeciesRoll >= 95 && this.SpeciesRoll <= 98)
+      else if(dieResult >= 95 && dieResult <= 98)
         return new Dwarf();
-      else if(this.SpeciesRoll == 99)
+      else if(dieResult == 99)
         return new HighElf();
-      else if(this.SpeciesRoll == 100)
+      else if(dieResult == 100)
         return new WoodElf();
     }
 }
