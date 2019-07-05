@@ -154,15 +154,15 @@ describe('Character - ', () => {
     expect(character.Fellowship.GetTotalScore()).toBe(30);
   });
 
-  it('has the sum and average to characteristic rolls so you can see how much RNG loves you', () => {
+  it('has the sum and percent to characteristic rolls so you can see how much RNG loves you', () => {
     setFakeSumDicResult(10);
     character.rollANewCharacter();
     expect(character.CharacteristicSum).toBe(100);
-    expect(character.CharacteristicAvg).toBe(10);
+    expect(character.CharacteristicPct).toBe(50);
     setFakeSumDicResult(13);
     character.rollANewCharacter();
     expect(character.CharacteristicSum).toBe(130);
-    expect(character.CharacteristicAvg).toBe(13);
+    expect(character.CharacteristicPct).toBe(65);
     
   });
 

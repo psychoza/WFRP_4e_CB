@@ -14,7 +14,7 @@ export class Character {
     Species:Species = null;
     SpeciesRoll:number = 0;
     CharacteristicSum:number = 0;
-    CharacteristicAvg:number = 0;
+    CharacteristicPct:number = 0;
     WeaponSkill:Characteristic = new Characteristic('',0,0);
     BallisticSkill:Characteristic= new Characteristic('',0,0);
     Strength:Characteristic= new Characteristic('',0,0);
@@ -82,6 +82,6 @@ export class Character {
         this.Intelligence.StartingScore +
         this.Willpower.StartingScore +
         this.Fellowship.StartingScore;
-      this.CharacteristicAvg = this.CharacteristicSum / 10;
+      this.CharacteristicPct = Math.floor((this.CharacteristicSum / 200) * 100);
     }
 }
