@@ -42,6 +42,10 @@
       <tr as-element="characteristic-row" characteristic.bind="character.Intelligence"></tr>
       <tr as-element="characteristic-row" characteristic.bind="character.Willpower"></tr>
       <tr as-element="characteristic-row" characteristic.bind="character.Fellowship"></tr>
+      <tr>
+        <td colspan="2">Sum: ${character.CharacteristicSum}</td>
+        <td colspan="3">Avg: ${character.CharacteristicAvg}%</td>
+      </tr>
     </tbody>
   </table>
 </template>

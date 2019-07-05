@@ -72,6 +72,7 @@ describe('Character - ', () => {
 
   it('has characteristics all set to 10 by default the average of 5 + 5, plus 20 for being a human', () => {
     setFakeSumDicResult(10);
+    setFakePercentileDiceResult(1);
     character.rollANewCharacter();
     expect(character.WeaponSkill.GetTotalScore()).toBe(30);
     expect(character.BallisticSkill.GetTotalScore()).toBe(30);
@@ -151,6 +152,18 @@ describe('Character - ', () => {
     expect(character.Intelligence.GetTotalScore()).toBe(40);
     expect(character.Willpower.GetTotalScore()).toBe(40);
     expect(character.Fellowship.GetTotalScore()).toBe(30);
+  });
+
+  it('has the sum and average to characteristic rolls so you can see how much RNG loves you', () => {
+    setFakeSumDicResult(10);
+    character.rollANewCharacter();
+    expect(character.CharacteristicSum).toBe(100);
+    expect(character.CharacteristicAvg).toBe(10);
+    setFakeSumDicResult(13);
+    character.rollANewCharacter();
+    expect(character.CharacteristicSum).toBe(130);
+    expect(character.CharacteristicAvg).toBe(13);
+    
   });
 
   // xp

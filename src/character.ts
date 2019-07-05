@@ -13,6 +13,8 @@ export class Character {
     Name:string = "Bob";
     Species:Species = null;
     SpeciesRoll:number = 0;
+    CharacteristicSum:number = 0;
+    CharacteristicAvg:number = 0;
     WeaponSkill:Characteristic = new Characteristic('',0,0);
     BallisticSkill:Characteristic= new Characteristic('',0,0);
     Strength:Characteristic= new Characteristic('',0,0);
@@ -30,7 +32,7 @@ export class Character {
       //this.rollANewCharacter();
     }
 
-    rollANewCharacter(){      
+    rollANewCharacter():void{      
       this.Species = this.rollSpecies();
 
       this.WeaponSkill = new Characteristic('Weapon Skill',this.rollSum(), this.Species.WeaponSkill);
@@ -43,6 +45,8 @@ export class Character {
       this.Intelligence = new Characteristic('Intelligence', this.rollSum(), this.Species.Intelligence);
       this.Willpower = new Characteristic('Willpower', this.rollSum(), this.Species.Willpower);
       this.Fellowship = new Characteristic('Fellowship', this.rollSum(), this.Species.Fellowship);
+      
+      this.setCharacteristicRollNumbers();
     }
 
     rollSum():number{
@@ -65,5 +69,19 @@ export class Character {
         return new HighElf();
       else if(this.SpeciesRoll == 100)
         return new WoodElf();
+    }
+
+    setCharacteristicRollNumbers():void{
+      this.CharacteristicSum = this.WeaponSkill.StartingScore +
+        this.BallisticSkill.StartingScore +
+        this.Strength.StartingScore +
+        this.Toughness.StartingScore +
+        this.Initiative.StartingScore +
+        this.Agility.StartingScore +
+        this.Dexterity.StartingScore +
+        this.Intelligence.StartingScore +
+        this.Willpower.StartingScore +
+        this.Fellowship.StartingScore;
+      this.CharacteristicAvg = this.CharacteristicSum / 10;
     }
 }
