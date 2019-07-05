@@ -61,6 +61,15 @@ describe('Character - ', () => {
     expect(character.Species.Description).toBe('Wood Elf');
   });
 
+  it('has its species roll stored so it can be seen how likely you are to be human', () => {
+    setFakePercentileDiceResult(1);
+    character.rollANewCharacter();
+    expect(character.SpeciesRoll).toBe(1);
+    setFakePercentileDiceResult(100);
+    character.rollANewCharacter();
+    expect(character.SpeciesRoll).toBe(100);
+  });
+
   it('has characteristics all set to 10 by default the average of 5 + 5, plus 20 for being a human', () => {
     setFakeSumDicResult(10);
     character.rollANewCharacter();
