@@ -1,5 +1,4 @@
 import { computedFrom } from "aurelia-binding";
-import { inherits } from "util";
 
 export class Species {
     Description:string = "Not Specified";

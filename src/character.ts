@@ -12,6 +12,7 @@ export class Character {
 
     Name:string = "Bob";
     Species:Species = null;
+    RandomSpecies:Species = null;
     SpeciesRoll:number = 0;
     CharacteristicSum:number = 0;
     CharacteristicPct:number = 0;
@@ -25,7 +26,7 @@ export class Character {
     Intelligence:Characteristic= new Characteristic('',0,0);
     Willpower:Characteristic= new Characteristic('',0,0);
     Fellowship:Characteristic= new Characteristic('',0,0);
-
+    Experience:number = 0;
     constructor() {
       this.dicer = new Dicer();
       this.Species = new Human();
@@ -34,7 +35,7 @@ export class Character {
 
     rollANewCharacter():void{      
       this.Species = this.rollSpecies();
-
+      this.RandomSpecies = this.Species;
       this.WeaponSkill = new Characteristic('Weapon Skill',this.rollSum(), this.Species.WeaponSkill);
       this.BallisticSkill = new Characteristic('Ballistic Skill', this.rollSum(), this.Species.BallisticSkill);
       this.Strength = new Characteristic('Strength', this.rollSum(), this.Species.Strength);
@@ -47,6 +48,7 @@ export class Character {
       this.Fellowship = new Characteristic('Fellowship', this.rollSum(), this.Species.Fellowship);
       
       this.setCharacteristicRollNumbers();
+      this.Experience = this.getExperience();
     }
 
     rollSum():number{
@@ -83,5 +85,19 @@ export class Character {
         this.Willpower.StartingScore +
         this.Fellowship.StartingScore;
       this.CharacteristicPct = Math.floor((this.CharacteristicSum / 200) * 100);
+    }
+
+    selectSpecies(species:Species){
+      this.Species = species;
+      this.Experience = this.getExperience();
+    }
+
+    getExperience():number{
+      let xp:number = 0;
+
+      if (this.RandomSpecies.Description === this.Species.Description)
+        xp += 20;
+
+      return xp;
     }
 }
