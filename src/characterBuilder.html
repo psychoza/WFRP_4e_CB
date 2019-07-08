@@ -12,7 +12,7 @@
     <hr>
     <div class="row">
       <div class="col-sm">
-        Name: ${character.Name}
+        Name: <input type="text" value.bind="character.Name"/>
       </div>
       <div class="col-sm">
         Species: ${character.Species.Description} (${character.SpeciesRoll})
@@ -39,16 +39,16 @@
     </div>
     <div class="row">
       <div class="col-sm">
-        Age: 
+        Age: <input type="text" />
       </div>
       <div class="col-sm">
-        Height:
+        Height: <input type="text" />
       </div>
       <div class="col-sm">
-        Hair:
+        Hair: <input type="text" />
       </div>
       <div class="col-sm">
-        Eyes:
+        Eyes: <input type="text" />
       </div>
     </div>
     <hr>
@@ -93,10 +93,10 @@
       </div>
       <div class="col-sm">
         <div class="row">
-          <div class="col-sm">Fate</div>
-          <div class="col-sm">Resilience</div>
+          <div class="col-sm"><h6>Fate</h6></div>
+          <div class="col-sm"><h6>Resilience</h6></div>
           <div class="col-sm">
-            Experience
+            <h6>Experience</h6>
             <table>
               <thead>
                 <tr>
