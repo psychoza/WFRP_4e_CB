@@ -9,4 +9,9 @@ export class HighElf extends Species {
   Dexterity:number = 30;
   Intelligence:number = 30;
   Willpower:number = 30;
+
+  Fate:number = 0;
+  Resilience:number = 0;
+  ExtraPoints:number = 2;
+  Movement:number = 5;
 }

@@ -8,4 +8,9 @@ export class Dwarf extends Species {
   Dexterity:number = 30;
   Willpower:number = 40;
   Fellowship:number = 10;
+  
+  Fate:number = 0;
+  Resilience:number = 2;
+  ExtraPoints:number = 2;
+  Movement:number = 3;
 }

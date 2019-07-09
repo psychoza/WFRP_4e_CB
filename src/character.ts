@@ -26,7 +26,14 @@ export class Character {
     Intelligence:Characteristic= new Characteristic('',0,0);
     Willpower:Characteristic= new Characteristic('',0,0);
     Fellowship:Characteristic= new Characteristic('',0,0);
+    Fate:number = 0;
+    Fortune:number = 0;
+    Resilience:number = 0;
+    Resolve:number = 0;
+    ExtraPoints:number = 0;
+    Movement:number = 0;
     Experience:number = 0;
+
     constructor() {
       this.dicer = new Dicer();
       this.Species = new Human();
@@ -36,20 +43,29 @@ export class Character {
     rollANewCharacter():void{      
       this.Species = this.rollSpecies();
       this.RandomSpecies = this.Species;
-      this.WeaponSkill = new Characteristic('Weapon Skill',this.rollSum(), this.Species.WeaponSkill);
-      this.BallisticSkill = new Characteristic('Ballistic Skill', this.rollSum(), this.Species.BallisticSkill);
-      this.Strength = new Characteristic('Strength', this.rollSum(), this.Species.Strength);
-      this.Toughness = new Characteristic('Toughness', this.rollSum(), this.Species.Toughness);
-      this.Initiative = new Characteristic('Initiative', this.rollSum(), this.Species.Initiative);
-      this.Agility = new Characteristic('Agility', this.rollSum(), this.Species.Agility);
-      this.Dexterity = new Characteristic('Dexterity', this.rollSum(), this.Species.Dexterity);
-      this.Intelligence = new Characteristic('Intelligence', this.rollSum(), this.Species.Intelligence);
-      this.Willpower = new Characteristic('Willpower', this.rollSum(), this.Species.Willpower);
-      this.Fellowship = new Characteristic('Fellowship', this.rollSum(), this.Species.Fellowship);
-      
+      this.Fate = this.Species.Fate;
+      this.Fortune = this.Fate;
+      this.Resilience = this.Species.Resilience;
+      this.Resolve = this.Resilience;
+      this.ExtraPoints = this.Species.ExtraPoints;
+      this.Movement = this.Species.Movement;
+      this.rollCharacteristics();
       this.setCharacteristicRollNumbers();
       this.Experience = this.getExperience();
     }
+
+  private rollCharacteristics() {
+    this.WeaponSkill = new Characteristic('Weapon Skill', this.rollSum(), this.Species.WeaponSkill);
+    this.BallisticSkill = new Characteristic('Ballistic Skill', this.rollSum(), this.Species.BallisticSkill);
+    this.Strength = new Characteristic('Strength', this.rollSum(), this.Species.Strength);
+    this.Toughness = new Characteristic('Toughness', this.rollSum(), this.Species.Toughness);
+    this.Initiative = new Characteristic('Initiative', this.rollSum(), this.Species.Initiative);
+    this.Agility = new Characteristic('Agility', this.rollSum(), this.Species.Agility);
+    this.Dexterity = new Characteristic('Dexterity', this.rollSum(), this.Species.Dexterity);
+    this.Intelligence = new Characteristic('Intelligence', this.rollSum(), this.Species.Intelligence);
+    this.Willpower = new Characteristic('Willpower', this.rollSum(), this.Species.Willpower);
+    this.Fellowship = new Characteristic('Fellowship', this.rollSum(), this.Species.Fellowship);
+  }
 
     rollSum():number{
       return this.dicer.RollDice().Sum();

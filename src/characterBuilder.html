@@ -6,13 +6,13 @@
         <h1>Character Builder</h1>
       </div>
       <div class="col-sm">
-        <input type="button" click.delegate="CreateCharacter()" value="Create Character"/>
+        <input type="button" click.delegate="CreateCharacter()" value="Create Character" />
       </div>
     </div>
     <hr>
     <div class="row">
       <div class="col-sm">
-        Name: <input type="text" value.bind="character.Name"/>
+        Name: <input type="text" value.bind="character.Name" />
       </div>
       <div class="col-sm">
         Species: ${character.Species.Description} (${character.SpeciesRoll})
@@ -23,7 +23,7 @@
     </div>
     <div class="row">
       <div class="col-sm">
-        Career: 
+        Career:
       </div>
       <div class="col-sm">
         Career Level:
@@ -31,7 +31,7 @@
     </div>
     <div class="row">
       <div class="col-sm">
-        Career Path: 
+        Career Path:
       </div>
       <div class="col-sm">
         Status:
@@ -93,19 +93,47 @@
       </div>
       <div class="col-sm">
         <div class="row">
-          <div class="col-sm"><h6>Fate</h6></div>
-          <div class="col-sm"><h6>Resilience</h6></div>
+          <div class="col-sm">
+            <h6>Fate</h6>
+            <table>
+                <tbody>
+                  <tr>
+                    <td>Fate</td>
+                    <td>${character.Fate}</td>
+                  </tr>
+                  <tr>
+                    <td>Fortune</td>
+                    <td>${character.Fortune}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          <div class="col-sm">
+            <h6>Resilience</h6>
+            <table>
+                <tbody>
+                  <tr>
+                    <td>Resilience</td>
+                    <td>Resolve</td>
+                    <td>Motivation</td>
+                  </tr>
+                  <tr>
+                    <td>${character.Resilience}</td>
+                    <td>${character.Resolve}</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
           <div class="col-sm">
             <h6>Experience</h6>
             <table>
-              <thead>
-                <tr>
-                  <th>Current</th>
-                  <th>Spent</th>
-                  <th>Total</th>
-                </tr>
-              </thead>
               <tbody>
+                <tr>
+                  <td>Current</td>
+                  <td>Spent</td>
+                  <td>Total</td>
+                </tr>
                 <tr>
                   <td>${character.Experience}</td>
                   <td>0</td>
@@ -117,13 +145,27 @@
         </div>
         <hr>
         <div class="row">
-          <div class="col-sm">Movement</div>
+          <div class="col-sm">
+            <h6>Movement</h6>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Movement</td>
+                  <td>${character.Movement}</td>
+                  <td>Walk</td>
+                  <td>${character.Movement * 2}</td>
+                  <td>Run</td>
+                  <td>${character.Movement * 4}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
     <hr>
-    
 
-    
+
+
   </div>
 </template>

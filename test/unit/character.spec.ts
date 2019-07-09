@@ -71,7 +71,7 @@ describe('Character - ', () => {
     expect(character.SpeciesRoll).toBe(100);
   });
 
-  it('has characteristics all set to 10 by default the average of 5 + 5, plus 20 for being a human', () => {
+  it('has attributes of a human', () => {
     setFakeSumDicResult(10);
     setFakePercentileDiceResult(1);
     character.rollANewCharacter();
@@ -85,9 +85,16 @@ describe('Character - ', () => {
     expect(character.Intelligence.GetTotalScore()).toBe(30);
     expect(character.Willpower.GetTotalScore()).toBe(30);
     expect(character.Fellowship.GetTotalScore()).toBe(30);
+    
+    expect(character.Fate).toEqual(2);
+    expect(character.Fortune).toEqual(2);
+    expect(character.Resilience).toEqual(1);
+    expect(character.Resolve).toEqual(1);
+    expect(character.ExtraPoints).toEqual(3);
+    expect(character.Movement).toEqual(4);
   });
 
-  it('has a bonus to characteristics for being a halfling', () => {
+  it('has attributes of a halfling', () => {
     setFakePercentileDiceResult(91);
     setFakeSumDicResult(10);
     character.rollANewCharacter();
@@ -102,9 +109,16 @@ describe('Character - ', () => {
     expect(character.Intelligence.GetTotalScore()).toBe(30);
     expect(character.Willpower.GetTotalScore()).toBe(40);
     expect(character.Fellowship.GetTotalScore()).toBe(40);
+    
+    expect(character.Fate).toEqual(0);
+    expect(character.Fortune).toEqual(0);
+    expect(character.Resilience).toEqual(2);
+    expect(character.Resolve).toEqual(2);
+    expect(character.ExtraPoints).toEqual(3);
+    expect(character.Movement).toEqual(3);
   });
 
-  it('has a bonus to characteristics for being a dwarf', () => {
+  it('has attributes of a dwarf', () => {
     setFakePercentileDiceResult(95);
     setFakeSumDicResult(10);
     character.rollANewCharacter();
@@ -119,9 +133,16 @@ describe('Character - ', () => {
     expect(character.Intelligence.GetTotalScore()).toBe(30);
     expect(character.Willpower.GetTotalScore()).toBe(50);
     expect(character.Fellowship.GetTotalScore()).toBe(20);
+    
+    expect(character.Fate).toEqual(0);
+    expect(character.Fortune).toEqual(0);
+    expect(character.Resilience).toEqual(2);
+    expect(character.Resolve).toEqual(2);
+    expect(character.ExtraPoints).toEqual(2);
+    expect(character.Movement).toEqual(3);
   });
 
-  it('has a bonus to characteristics for being a high elf', () => {
+  it('has attributes of a high elf', () => {
     setFakePercentileDiceResult(99);
     setFakeSumDicResult(10);
     character.rollANewCharacter();
@@ -136,9 +157,16 @@ describe('Character - ', () => {
     expect(character.Intelligence.GetTotalScore()).toBe(40);
     expect(character.Willpower.GetTotalScore()).toBe(40);
     expect(character.Fellowship.GetTotalScore()).toBe(30);
+    
+    expect(character.Fate).toEqual(0);
+    expect(character.Fortune).toEqual(0);
+    expect(character.Resilience).toEqual(0);
+    expect(character.Resolve).toEqual(0);
+    expect(character.ExtraPoints).toEqual(2);
+    expect(character.Movement).toEqual(5);
   });
 
-  it('has a bonus to characteristics for being a wood elf', () => {
+  it('has attributes of a wood elf', () => {
     setFakePercentileDiceResult(100);
     setFakeSumDicResult(10);
     character.rollANewCharacter();
@@ -153,6 +181,13 @@ describe('Character - ', () => {
     expect(character.Intelligence.GetTotalScore()).toBe(40);
     expect(character.Willpower.GetTotalScore()).toBe(40);
     expect(character.Fellowship.GetTotalScore()).toBe(30);
+    
+    expect(character.Fate).toEqual(0);
+    expect(character.Fortune).toEqual(0);
+    expect(character.Resilience).toEqual(0);
+    expect(character.Resolve).toEqual(0);
+    expect(character.ExtraPoints).toEqual(2);
+    expect(character.Movement).toEqual(5);
   });
 
   it('has the sum and percent to characteristic rolls so you can see how much RNG loves you', () => {
