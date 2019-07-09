@@ -5,13 +5,12 @@ export class CharacterBuilder {
   character: Character = null;
 
   constructor() {
-    this.CreateCharacter();    
+    this.CreateCharacter();
   }
 
-  public CreateCharacter()
-  {
-      let newCharacter = new Character();
-      newCharacter.rollANewCharacter();
-      this.character = newCharacter;
+  public CreateCharacter() {
+    let newCharacter = new Character();
+    newCharacter.rollANewCharacter();
+    this.character = newCharacter;
   }
 }
