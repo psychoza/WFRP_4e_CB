@@ -92,12 +92,39 @@ export class Character {
       this.Experience = this.getExperience();
     }
 
+    swapCharacteristics(c1:Characteristic, c2:Characteristic){
+      c1.SwapStartingScores(c2);
+      this.Experience = this.getExperience();
+    }
+
     getExperience():number{
       let xp:number = 0;
 
-      if (this.RandomSpecies.Description === this.Species.Description)
+      if (this.isUsingTheirRandomSpecies())
         xp += 20;
-
+      if (this.isUsingTheirRandomCharacteristics())
+        xp += 50;
       return xp;
     }
+
+  private isUsingTheirRandomSpecies():boolean {
+    return this.RandomSpecies.Description === this.Species.Description;
+  }
+
+  private isUsingTheirRandomCharacteristics():boolean {
+    if (this.WeaponSkill.HasOriginalScore() &&
+      this.BallisticSkill.HasOriginalScore() &&
+      this.Strength.HasOriginalScore() &&
+      this.Toughness.HasOriginalScore() &&
+      this.Initiative.HasOriginalScore() &&
+      this.Agility.HasOriginalScore() &&
+      this.Dexterity.HasOriginalScore() &&
+      this.Intelligence.HasOriginalScore() &&
+      this.Willpower.HasOriginalScore() &&
+      this.Fellowship.HasOriginalScore()
+    )
+      return true;
+    else 
+      return false;
+  }
 }

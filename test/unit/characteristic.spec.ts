@@ -49,5 +49,28 @@ describe('Characteristic - ', () => {
     expect(stat.GetScoreBonus()).toEqual(4);    
   });
   
+  it('can swap scores with another characteristic', () => {
+    stat = new Characteristic('test', 18, 20);
+    let stat2 = new Characteristic('best', 2, 20);
+    expect(stat.SwapStartingScores).toBeDefined();
+    stat.SwapStartingScores(stat2);
+    expect(stat.StartingScore).toEqual(2);
+    expect(stat.Description).toEqual("test");
+    expect(stat2.StartingScore).toEqual(18);
+    expect(stat2.Description).toEqual("best");
+  });
+
+  
+  
+  it('when it swaps scores it knows when it has its original value', () => {
+    stat = new Characteristic('test', 18, 20);
+    let stat2 = new Characteristic('best', 2, 20);
+    stat.SwapStartingScores(stat2);
+    expect(stat.HasOriginalScore()).toEqual(false);
+    expect(stat2.HasOriginalScore()).toEqual(false);
+    stat.SwapStartingScores(stat2);
+    expect(stat.HasOriginalScore()).toEqual(true);
+    expect(stat2.HasOriginalScore()).toEqual(true);
+  });
 
 });

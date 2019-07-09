@@ -184,19 +184,28 @@ describe('Character - ', () => {
   it('has 20 experience while having the random species', () => {
     setFakePercentileDiceResult(90);
     character.rollANewCharacter();
+    character.WeaponSkill.StartingScore = 1;
+    character.swapCharacteristics(character.WeaponSkill,character.BallisticSkill);
     expect(character.Experience).toBe(20);
   });
-
   
   it('has 0 experience while having a specified species', () => {
     setFakePercentileDiceResult(90);
     character.rollANewCharacter();
+    character.WeaponSkill.StartingScore = 1;
+    character.swapCharacteristics(character.WeaponSkill,character.BallisticSkill);
     character.selectSpecies(new WoodElf());
     expect(character.Experience).toBe(0);
   });
 
+  it('has 50 experience while using the random characteristics', () => {
+    setFakePercentileDiceResult(90);
+    character.rollANewCharacter();
+    character.selectSpecies(new WoodElf());
+    expect(character.Experience).toBe(50);
+  });  
+
   // xp
-  // +20 for random species
   // +50 for random class / career
   // +50 for random characteristics
   // +25 for moving random characteristics 
