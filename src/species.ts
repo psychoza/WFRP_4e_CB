@@ -109,5 +109,3 @@ export class WoodElf extends Species {
   ExtraPoints: number = 2;
   Movement: number = 5;
 }
-
-
