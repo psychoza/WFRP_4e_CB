@@ -215,8 +215,8 @@ describe('Character - ', () => {
       setFakePercentileDiceResult(12);
       character.rollANewCharacter();
       expect(character.Species.Description).toEqual('Human');
-      expect(character.Career).toEqual(Scholar);
-      expect(character.Class).toEqual(Academics);
+      expect(character.Career.Description).toEqual("Scholar");
+      expect(character.Class.Description).toEqual("Academics");
     });
 
     
@@ -224,8 +224,8 @@ describe('Character - ', () => {
       setFakePercentileDiceResult(80);
       character.rollANewCharacter();
       expect(character.Species.Description).toEqual('Human');
-      expect(character.Career).toEqual(Outlaw);
-      expect(character.Class).toEqual(Rogues);
+      expect(character.Career.Description).toEqual("Outlaw");
+      expect(character.Class.Description).toEqual("Rogues");
     });
   });
 

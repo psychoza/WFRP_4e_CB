@@ -89,8 +89,8 @@ export class Human extends Species {
 
   constructor(){
     super();
-    this.AvailableCareers.push(new SpeciesClassCareer(Scholar,12,13));
-    this.AvailableCareers.push(new SpeciesClassCareer(Outlaw,80,83));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),12,13));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),80,83));
   }
 }
 

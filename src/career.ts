@@ -1,30 +1,56 @@
 // #region Classes
-export abstract class Class {
-  static Description: string = "";
+export class Class {
+  Description: string = "";
 }
 
-export abstract class Academics extends Class {
-  static Description: string = "Academics";
+export class Academics extends Class {
+  Description: string = "Academics";
 }
 
-export abstract class Rogues extends Class {
-  static Description: string = "Rogues";
+export class Rogues extends Class {
+  Description: string = "Rogues";
 }
 // #endregion
 
 // #region Careers
 export class Career {
-  static Description: string = "";
-  static Class = Class;
+  Description: string = "";
+  Class: Class;
+  Level: number = 1;
+  CareerPath: string = ""
 }
 
 export class Scholar extends Career {
-  static Description: string = "Scholar";
-  static Class = Academics;
+  Description: string = "Scholar";
+  Class: Class;
+  get CareerPath(): string {
+    if (this.Level == 1)
+      return "Student"
+    else if (this.Level == 2)
+      return "Scholar";
+    else if (this.Level == 3)
+      return "Fellow";
+    else if (this.Level == 4)
+      return "Professor";
+    else
+      return "";
+  }
+  set CareerPath(v:string){
+
+  }; 
+
+constructor(){ 
+    super();
+  this.Class = new Academics();
+  }
 }
 
 export class Outlaw extends Career {
-  static Description: string = "Outlaw";
-  static Class = Rogues;
+  Description: string = "Outlaw";
+Class: Rogues;
+  constructor(){
+  super(); 
+    this.Class = new Rogues();
+}
 }
 // #endregion
