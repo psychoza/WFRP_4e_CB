@@ -56,9 +56,13 @@ describe('Class / Career - ', () => {
         expect(testCareer.CareerPath).toEqual('Professor');
       });
 
+      it('When it has a level of 1, it has 3 characteristics to advance', () => {
+        let testCareer = new Scholar();
+        expect(testCareer.CareerPath).toEqual('Student');
+      });
+
       //careers have levels
       // each level has :
-      // descriptor
       // a skills list
       // a talents list
       // a trappings list

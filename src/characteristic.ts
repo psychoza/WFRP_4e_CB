@@ -1,11 +1,13 @@
 export class Characteristic {
   Description: string = '';
+  CharacteristicType: CharacteristicType;
   StartingScore: number = 0;
   SpeciesScore: number = 0;
   Advances: number = 0;
   private OriginalScore: number = 0;
 
-  constructor(description: string, startingScore: number, speciesScore: number) {
+  constructor(type: CharacteristicType, description: string, startingScore: number, speciesScore: number) {
+    this.CharacteristicType = type;
     this.Description = description;
     this.StartingScore = startingScore;
     this.OriginalScore = startingScore;

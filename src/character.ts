@@ -18,16 +18,39 @@ export class Character {
 
   CharacteristicSum: number = 0;
   CharacteristicPct: number = 0;
-  WeaponSkill: Characteristic = new Characteristic('', 0, 0);
-  BallisticSkill: Characteristic = new Characteristic('', 0, 0);
-  Strength: Characteristic = new Characteristic('', 0, 0);
-  Toughness: Characteristic = new Characteristic('', 0, 0);
-  Initiative: Characteristic = new Characteristic('', 0, 0);
-  Agility: Characteristic = new Characteristic('', 0, 0);
-  Dexterity: Characteristic = new Characteristic('', 0, 0);
-  Intelligence: Characteristic = new Characteristic('', 0, 0);
-  Willpower: Characteristic = new Characteristic('', 0, 0);
-  Fellowship: Characteristic = new Characteristic('', 0, 0);
+  Characteristics: Characteristic[] = [];
+
+  get WeaponSkill():Characteristic{
+    return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.WeaponSkill });
+  }  
+  get BallisticSkill():Characteristic{
+    return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.BallisticSkill });
+  }  
+  get Strength():Characteristic{
+    return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Strength });
+  }  
+  get Toughness():Characteristic{
+    return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Toughness });
+  }  
+  get Initiative():Characteristic{
+    return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Initiative });
+  }  
+  get Agility():Characteristic{
+    return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Agility });
+  }  
+  get Dexterity():Characteristic{
+    return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Dexterity });
+  }
+  get Intelligence():Characteristic{
+    return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Intelligence });
+  }
+  get Willpower():Characteristic{
+    return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Willpower });
+  }
+  get Fellowship():Characteristic{
+    return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Fellowship });
+  }
+
   Fate: number = 0;
   Fortune: number = 0;
   Resilience: number = 0;
@@ -91,29 +114,25 @@ export class Character {
   }
 
   private rollCharacteristics(): void {
-    this.WeaponSkill = new Characteristic('Weapon Skill', this.rollSum(), this.Species.WeaponSkill);
-    this.BallisticSkill = new Characteristic('Ballistic Skill', this.rollSum(), this.Species.BallisticSkill);
-    this.Strength = new Characteristic('Strength', this.rollSum(), this.Species.Strength);
-    this.Toughness = new Characteristic('Toughness', this.rollSum(), this.Species.Toughness);
-    this.Initiative = new Characteristic('Initiative', this.rollSum(), this.Species.Initiative);
-    this.Agility = new Characteristic('Agility', this.rollSum(), this.Species.Agility);
-    this.Dexterity = new Characteristic('Dexterity', this.rollSum(), this.Species.Dexterity);
-    this.Intelligence = new Characteristic('Intelligence', this.rollSum(), this.Species.Intelligence);
-    this.Willpower = new Characteristic('Willpower', this.rollSum(), this.Species.Willpower);
-    this.Fellowship = new Characteristic('Fellowship', this.rollSum(), this.Species.Fellowship);
+    this.Characteristics = [];
+    this.Characteristics.push(new Characteristic(CharacteristicType.WeaponSkill,'Weapon Skill', this.rollSum(), this.Species.WeaponSkill));
+    this.Characteristics.push(new Characteristic(CharacteristicType.BallisticSkill,'Ballistic Skill', this.rollSum(), this.Species.BallisticSkill));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Strength,'Strength', this.rollSum(), this.Species.Strength));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Toughness,'Toughness', this.rollSum(), this.Species.Toughness));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Initiative,'Initiative', this.rollSum(), this.Species.Initiative));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Agility,'Agility', this.rollSum(), this.Species.Agility));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Dexterity,'Dexterity', this.rollSum(), this.Species.Dexterity));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Intelligence,'Intelligence', this.rollSum(), this.Species.Intelligence));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Willpower,'Willpower', this.rollSum(), this.Species.Willpower));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Fellowship,'Fellowship', this.rollSum(), this.Species.Fellowship));
   }
 
   setCharacteristicRollNumbers(): void {
-    this.CharacteristicSum = this.WeaponSkill.StartingScore +
-      this.BallisticSkill.StartingScore +
-      this.Strength.StartingScore +
-      this.Toughness.StartingScore +
-      this.Initiative.StartingScore +
-      this.Agility.StartingScore +
-      this.Dexterity.StartingScore +
-      this.Intelligence.StartingScore +
-      this.Willpower.StartingScore +
-      this.Fellowship.StartingScore;
+    let sum = 0;
+    this.Characteristics.forEach(c => {
+      sum += c.StartingScore
+    });
+    this.CharacteristicSum = sum;
     this.CharacteristicPct = Math.floor((this.CharacteristicSum / 200) * 100);
   }
 
@@ -142,19 +161,11 @@ export class Character {
   }
 
   private isUsingTheirRandomCharacteristics(): boolean {
-    if (this.WeaponSkill.HasOriginalScore() &&
-      this.BallisticSkill.HasOriginalScore() &&
-      this.Strength.HasOriginalScore() &&
-      this.Toughness.HasOriginalScore() &&
-      this.Initiative.HasOriginalScore() &&
-      this.Agility.HasOriginalScore() &&
-      this.Dexterity.HasOriginalScore() &&
-      this.Intelligence.HasOriginalScore() &&
-      this.Willpower.HasOriginalScore() &&
-      this.Fellowship.HasOriginalScore()
-    )
-      return true;
-    else
-      return false;
+    let result = true
+    this.Characteristics.forEach(c => {
+      if (!c.HasOriginalScore())
+        result = false;
+    });
+    return result;
   }
 }

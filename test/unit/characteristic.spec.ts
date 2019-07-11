@@ -2,11 +2,15 @@ import { Characteristic } from './../../src/characteristic';
 describe('Characteristic - ', () => {
   let stat: Characteristic;
   beforeEach(() => {
-    stat = new Characteristic('', 0, 0);
+    stat = new Characteristic(CharacteristicType.WeaponSkill,'', 0, 0);
   });
 
   it('has a description', () => {
     expect(stat.Description).toBeDefined();
+  });
+  
+  it('has a type', () => {
+    expect(stat.CharacteristicType).toBeDefined();
   });
 
   it('has a starting score', () => {
@@ -50,8 +54,8 @@ describe('Characteristic - ', () => {
   });
 
   it('can swap scores with another characteristic', () => {
-    stat = new Characteristic('test', 18, 20);
-    let stat2 = new Characteristic('best', 2, 20);
+    stat = new Characteristic(CharacteristicType.WeaponSkill,'test', 18, 20);
+    let stat2 = new Characteristic(CharacteristicType.BallisticSkill,'best', 2, 20);
     expect(stat.SwapStartingScores).toBeDefined();
     stat.SwapStartingScores(stat2);
     expect(stat.StartingScore).toEqual(2);
@@ -61,8 +65,8 @@ describe('Characteristic - ', () => {
   });
 
   it('when it swaps scores it knows when it has its original value', () => {
-    stat = new Characteristic('test', 18, 20);
-    let stat2 = new Characteristic('best', 2, 20);
+    stat = new Characteristic(CharacteristicType.WeaponSkill,'test', 18, 20);
+    let stat2 = new Characteristic(CharacteristicType.BallisticSkill,'best', 2, 20);
     stat.SwapStartingScores(stat2);
     expect(stat.HasOriginalScore()).toEqual(false);
     expect(stat2.HasOriginalScore()).toEqual(false);
@@ -72,14 +76,14 @@ describe('Characteristic - ', () => {
   });
 
   it('it can be advanced', () => {
-    stat = new Characteristic('test', 18, 20);
+    stat = new Characteristic(CharacteristicType.WeaponSkill,'test', 18, 20);
     expect(stat.Advances).toEqual(0);
     stat.Advance(25);
     expect(stat.Advances).toEqual(1);
   });
 
   it('it can return the cost to advance', () => {
-    stat = new Characteristic('test', 18, 20);
+    stat = new Characteristic(CharacteristicType.WeaponSkill,'test', 18, 20);
     expect(stat.Advances).toEqual(0);
     expect(stat.GetAdvanceCost()).toEqual(25);
     stat.Advances = 5;
@@ -113,7 +117,7 @@ describe('Characteristic - ', () => {
   });
 
   it('advancement takes in a number of xp, and returns the remainder after advancing', () => {
-    stat = new Characteristic('test', 18, 20);
+    stat = new Characteristic(CharacteristicType.WeaponSkill,'test', 18, 20);
     expect(stat.Advances).toEqual(0);
     expect(stat.Advance(28)).toEqual(3);
   });

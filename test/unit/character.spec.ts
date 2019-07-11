@@ -29,16 +29,19 @@ describe('Character - ', () => {
   });
 
   it('has characteristics', () => {
-    expect(character.WeaponSkill).toBeDefined();
-    expect(character.BallisticSkill).toBeDefined();
-    expect(character.Strength).toBeDefined();
-    expect(character.Toughness).toBeDefined();
-    expect(character.Initiative).toBeDefined();
-    expect(character.Agility).toBeDefined();
-    expect(character.Dexterity).toBeDefined();
-    expect(character.Intelligence).toBeDefined();
-    expect(character.Willpower).toBeDefined();
-    expect(character.Fellowship).toBeDefined();
+    character.rollANewCharacter();
+    expect(character.Characteristics).toBeDefined();
+    expect(character.Characteristics.length).toEqual(10);
+    expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.WeaponSkill }).CharacteristicType).toEqual(CharacteristicType.WeaponSkill);
+    expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.BallisticSkill }).CharacteristicType).toEqual(CharacteristicType.BallisticSkill);
+    expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Strength }).CharacteristicType).toEqual(CharacteristicType.Strength);
+    expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Toughness }).CharacteristicType).toEqual(CharacteristicType.Toughness);
+    expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Initiative }).CharacteristicType).toEqual(CharacteristicType.Initiative);
+    expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Agility }).CharacteristicType).toEqual(CharacteristicType.Agility);
+    expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Dexterity }).CharacteristicType).toEqual(CharacteristicType.Dexterity);
+    expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Intelligence }).CharacteristicType).toEqual(CharacteristicType.Intelligence);
+    expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Willpower }).CharacteristicType).toEqual(CharacteristicType.Willpower);
+    expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Fellowship }).CharacteristicType).toEqual(CharacteristicType.Fellowship);
   });
 
   describe('Species - ', () => {
@@ -219,7 +222,7 @@ describe('Character - ', () => {
       expect(character.Class.Description).toEqual("Academics");
     });
 
-    
+
     it('has a random Class and Career of Rogues - Outlaw', () => {
       setFakePercentileDiceResult(80);
       character.rollANewCharacter();
@@ -237,7 +240,7 @@ describe('Character - ', () => {
 
     it('has 20 experience while having the random species', () => {
       setFakePercentileDiceResult(90);
-      character.rollANewCharacter();
+      character.rollANewCharacter();      
       character.WeaponSkill.StartingScore = 1;
       character.swapCharacteristics(character.WeaponSkill, character.BallisticSkill);
       expect(character.Experience).toBe(20);
