@@ -1,12 +1,26 @@
+interface ISkill{
+  Description: string;
+  CharacteristicType: CharacteristicType;
+  IsAdvanced: boolean;
+  IsGrouped: boolean;
+  Advances: number;
+}
+
 export class Skill {
-  Description: string = "";
-  CharacteristicType: CharacteristicType = null;
-  IsAdvanced: boolean = false;
-  Advances: number = 0;
-  constructor(desc: string, type: CharacteristicType, isAdvanced: boolean) {
-    this.Description = desc;
-    this.CharacteristicType = type;
-    this.IsAdvanced = isAdvanced;
+  Description: string;
+  CharacteristicType: CharacteristicType;
+  IsAdvanced: boolean;
+  IsGrouped: boolean;
+  Advances: number;
+
+  constructor();
+  constructor(obj: ISkill);
+  constructor(obj: ISkill = {} as ISkill) {
+    this.Description = obj && obj.Description || "";
+    this.CharacteristicType = obj && obj.CharacteristicType || null;
+    this.IsAdvanced = obj && obj.IsAdvanced || false;
+    this.IsGrouped = obj && obj.IsGrouped || false;
+    this.Advances =obj && obj.Advances || 0;
   }
 
   Advance(currentXp: number): number {

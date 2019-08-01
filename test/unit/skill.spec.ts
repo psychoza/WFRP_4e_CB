@@ -1,10 +1,10 @@
-import { Skill } from "../../src/skill";
+import { Skill, ISkill } from "../../src/skill";
 
 describe('Skill - ', () => {
   let skill: Skill = null;
 
   beforeEach(() => {
-    skill = new Skill("", CharacteristicType.Agility, false);
+    skill = new Skill();
   });
 
   it('has a description', () => {
@@ -13,18 +13,18 @@ describe('Skill - ', () => {
 
   it('has a description that it was defined as', () => {
     let desc = "Awesome";
-    skill = new Skill(desc, CharacteristicType.Agility, false);
+    skill = new Skill({Description: desc} as ISkill);
     expect(skill.Description).toEqual(desc);
   });
 
   it('has a given characteristic type associated to it', () => {
     let type = CharacteristicType.Agility;
-    skill = new Skill("Athletics", type, false);
+    skill = new Skill({CharacteristicType: type} as ISkill);
     expect(skill.CharacteristicType).toEqual(CharacteristicType.Agility);
   });
 
   it('has a way to determine if its a basic skill or not', () => {    
-    skill = new Skill("Athletics", CharacteristicType.Agility, false);
+    skill = new Skill({IsAdvanced:false} as ISkill);
     expect(skill.IsAdvanced).toEqual(false);
   });
 
@@ -74,5 +74,10 @@ describe('Skill - ', () => {
   it('advancement takes in a number of xp, and returns the remainder after advancing', () => {
     expect(skill.Advances).toEqual(0);
     expect(skill.Advance(11)).toEqual(1);
+  });
+
+  it('can be a grouped skill', () => {
+    skill = new Skill({IsGrouped: true} as ISkill);
+    expect(skill.IsGrouped).toEqual(true);
   });
 });
