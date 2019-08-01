@@ -2,6 +2,8 @@ import { Characteristic } from './characteristic';
 import { Dicer } from "./dicer";
 import { Species, Dwarf, Halfling, HighElf, Human, WoodElf } from "./species";
 import { Class, Career, Scholar } from './career';
+import { Skill } from './skill';
+import { SkillLibrary } from './skillLibrary';
 
 export class Character {
   private dicer: Dicer = null;
@@ -20,34 +22,34 @@ export class Character {
   CharacteristicPct: number = 0;
   Characteristics: Characteristic[] = [];
 
-  get WeaponSkill():Characteristic{
+  get WeaponSkill(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.WeaponSkill });
-  }  
-  get BallisticSkill():Characteristic{
+  }
+  get BallisticSkill(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.BallisticSkill });
-  }  
-  get Strength():Characteristic{
+  }
+  get Strength(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Strength });
-  }  
-  get Toughness():Characteristic{
+  }
+  get Toughness(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Toughness });
-  }  
-  get Initiative():Characteristic{
+  }
+  get Initiative(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Initiative });
-  }  
-  get Agility():Characteristic{
+  }
+  get Agility(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Agility });
-  }  
-  get Dexterity():Characteristic{
+  }
+  get Dexterity(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Dexterity });
   }
-  get Intelligence():Characteristic{
+  get Intelligence(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Intelligence });
   }
-  get Willpower():Characteristic{
+  get Willpower(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Willpower });
   }
-  get Fellowship():Characteristic{
+  get Fellowship(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Fellowship });
   }
 
@@ -58,6 +60,8 @@ export class Character {
   ExtraPoints: number = 0;
   Movement: number = 0;
   Experience: number = 0;
+
+  Skills: Skill[] = [];
 
   constructor() {
     this.dicer = new Dicer();
@@ -71,6 +75,7 @@ export class Character {
     this.rollCharacteristics();
     this.setCharacteristicRollNumbers();
     this.Experience = this.getExperience();
+    this.figureOutSkills();
   }
 
   rollSum(): number {
@@ -115,16 +120,16 @@ export class Character {
 
   private rollCharacteristics(): void {
     this.Characteristics = [];
-    this.Characteristics.push(new Characteristic(CharacteristicType.WeaponSkill,'Weapon Skill', this.rollSum(), this.Species.WeaponSkill));
-    this.Characteristics.push(new Characteristic(CharacteristicType.BallisticSkill,'Ballistic Skill', this.rollSum(), this.Species.BallisticSkill));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Strength,'Strength', this.rollSum(), this.Species.Strength));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Toughness,'Toughness', this.rollSum(), this.Species.Toughness));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Initiative,'Initiative', this.rollSum(), this.Species.Initiative));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Agility,'Agility', this.rollSum(), this.Species.Agility));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Dexterity,'Dexterity', this.rollSum(), this.Species.Dexterity));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Intelligence,'Intelligence', this.rollSum(), this.Species.Intelligence));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Willpower,'Willpower', this.rollSum(), this.Species.Willpower));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Fellowship,'Fellowship', this.rollSum(), this.Species.Fellowship));
+    this.Characteristics.push(new Characteristic(CharacteristicType.WeaponSkill, 'Weapon Skill', this.rollSum(), this.Species.WeaponSkill));
+    this.Characteristics.push(new Characteristic(CharacteristicType.BallisticSkill, 'Ballistic Skill', this.rollSum(), this.Species.BallisticSkill));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Strength, 'Strength', this.rollSum(), this.Species.Strength));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Toughness, 'Toughness', this.rollSum(), this.Species.Toughness));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Initiative, 'Initiative', this.rollSum(), this.Species.Initiative));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Agility, 'Agility', this.rollSum(), this.Species.Agility));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Dexterity, 'Dexterity', this.rollSum(), this.Species.Dexterity));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Intelligence, 'Intelligence', this.rollSum(), this.Species.Intelligence));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Willpower, 'Willpower', this.rollSum(), this.Species.Willpower));
+    this.Characteristics.push(new Characteristic(CharacteristicType.Fellowship, 'Fellowship', this.rollSum(), this.Species.Fellowship));
   }
 
   setCharacteristicRollNumbers(): void {
@@ -167,5 +172,19 @@ export class Character {
         result = false;
     });
     return result;
+  }
+
+  private figureOutSkills() {
+    this.Skills = SkillLibrary.BasicSkills;
+  }
+
+  private getCharacteristicScore(type: CharacteristicType): number {
+    return this.Characteristics.find((c) => { return c.CharacteristicType === type; }).GetTotalScore();
+  }
+
+  getSkillLevel(skill: Skill): number {
+    let skillType = skill.CharacteristicType;
+    let characteristicScore = this.getCharacteristicScore(skillType);
+    return characteristicScore + skill.Advances;
   }
 }

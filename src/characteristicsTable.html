@@ -1,0 +1,36 @@
+<template>
+    <table>
+        <thead>
+          <tr>
+            <th>
+              Characteristic
+            </th>
+            <th>
+              Rolled Score
+            </th>
+            <th>
+              Species Bonus
+            </th>
+            <th>
+              Total Score
+            </th>
+            <th>
+              Bonus
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr repeat.for="characteristic of Characteristics">
+              <td>${characteristic.Description}</td>
+              <td>${characteristic.StartingScore}</td>
+              <td>${characteristic.SpeciesScore}</td>
+              <td>${characteristic.GetTotalScore()}</td>
+              <td>${characteristic.GetScoreBonus()}</td>
+          </tr>
+          <tr>
+            <td colspan="5">Total Rolled: ${CharacteristicSum}/200 (${CharacteristicPct}%)</td>
+          </tr>
+        </tbody>
+      </table>
+  
+</template>

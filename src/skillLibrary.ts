@@ -32,7 +32,7 @@ export abstract class SkillLibrary {
     new Skill({Description: "Intuition", CharacteristicType: CharacteristicType.Initiative} as ISkill),
     new Skill({Description: "Leadership", CharacteristicType: CharacteristicType.Fellowship} as ISkill),
     new Skill({Description: "Melee", CharacteristicType: CharacteristicType.WeaponSkill} as ISkill),
-    // new Skill({Description: "Melee (Basic)", CharacteristicType: CharacteristicType.WeaponSkill}),
+    new Skill({Description: "Melee (Basic)", CharacteristicType: CharacteristicType.WeaponSkill} as ISkill),
     // new Skill({Description: "Melee (Brawling)", CharacteristicType: CharacteristicType.WeaponSkill}),
     // new Skill({Description: "Melee (Cavalry)", CharacteristicType: CharacteristicType.WeaponSkill}),
     // new Skill({Description: "Melee (Fencing)", CharacteristicType: CharacteristicType.WeaponSkill}),

@@ -1,5 +1,5 @@
 <template>
-  <require from="./characteristicRow"></require>
+  <require from="./characteristicsTable"></require>
   <div class="container">
     <div class="row">
       <div class="col-sm">
@@ -9,7 +9,8 @@
         <input type="button" click.delegate="CreateCharacter()" value="Create Character" />
       </div>
       <div class="col-sm">
-        <a href="https://github.com/psychoza/WFRP_4e_CB"><img src="src/resources/images/GitHub-Mark-64px.png" alt="WFRP_4e_CB GitHub repository"></a>
+        <a href="https://github.com/psychoza/WFRP_4e_CB"><img src="src/resources/images/GitHub-Mark-64px.png"
+            alt="WFRP_4e_CB GitHub repository"></a>
       </div>
     </div>
     <hr>
@@ -57,76 +58,41 @@
     <hr>
     <div class="row">
       <div class="col-sm">
-        <table>
-          <thead>
-            <tr>
-              <th>
-                Characteristic
-              </th>
-              <th>
-                Rolled Score
-              </th>
-              <th>
-                Species Bonus
-              </th>
-              <th>
-                Total Score
-              </th>
-              <th>
-                Bonus
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr as-element="characteristic-row" characteristic.bind="character.WeaponSkill"></tr>
-            <tr as-element="characteristic-row" characteristic.bind="character.BallisticSkill"></tr>
-            <tr as-element="characteristic-row" characteristic.bind="character.Strength"></tr>
-            <tr as-element="characteristic-row" characteristic.bind="character.Toughness"></tr>
-            <tr as-element="characteristic-row" characteristic.bind="character.Initiative"></tr>
-            <tr as-element="characteristic-row" characteristic.bind="character.Agility"></tr>
-            <tr as-element="characteristic-row" characteristic.bind="character.Dexterity"></tr>
-            <tr as-element="characteristic-row" characteristic.bind="character.Intelligence"></tr>
-            <tr as-element="characteristic-row" characteristic.bind="character.Willpower"></tr>
-            <tr as-element="characteristic-row" characteristic.bind="character.Fellowship"></tr>
-            <tr>
-              <td colspan="5">Total Rolled: ${character.CharacteristicSum}/200 (${character.CharacteristicPct}%)</td>
-            </tr>
-          </tbody>
-        </table>
+        <characteristics-table characteristics.bind="character.Characteristics"></characteristics-table>
       </div>
       <div class="col-sm">
         <div class="row">
           <div class="col-sm">
             <h6>Fate</h6>
             <table>
-                <tbody>
-                  <tr>
-                    <td>Fate</td>
-                    <td>${character.Fate}</td>
-                  </tr>
-                  <tr>
-                    <td>Fortune</td>
-                    <td>${character.Fortune}</td>
-                  </tr>
-                </tbody>
-              </table>
+              <tbody>
+                <tr>
+                  <td>Fate</td>
+                  <td>${character.Fate}</td>
+                </tr>
+                <tr>
+                  <td>Fortune</td>
+                  <td>${character.Fortune}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div class="col-sm">
             <h6>Resilience</h6>
             <table>
-                <tbody>
-                  <tr>
-                    <td>Resilience</td>
-                    <td>Resolve</td>
-                    <td>Motivation</td>
-                  </tr>
-                  <tr>
-                    <td>${character.Resilience}</td>
-                    <td>${character.Resolve}</td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+              <tbody>
+                <tr>
+                  <td>Resilience</td>
+                  <td>Resolve</td>
+                  <td>Motivation</td>
+                </tr>
+                <tr>
+                  <td>${character.Resilience}</td>
+                  <td>${character.Resolve}</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div class="col-sm">
             <h6>Experience</h6>
@@ -167,8 +133,37 @@
       </div>
     </div>
     <hr>
-
-
-
+    <div class="row">
+      <div class="col-sm">
+        <h6>Basic Skills</h6>
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th colspan="2">
+                Characteristic
+              </th>
+              <th>
+                Adv
+              </th>
+              <th>
+                Skill
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr repeat.for="skill of character.Skills">
+              <td>${skill.Description}</td>
+              <td>${skill.CharacteristicType}</td>
+              <td>${character.getCharacteristicScore(skill.CharacteristicType)}</td>
+              <td>${skill.Advances}</td>
+              <td>${character.getSkillLevel(skill)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </template>

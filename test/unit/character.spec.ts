@@ -267,4 +267,27 @@ describe('Character - ', () => {
     // +50 for random characteristics
     // +25 for moving random characteristics 
   });
+  describe('Skills - ', () => {
+    it('has skills', () => {
+      character.rollANewCharacter();
+      expect(character.Skills.length).toEqual(26);
+    });
+
+    it('can calculate a skills level on characteristic', () => {
+      character.rollANewCharacter();
+      let skillType = character.Skills[0].CharacteristicType;
+      let characteristic = character.Characteristics.find((c)=> { return c.CharacteristicType === skillType; });
+      expect(character.getSkillLevel(character.Skills[0])).toEqual(characteristic.GetTotalScore());
+    });
+
+    
+    it('can calculate a skills level on advances', () => {
+      character.rollANewCharacter();
+      let advances = 10;
+      character.Skills[0].Advances = advances;
+      let skillType = character.Skills[0].CharacteristicType;
+      let characteristic = character.Characteristics.find((c)=> { return c.CharacteristicType === skillType; });
+      expect(character.getSkillLevel(character.Skills[0])).toEqual(characteristic.GetTotalScore() + advances);
+    });
+  });
 });
