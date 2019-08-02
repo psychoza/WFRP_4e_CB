@@ -1,36 +1,66 @@
 <template>
-    <table>
-        <thead>
-          <tr>
-            <th>
-              Characteristic
-            </th>
-            <th>
-              Rolled Score
-            </th>
-            <th>
-              Species Bonus
-            </th>
-            <th>
-              Total Score
-            </th>
-            <th>
-              Bonus
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr repeat.for="characteristic of Characteristics">
-              <td>${characteristic.Description}</td>
-              <td>${characteristic.StartingScore}</td>
-              <td>${characteristic.SpeciesScore}</td>
-              <td>${characteristic.GetTotalScore()}</td>
-              <td>${characteristic.GetScoreBonus()}</td>
-          </tr>
-          <tr>
-            <td colspan="5">Total Rolled: ${CharacteristicSum}/200 (${CharacteristicPct}%)</td>
-          </tr>
-        </tbody>
-      </table>
-  
+  <!-- <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">
+          Characteristic
+        </th>
+        <th scope="col">
+          Rolled Score
+        </th>
+        <th scope="col">
+          Species Bonus
+        </th>
+        <th scope="col">
+          Total Score
+        </th>
+        <th scope="col">
+          Bonus
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr repeat.for="characteristic of Characteristics">
+        <td>${characteristic.Description}</td>
+        <td>${characteristic.StartingScore}</td>
+        <td>${characteristic.SpeciesScore}</td>
+        <td>${characteristic.GetTotalScore()}</td>
+        <td>${characteristic.GetScoreBonus()}</td>
+      </tr>
+      <tr>
+        <td colspan="5">Total Rolled: ${CharacteristicSum}/200 (${CharacteristicPct}%)</td>
+      </tr>
+    </tbody>
+  </table> -->
+  <h6>Characteristics</h6>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col" repeat.for="c of Characteristics">
+          ${c.CharacteristicType}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Initial</th>
+        <td repeat.for="c of Characteristics">
+            ${c.GetInitialScore()}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Advances</th>
+        <td repeat.for="c of Characteristics">
+          ${c.Advances}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Current</th>
+        <td repeat.for="c of Characteristics">
+          ${c.GetTotalScore()}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </template>

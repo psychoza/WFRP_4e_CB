@@ -13,9 +13,13 @@ export class Characteristic {
     this.OriginalScore = startingScore;
     this.SpeciesScore = speciesScore;
   }
+  
+  GetInitialScore(): number {
+    return this.StartingScore + this.SpeciesScore;
+  };
 
   GetTotalScore(): number {
-    return this.StartingScore + this.SpeciesScore;
+    return this.StartingScore + this.SpeciesScore + this.Advances;
   };
   GetScoreBonus(): number {
     return Math.floor(this.GetTotalScore() / 10);

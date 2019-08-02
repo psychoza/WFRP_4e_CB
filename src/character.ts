@@ -175,7 +175,29 @@ export class Character {
   }
 
   private figureOutSkills() {
-    this.Skills = SkillLibrary.BasicSkills;
+    let skills = [...SkillLibrary.BasicSkills];
+    if (this.Career && this.Career.Skills) {
+      let careerSkills = this.Career.Skills;
+      if (careerSkills) {
+        careerSkills.forEach(skill => {
+          if (!skills.some((s) => { return s.Description === skill.Description; }))
+            skills.push(skill);
+        });
+      }
+    }
+
+    this.Skills = skills.sort((left: Skill, right: Skill) => {
+      let l = left.Description.toLowerCase();
+      let r = right.Description.toLowerCase();
+      let comparisonResult: number = 0;
+      if (l < r) {
+        comparisonResult = -1;
+      }
+      else if (l > r) {
+        comparisonResult = 1;
+      };
+      return comparisonResult;
+    });
   }
 
   private getCharacteristicScore(type: CharacteristicType): number {
@@ -186,5 +208,9 @@ export class Character {
     let skillType = skill.CharacteristicType;
     let characteristicScore = this.getCharacteristicScore(skillType);
     return characteristicScore + skill.Advances;
+  }
+
+  advanceSkill(skill: Skill): void {
+
   }
 }

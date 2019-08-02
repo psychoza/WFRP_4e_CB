@@ -33,9 +33,20 @@ describe('Class / Career - ', () => {
         expect(testCareer.Level).toEqual(1);
       });
 
+      it('has a list of skills', () => {
+        let testCareer = new Scholar();
+        expect(testCareer.Skills).toBeDefined();
+      });
+
       it('When it has a level of 1, it has a Career Path of Student', () => {
         let testCareer = new Scholar();
         expect(testCareer.CareerPath).toEqual('Student');
+      });
+      
+      it('When it has a level of 1, it has a list of skills', () => {
+        let testCareer = new Scholar();
+        expect(testCareer.Skills.length).toEqual(16);
+        expect(testCareer.Skills[0].Description).toEqual("Consume Alcohol");
       });
       
       it('When it has a level of 2, it has a Career Path of Scholar', () => {

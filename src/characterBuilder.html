@@ -1,12 +1,13 @@
 <template>
   <require from="./characteristicsTable"></require>
-  <div class="container">
+  <require from="./skillsTable"></require>
+  <div class="container-fluid">
     <div class="row">
       <div class="col-sm">
         <h1>Character Builder</h1>
       </div>
       <div class="col-sm">
-        <input type="button" click.delegate="CreateCharacter()" value="Create Character" />
+        <input type="button" class="btn btn-primary" click.delegate="CreateCharacter()" value="Create Character" />
       </div>
       <div class="col-sm">
         <a href="https://github.com/psychoza/WFRP_4e_CB"><img src="src/resources/images/GitHub-Mark-64px.png"
@@ -64,7 +65,7 @@
         <div class="row">
           <div class="col-sm">
             <h6>Fate</h6>
-            <table>
+            <table class="table">
               <tbody>
                 <tr>
                   <td>Fate</td>
@@ -79,7 +80,7 @@
           </div>
           <div class="col-sm">
             <h6>Resilience</h6>
-            <table>
+            <table class="table">
               <tbody>
                 <tr>
                   <td>Resilience</td>
@@ -96,7 +97,7 @@
           </div>
           <div class="col-sm">
             <h6>Experience</h6>
-            <table>
+            <table class="table">
               <tbody>
                 <tr>
                   <td>Current</td>
@@ -116,7 +117,7 @@
         <div class="row">
           <div class="col-sm">
             <h6>Movement</h6>
-            <table>
+            <table class="table">
               <tbody>
                 <tr>
                   <td>Movement</td>
@@ -134,27 +135,27 @@
     </div>
     <hr>
     <div class="row">
-      <div class="col-sm">
-        <h6>Basic Skills</h6>
-        <table>
+      <div class="col-sm-4"  repeat.for="a of getCeilingValue(character.Skills.length/numberOfSkillsPerColumn)">
+        <table class="table table-striped">
           <thead>
             <tr>
-              <th>
+              <th scope="col">
                 Name
               </th>
-              <th colspan="2">
+              <th colspan="2" scope="col">
                 Characteristic
               </th>
-              <th>
+              <th scope="col">
                 Adv
               </th>
-              <th>
+              <th scope="col">
                 Skill
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr repeat.for="skill of character.Skills">
+            <tr
+              repeat.for="skill of character.Skills.slice($index*numberOfSkillsPerColumn,$index*numberOfSkillsPerColumn+numberOfSkillsPerColumn)">
               <td>${skill.Description}</td>
               <td>${skill.CharacteristicType}</td>
               <td>${character.getCharacteristicScore(skill.CharacteristicType)}</td>

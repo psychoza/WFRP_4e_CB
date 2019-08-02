@@ -1,6 +1,7 @@
 import { Character } from '../../src/character';
 import { WoodElf } from '../../src/species';
 import { Academics, Rogues, Scholar, Outlaw } from '../../src/career';
+import { SkillLibrary } from '../../src/skillLibrary';
 
 describe('Character - ', () => {
   let character: Character = null;
@@ -42,6 +43,17 @@ describe('Character - ', () => {
     expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Intelligence }).CharacteristicType).toEqual(CharacteristicType.Intelligence);
     expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Willpower }).CharacteristicType).toEqual(CharacteristicType.Willpower);
     expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Fellowship }).CharacteristicType).toEqual(CharacteristicType.Fellowship);
+  });
+
+  
+
+  it('has keeps various scores separate', () => {
+    character.rollANewCharacter();
+    let c = character.Characteristics[0];
+    c.Advances = 10;
+    expect(c.GetInitialScore).toBeDefined();
+    expect(c.GetInitialScore()).toEqual(c.StartingScore + c.SpeciesScore, "Initial Score did not equal the sum of starting score and species score");
+    expect(c.GetTotalScore()).toEqual(c.StartingScore + c.SpeciesScore + c.Advances, "Total Score did not equal the sum of starting score, species score, and number of advances");
   });
 
   describe('Species - ', () => {
@@ -267,10 +279,11 @@ describe('Character - ', () => {
     // +50 for random characteristics
     // +25 for moving random characteristics 
   });
+  
   describe('Skills - ', () => {
     it('has skills', () => {
       character.rollANewCharacter();
-      expect(character.Skills.length).toEqual(26);
+      expect(character.Skills.length).toEqual(SkillLibrary.BasicSkills.length);
     });
 
     it('can calculate a skills level on characteristic', () => {
@@ -279,7 +292,6 @@ describe('Character - ', () => {
       let characteristic = character.Characteristics.find((c)=> { return c.CharacteristicType === skillType; });
       expect(character.getSkillLevel(character.Skills[0])).toEqual(characteristic.GetTotalScore());
     });
-
     
     it('can calculate a skills level on advances', () => {
       character.rollANewCharacter();
@@ -288,6 +300,16 @@ describe('Character - ', () => {
       let skillType = character.Skills[0].CharacteristicType;
       let characteristic = character.Characteristics.find((c)=> { return c.CharacteristicType === skillType; });
       expect(character.getSkillLevel(character.Skills[0])).toEqual(characteristic.GetTotalScore() + advances);
+    });
+
+    it('has a more skills from the random Class and Career of Academics - Scholar', () => {
+      setFakePercentileDiceResult(12);
+      character.rollANewCharacter();
+      expect(character.Career.Description).toEqual("Scholar");
+      expect(character.Skills.length).toBeGreaterThan(SkillLibrary.BasicSkills.length);
+      expect(character.Skills.length).toEqual(38);
+      expect(character.Skills.some((s) => { return s.Description === "Research"})).toBeTruthy();      
+      expect(character.Skills.filter((s) => { return s.Description === "Consume Alcohol"}).length).toEqual(1);
     });
   });
 });

@@ -1,4 +1,4 @@
-interface ISkill{
+export interface ISkill{
   Description: string;
   CharacteristicType: CharacteristicType;
   IsAdvanced: boolean;

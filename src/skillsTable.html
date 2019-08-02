@@ -1,0 +1,32 @@
+<template>
+  <h6>Skills</h6>
+  <div class="col-sm-4" repeat.for="a of getCeilingValue(Skills.length/13)">
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th colspan="2">
+            Characteristic
+          </th>
+          <th>
+            Adv
+          </th>
+          <th>
+            Skill
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr repeat.for="skill of Skills.slice($index*13,$index*13+13)">
+          <td>${skill.Description}</td>
+          <td>${skill.CharacteristicType}</td>
+          <td>${getCharacteristicScore(skill.CharacteristicType)}</td>
+          <td>${skill.Advances}</td>
+          <td>${getSkillLevel(skill)}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
