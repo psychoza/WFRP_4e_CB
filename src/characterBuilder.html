@@ -17,43 +17,43 @@
     <hr>
     <div class="row">
       <div class="col-sm">
-        Name: <input type="text" value.bind="character.Name" />
+        <span>Name:</span> <input type="text" value.bind="character.Name" />
       </div>
       <div class="col-sm">
-        Species: ${character.Species.Description} (${character.SpeciesRoll})
+        <span>Species:</span> ${character.Species.Description} (${character.SpeciesRoll})
       </div>
       <div class="col-sm">
-        Class: ${character.Class.Description} ${character.CareerRoll}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-        Career: ${character.Career.Description}
-      </div>
-      <div class="col-sm">
-        Career Level:
+        <span>Class:</span> ${character.Class.Description} ${character.CareerRoll}
       </div>
     </div>
     <div class="row">
       <div class="col-sm">
-        Career Path:
+        <span>Career:</span> ${character.Career.Description}
       </div>
       <div class="col-sm">
-        Status:
+        <span>Career Level:</span> ${character.Career.Level}
       </div>
     </div>
     <div class="row">
       <div class="col-sm">
-        Age: <input type="text" />
+        <span>Career Path:</span> ${character.Career.CareerPath}
       </div>
       <div class="col-sm">
-        Height: <input type="text" />
+        <span>Status:</span> ${character.Career.Status}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <span>Age:</span> <input type="text" />
       </div>
       <div class="col-sm">
-        Hair: <input type="text" />
+        <span>Height:</span> <input type="text" />
       </div>
       <div class="col-sm">
-        Eyes: <input type="text" />
+        <span>Hair:</span> <input type="text" />
+      </div>
+      <div class="col-sm">
+        <span>Eyes:</span> <input type="text" />
       </div>
     </div>
     <hr>
@@ -135,7 +135,7 @@
     </div>
     <hr>
     <div class="row">
-      <div class="col-sm-4"  repeat.for="a of getCeilingValue(character.Skills.length/numberOfSkillsPerColumn)">
+      <div class="col-sm-4" repeat.for="a of getCeilingValue(character.Skills.length/numberOfSkillsPerColumn)">
         <table class="table table-striped">
           <thead>
             <tr>

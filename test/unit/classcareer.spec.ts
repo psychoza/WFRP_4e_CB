@@ -41,6 +41,7 @@ describe('Class / Career - ', () => {
       it('When it has a level of 1, it has a Career Path of Student', () => {
         let testCareer = new Scholar();
         expect(testCareer.CareerPath).toEqual('Student');
+        expect(testCareer.Status).toEqual('Brass 3');
       });
       
       it('When it has a level of 1, it has a list of skills', () => {
@@ -53,18 +54,21 @@ describe('Class / Career - ', () => {
         let testCareer = new Scholar();        
         testCareer.Level = 2;
         expect(testCareer.CareerPath).toEqual('Scholar');
+        expect(testCareer.Status).toEqual('Silver 2');
       });
       
       it('When it has a level of 3, it has a Career Path of Fellow', () => {
         let testCareer = new Scholar();        
         testCareer.Level = 3;
         expect(testCareer.CareerPath).toEqual('Fellow');
+        expect(testCareer.Status).toEqual('Silver 5');
       });
       
       it('When it has a level of 4, it has a Career Path of Professor', () => {
         let testCareer = new Scholar();        
         testCareer.Level = 4;
         expect(testCareer.CareerPath).toEqual('Professor');
+        expect(testCareer.Status).toEqual('Gold 1');
       });
 
       it('When it has a level of 1, it has 3 characteristics to advance', () => {

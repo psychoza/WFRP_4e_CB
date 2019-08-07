@@ -19,8 +19,9 @@ export class Career {
   Description: string = "";
   Class: Class;
   Level: number = 1;
-  CareerPath: string = ""  
-  Skills: Skill[] = []
+  CareerPath: string = "";
+  Status: string = "";  
+  Skills: Skill[] = [];
 }
 
 export class Scholar extends Career {
@@ -39,7 +40,19 @@ export class Scholar extends Career {
       return "";
   }
   set CareerPath(v: string) { };
-
+  get Status(): string {
+    if (this.Level == 1)
+      return "Brass 3"
+    else if (this.Level == 2)
+      return "Silver 2";
+    else if (this.Level == 3)
+      return "Silver 5";
+    else if (this.Level == 4)
+      return "Gold 1";
+    else
+      return "";
+  }
+  set Status(v: string) { };
   Skills: Skill[] = [];
 
   constructor() {

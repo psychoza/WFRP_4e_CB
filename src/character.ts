@@ -110,7 +110,7 @@ export class Character {
   }
 
   private rollClassAndCareer(): void {
-    this.CareerRoll = this.rollPercentile();
+    this.CareerRoll = 12;//this.rollPercentile();
     let rolledCareer = this.Species.AvailableCareers.find((ac) => { return ac.MinimumRange <= this.CareerRoll && this.CareerRoll <= ac.MaximumRange });
     if (rolledCareer) {
       this.Career = rolledCareer.Career;

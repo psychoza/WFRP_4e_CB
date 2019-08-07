@@ -232,8 +232,9 @@ describe('Character - ', () => {
       expect(character.Species.Description).toEqual('Human');
       expect(character.Career.Description).toEqual("Scholar");
       expect(character.Class.Description).toEqual("Academics");
+      expect(character.Career.Level).toEqual(1);      
+      expect(character.Career.CareerPath).toEqual("Student");
     });
-
 
     it('has a random Class and Career of Rogues - Outlaw', () => {
       setFakePercentileDiceResult(80);
