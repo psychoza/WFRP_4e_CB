@@ -1,3 +1,4 @@
+import { Characteristic } from './../../src/characteristic';
 import { Career } from './../../src/career';
 import { Academics, Rogues, Scholar, Outlaw } from '../../src/career';
 
@@ -73,7 +74,47 @@ describe('Class / Career - ', () => {
 
       it('When it has a level of 1, it has 3 characteristics to advance', () => {
         let testCareer = new Scholar();
-        expect(testCareer.CareerPath).toEqual('Student');
+        expect(testCareer.Level).toEqual(1);
+        expect(testCareer.Characteristics.length).toEqual(3);
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy("Missing Characteristic Toughness");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy("Missing Characteristic Intelligence");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy("Missing Characteristic Willpower");
+      });
+      
+      it('When it has a level of 2, it has 4 characteristics to advance', () => {
+        let testCareer = new Scholar();
+        testCareer.Level = 2;
+        expect(testCareer.Level).toEqual(2);
+        expect(testCareer.Characteristics.length).toEqual(4);
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy("Missing Characteristic Toughness");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy("Missing Characteristic Intelligence");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy("Missing Characteristic Willpower");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Initiative)).toBeTruthy("Missing Characteristic Initiative");
+      });
+            
+      it('When it has a level of 3, it has 5 characteristics to advance', () => {
+        let testCareer = new Scholar();
+        testCareer.Level = 3;
+        expect(testCareer.Level).toEqual(3);
+        expect(testCareer.Characteristics.length).toEqual(5);
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy("Missing Characteristic Toughness");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy("Missing Characteristic Intelligence");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy("Missing Characteristic Willpower");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Initiative)).toBeTruthy("Missing Characteristic Initiative");        
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Fellowship)).toBeTruthy("Missing Characteristic Fellowship");
+      });      
+            
+      it('When it has a level of 4, it has 6 characteristics to advance', () => {
+        let testCareer = new Scholar();
+        testCareer.Level = 4;
+        expect(testCareer.Level).toEqual(4);
+        expect(testCareer.Characteristics.length).toEqual(6);
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy("Missing Characteristic Toughness");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy("Missing Characteristic Intelligence");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy("Missing Characteristic Willpower");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Initiative)).toBeTruthy("Missing Characteristic Initiative");        
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Fellowship)).toBeTruthy("Missing Characteristic Fellowship");                
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Dexterity)).toBeTruthy("Missing Characteristic Dexterity");
       });
 
       //careers have levels
@@ -84,8 +125,8 @@ describe('Class / Career - ', () => {
       // an advance scheme of characteristics
       // // at level 1 it is 3 characteristics
       // // level 2 it is 4
-      // // level 2 it is 5
-      // // level 2 it is 6
+      // // level 3 it is 5
+      // // level 4 it is 6
       // // at level 1 everything must be advanced by 5
       // // at level 2 everything must be advanced by 10
       // // at level 3 everything must be advanced by 15
