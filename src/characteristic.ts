@@ -5,15 +5,17 @@ export class Characteristic {
   SpeciesScore: number = 0;
   Advances: number = 0;
   private OriginalScore: number = 0;
+  CanBeAdvanced: boolean = false;
 
-  constructor(type: CharacteristicType, description: string, startingScore: number, speciesScore: number) {
+  constructor(type: CharacteristicType, description: string, startingScore: number, speciesScore: number, canBeAdvanced: boolean = false) {
     this.CharacteristicType = type;
     this.Description = description;
     this.StartingScore = startingScore;
     this.OriginalScore = startingScore;
     this.SpeciesScore = speciesScore;
+    this.CanBeAdvanced = canBeAdvanced;
   }
-  
+
   GetInitialScore(): number {
     return this.StartingScore + this.SpeciesScore;
   };

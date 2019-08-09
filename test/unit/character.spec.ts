@@ -1,3 +1,4 @@
+import { Career } from './../../src/career';
 import { Character } from '../../src/character';
 import { WoodElf } from '../../src/species';
 import { Academics, Rogues, Scholar, Outlaw } from '../../src/career';
@@ -45,7 +46,6 @@ describe('Character - ', () => {
     expect(character.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.Fellowship }).CharacteristicType).toEqual(CharacteristicType.Fellowship);
   });
 
-  
 
   it('has keeps various scores separate', () => {
     character.rollANewCharacter();
@@ -236,6 +236,19 @@ describe('Character - ', () => {
       expect(character.Career.CareerPath).toEqual("Student");
     });
 
+    it('as a Academic Scholar Student it knows which characteristics can be advanced', () => {
+      setFakePercentileDiceResult(12);
+      character.rollANewCharacter();
+      expect(character.Species.Description).toEqual('Human');
+      expect(character.Career.Description).toEqual("Scholar");
+      expect(character.Class.Description).toEqual("Academics");
+      expect(character.Career.Level).toEqual(1);      
+      expect(character.Career.CareerPath).toEqual("Student");
+      expect(character.Intelligence.CanBeAdvanced).toEqual(true);
+      expect(character.Toughness.CanBeAdvanced).toEqual(true);
+      expect(character.Willpower.CanBeAdvanced).toEqual(true);
+    });
+
     it('has a random Class and Career of Rogues - Outlaw', () => {
       setFakePercentileDiceResult(80);
       character.rollANewCharacter();
@@ -246,6 +259,12 @@ describe('Character - ', () => {
   });
 
   describe('Experience - ', () => {
+    // +20 for random species
+    // +50 for random career
+    // // +25 for one of 3 random careers
+    // +50 for random characteristics
+    // // +25 for swapped characteristics
+
     it('has experience', () => {
       character.rollANewCharacter();
       expect(character.Experience).toBeDefined();
@@ -256,6 +275,7 @@ describe('Character - ', () => {
       character.rollANewCharacter();      
       character.WeaponSkill.StartingScore = 1;
       character.swapCharacteristics(character.WeaponSkill, character.BallisticSkill);
+      character.selectCareer(new Career());
       expect(character.Experience).toBe(20);
     });
 
@@ -265,6 +285,7 @@ describe('Character - ', () => {
       character.WeaponSkill.StartingScore = 1;
       character.swapCharacteristics(character.WeaponSkill, character.BallisticSkill);
       character.selectSpecies(new WoodElf());
+      character.selectCareer(new Career());
       expect(character.Experience).toBe(0);
     });
 
@@ -272,21 +293,45 @@ describe('Character - ', () => {
       setFakePercentileDiceResult(90);
       character.rollANewCharacter();
       character.selectSpecies(new WoodElf());
+      character.selectCareer(new Career());
       expect(character.Experience).toBe(50);
     });
 
-    // xp
-    // +50 for random class / career
-    // +50 for random characteristics
-    // +25 for moving random characteristics 
+    it('has 50 experience while using the random class / career', () => {
+      setFakePercentileDiceResult(90);
+      character.rollANewCharacter();
+      character.WeaponSkill.StartingScore = 1;
+      character.swapCharacteristics(character.WeaponSkill, character.BallisticSkill);
+      character.selectSpecies(new WoodElf());
+      expect(character.Experience).toBe(50);
+    });
+    
+    it('has 0 experience while not using the random class / career', () => {
+      setFakePercentileDiceResult(90);
+      character.rollANewCharacter();
+      character.WeaponSkill.StartingScore = 1;
+      character.swapCharacteristics(character.WeaponSkill, character.BallisticSkill);
+      character.selectSpecies(new WoodElf());
+      character.selectCareer(new Career());
+      expect(character.Experience).toBe(0);
+    });
+
+    it('has spent experience', () => {
+      setFakePercentileDiceResult(90);
+      character.rollANewCharacter();      
+      expect(character.SpentExperience).toBe(0);
+    });
+
+    
+    it('has spent experience', () => {
+      setFakePercentileDiceResult(90);
+      character.rollANewCharacter();
+      character.SpentExperience = 25;
+      expect(character.CurrentExperience).toBe(character.Experience - character.SpentExperience);
+    });
   });
   
   describe('Skills - ', () => {
-    it('has skills', () => {
-      character.rollANewCharacter();
-      expect(character.Skills.length).toEqual(SkillLibrary.BasicSkills.length);
-    });
-
     it('can calculate a skills level on characteristic', () => {
       character.rollANewCharacter();
       let skillType = character.Skills[0].CharacteristicType;

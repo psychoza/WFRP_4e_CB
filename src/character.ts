@@ -5,6 +5,8 @@ import { Class, Career, Scholar } from './career';
 import { Skill } from './skill';
 import { SkillLibrary } from './skillLibrary';
 
+const constCharacteristics: string[] = ['WeaponSkill', 'BallisticSkill', 'Strength', 'Toughness', 'Initiative', 'Agility', 'Dexterity', 'Intelligence', 'Willpower', 'Fellowship'];
+
 export class Character {
   private dicer: Dicer = null;
 
@@ -17,6 +19,7 @@ export class Character {
   CareerRoll: number = 0;
   Class: Class;
   Career: Career;
+  RandomCareer: Career;
 
   CharacteristicSum: number = 0;
   CharacteristicPct: number = 0;
@@ -60,6 +63,10 @@ export class Character {
   ExtraPoints: number = 0;
   Movement: number = 0;
   Experience: number = 0;
+  SpentExperience: number = 0;
+  get CurrentExperience(): number {
+    return this.Experience - this.SpentExperience;
+  };
 
   Skills: Skill[] = [];
 
@@ -110,26 +117,28 @@ export class Character {
   }
 
   private rollClassAndCareer(): void {
-    this.CareerRoll = 12;//this.rollPercentile();
+    this.CareerRoll = this.rollPercentile();
     let rolledCareer = this.Species.AvailableCareers.find((ac) => { return ac.MinimumRange <= this.CareerRoll && this.CareerRoll <= ac.MaximumRange });
     if (rolledCareer) {
       this.Career = rolledCareer.Career;
+      this.RandomCareer = this.Career;
       this.Class = rolledCareer.Career.Class;
     }
   }
 
   private rollCharacteristics(): void {
     this.Characteristics = [];
-    this.Characteristics.push(new Characteristic(CharacteristicType.WeaponSkill, 'Weapon Skill', this.rollSum(), this.Species.WeaponSkill));
-    this.Characteristics.push(new Characteristic(CharacteristicType.BallisticSkill, 'Ballistic Skill', this.rollSum(), this.Species.BallisticSkill));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Strength, 'Strength', this.rollSum(), this.Species.Strength));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Toughness, 'Toughness', this.rollSum(), this.Species.Toughness));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Initiative, 'Initiative', this.rollSum(), this.Species.Initiative));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Agility, 'Agility', this.rollSum(), this.Species.Agility));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Dexterity, 'Dexterity', this.rollSum(), this.Species.Dexterity));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Intelligence, 'Intelligence', this.rollSum(), this.Species.Intelligence));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Willpower, 'Willpower', this.rollSum(), this.Species.Willpower));
-    this.Characteristics.push(new Characteristic(CharacteristicType.Fellowship, 'Fellowship', this.rollSum(), this.Species.Fellowship));
+    constCharacteristics.forEach((characteristic) => {
+      this.addCharacteristic(characteristic, this.rollSum());
+    });
+  }
+
+  private addCharacteristic(type: string, score: number): void {
+    let characteristicType = CharacteristicType[type];
+    let speciesCharacteristicScore = this.Species[type];
+    let canBeAdvanced = this.Career.Characteristics.some((c) => { return c === characteristicType; });
+    let description = type.replace(/([A-Z])/g, ' $1').trim();
+    this.Characteristics.push(new Characteristic(characteristicType, description, score, speciesCharacteristicScore, canBeAdvanced));
   }
 
   setCharacteristicRollNumbers(): void {
@@ -146,6 +155,11 @@ export class Character {
     this.Experience = this.getExperience();
   }
 
+  selectCareer(career: Career) {
+    this.Career = career;
+    this.Experience = this.getExperience();
+  }
+
   swapCharacteristics(c1: Characteristic, c2: Characteristic) {
     c1.SwapStartingScores(c2);
     this.Experience = this.getExperience();
@@ -158,6 +172,8 @@ export class Character {
       xp += 20;
     if (this.isUsingTheirRandomCharacteristics())
       xp += 50;
+    if (this.isUsingTheirRandomCareer())
+      xp += 50
     return xp;
   }
 
@@ -172,6 +188,10 @@ export class Character {
         result = false;
     });
     return result;
+  }
+
+  private isUsingTheirRandomCareer(): boolean {
+    return this.RandomCareer && this.Career ? this.RandomCareer.Description === this.Career.Description : false;
   }
 
   private figureOutSkills() {

@@ -3,14 +3,6 @@ import { Career } from './../../src/career';
 import { Academics, Rogues, Scholar, Outlaw } from '../../src/career';
 
 describe('Class / Career - ', () => {
-  // let setMockDicResult = (tens, ones) => {
-  //   dicer.RollDice = () => {
-  //     let result = new DiceResult();
-  //     result.Tens = tens;
-  //     result.Ones = ones;
-  //     return result;
-  //   };
-  // };
 
   describe('the Academics Class - ', () => {
     it('has a description of Academics', () => {
@@ -131,45 +123,6 @@ describe('Class / Career - ', () => {
       // // at level 2 everything must be advanced by 10
       // // at level 3 everything must be advanced by 15
       // // at level 4 everything must be advanced by 20
-
-      
-      // describe('Career Levels - ', () => {
-      //   it('has a level of 1', () => {
-      //   });
-            //   it('Student @ 1', () => {
-      //   });
-            //   it('Scholar @ 2', () => {
-      //   });
-            //   it('Fellow @ 3', () => {
-      //   });
-            //   it('Professor @ 4', () => {
-      //   });
-      // });
-
-
-      // describe('Advance Scheme - ', () => {
-      //   it('has an Advance Scheme', () => {
-      //     //describes which characteristics can be advanced
-      //   });
-      // });
-
-      // describe('Can be go up a career level - ', () => {
-      //   it('has all characteristics advanced 5 times', () => {
-      //     //describes which characteristics can be advanced
-      //   });
-        
-      //   it('has all career level skills advanced 5 times', () => {
-      //     //describes which characteristics can be advanced
-      //   });
-        
-      //   it('has at least 1 talent from the current career level', () => {
-      //     //describes which characteristics can be advanced
-      //   });
-
-      //   it('has 100 current xp', () => {
-      //     //describes which characteristics can be advanced
-      //   });
-      // });
     });
   });
 

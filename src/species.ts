@@ -45,6 +45,11 @@ export class Dwarf extends Species {
   Resilience: number = 2;
   ExtraPoints: number = 2;
   Movement: number = 3;
+
+  constructor(){
+    super();
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,100));
+  }
 }
 
 export class Halfling extends Species {
@@ -60,6 +65,11 @@ export class Halfling extends Species {
   Resilience: number = 2;
   ExtraPoints: number = 3;
   Movement: number = 3;
+
+  constructor(){
+    super();
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,100));
+  }
 }
 
 export class HighElf extends Species {
@@ -76,6 +86,11 @@ export class HighElf extends Species {
   Resilience: number = 0;
   ExtraPoints: number = 2;
   Movement: number = 5;
+
+  constructor(){
+    super();
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,100));
+  }
 }
 
 export class Human extends Species {
@@ -85,12 +100,11 @@ export class Human extends Species {
   ExtraPoints: number = 3;
   Movement: number = 4;
 
-  AvailableCareers:SpeciesClassCareer[] = [];
-
   constructor(){
     super();
-    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),12,13));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,79));
     this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),80,83));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),84,100));
   }
 }
 
@@ -108,4 +122,9 @@ export class WoodElf extends Species {
   Resilience: number = 0;
   ExtraPoints: number = 2;
   Movement: number = 5;
+
+  constructor(){
+    super();
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,100));
+  }
 }

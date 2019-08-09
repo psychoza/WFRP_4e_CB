@@ -28,16 +28,16 @@
         <td>${characteristic.GetScoreBonus()}</td>
       </tr>
       <tr>
-        <td colspan="5">Total Rolled: ${CharacteristicSum}/200 (${CharacteristicPct}%)</td>
+        <td colspan="5">Total Rolled: </td>
       </tr>
     </tbody>
   </table> -->
   <h6>Characteristics</h6>
-  <table class="table table-striped">
+  <table class="table table-bordered table-hover table-sm">
     <thead>
       <tr>
-        <th scope="col"></th>
-        <th scope="col" repeat.for="c of Characteristics">
+        <th scope="col">${CharacteristicSum}/200 (${CharacteristicPct}%)</th>
+        <th scope="col" repeat.for="c of Characteristics" class.bind="c.CanBeAdvanced ? 'table-primary' : ''">
           ${c.CharacteristicType}
         </th>
       </tr>
@@ -45,19 +45,19 @@
     <tbody>
       <tr>
         <th scope="row">Initial</th>
-        <td repeat.for="c of Characteristics">
+        <td repeat.for="c of Characteristics" class.bind="c.CanBeAdvanced ? 'table-primary' : ''">
             ${c.GetInitialScore()}
         </td>
       </tr>
       <tr>
         <th scope="row">Advances</th>
-        <td repeat.for="c of Characteristics">
+        <td repeat.for="c of Characteristics" class.bind="c.CanBeAdvanced ? 'table-primary' : ''">
           ${c.Advances}
         </td>
       </tr>
       <tr>
         <th scope="row">Current</th>
-        <td repeat.for="c of Characteristics">
+        <td repeat.for="c of Characteristics" class.bind="c.CanBeAdvanced ? 'table-primary' : ''">
           ${c.GetTotalScore()}
         </td>
       </tr>

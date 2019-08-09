@@ -120,5 +120,5 @@ describe('Characteristic - ', () => {
     stat = new Characteristic(CharacteristicType.WeaponSkill,'test', 18, 20);
     expect(stat.Advances).toEqual(0);
     expect(stat.Advance(28)).toEqual(3);
-  });
+  });  
 });

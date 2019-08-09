@@ -25,7 +25,7 @@ export class Career {
   Skills: Skill[] = [];
   Characteristics: CharacteristicType[] = [];
 }
-
+// #region Academics
 export class Scholar extends Career {
   Description: string = "Scholar";
   Class: Class;
@@ -93,6 +93,7 @@ export class Scholar extends Career {
     ];
   }
 }
+// #endregion
 
 export class Outlaw extends Career {
   Description: string = "Outlaw";
