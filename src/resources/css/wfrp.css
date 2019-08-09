@@ -2,6 +2,10 @@ h6 {
   text-transform: uppercase;
 }
 
+.container {
+  padding-top: 5px;
+}
+
 .container-fluid {
   padding-top: 5px;
 }

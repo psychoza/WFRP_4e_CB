@@ -1,7 +1,7 @@
 <template>
   <require from="./characteristicsTable"></require>
   <require from="./skillsTable"></require>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col-sm">
         <h1>Character Builder</h1>
@@ -157,7 +157,7 @@
           <tbody>
             <tr
               repeat.for="skill of character.Skills.slice($index*numberOfSkillsPerColumn,$index*numberOfSkillsPerColumn+numberOfSkillsPerColumn)">
-              <td>${skill.Description}</td>
+              <td class="text-nowrap">${skill.Description}</td>
               <td>${skill.CharacteristicType}</td>
               <td>${character.getCharacteristicScore(skill.CharacteristicType)}</td>
               <td>${skill.Advances}</td>
