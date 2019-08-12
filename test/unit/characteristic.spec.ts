@@ -1,4 +1,4 @@
-import { Characteristic } from './../../src/characteristic';
+import { Characteristic } from '../../src/objects/characteristic';
 describe('Characteristic - ', () => {
   let stat: Characteristic;
   beforeEach(() => {

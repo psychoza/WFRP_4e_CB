@@ -1,4 +1,4 @@
-import { Characteristic } from './characteristic';
+import { Characteristic } from './objects/characteristic';
 import { bindable } from 'aurelia-framework';
 export class CharacteristicsTable {
   @bindable Characteristics: Characteristic[];

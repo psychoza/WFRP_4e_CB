@@ -1,8 +1,8 @@
-import { Career } from './../../src/career';
-import { Character } from '../../src/character';
-import { WoodElf } from '../../src/species';
-import { Academics, Rogues, Scholar, Outlaw } from '../../src/career';
-import { SkillLibrary } from '../../src/skillLibrary';
+import { Career } from '../../src/objects/career';
+import { Character } from '../../src/objects/character';
+import { WoodElf } from '../../src/objects/species';
+import { Academics, Rogues, Scholar, Outlaw } from '../../src/objects/career';
+import { SkillLibrary } from '../../src/objects/skillLibrary';
 
 describe('Character - ', () => {
   let character: Character = null;

@@ -1,4 +1,4 @@
-import { Skill, ISkill } from "../../src/skill";
+import { Skill, ISkill } from "../../src/objects/skill";
 
 describe('Skill - ', () => {
   let skill: Skill = null;

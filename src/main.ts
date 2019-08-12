@@ -1,10 +1,12 @@
 import {Aurelia} from 'aurelia-framework'
+import{ PLATFORM} from 'aurelia-pal'
 import environment from './environment';
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
-    .feature('resources');
+    .feature('resources')
+    .plugin(PLATFORM.moduleName('aurelia-dialog'));
 
   if (environment.debug) {
     aurelia.use.developmentLogging();

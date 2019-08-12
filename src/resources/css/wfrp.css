@@ -9,3 +9,8 @@ h6 {
 .container-fluid {
   padding-top: 5px;
 }
+
+ux-dialog-overlay.active {
+  background-color: black;
+  opacity: .6;
+}

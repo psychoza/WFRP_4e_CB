@@ -1,5 +1,5 @@
-import { Characteristic } from './characteristic';
-import { Skill } from './skill';
+import { Characteristic } from './objects/characteristic';
+import { Skill } from './objects/skill';
 import { bindable } from 'aurelia-framework';
 export class SkillsTable {
   @bindable Characteristics: Characteristic[] = [];

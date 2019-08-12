@@ -1,9 +1,11 @@
+import { autoinject } from 'aurelia-framework';
 import { Characteristic } from './characteristic';
 import { Dicer } from "./dicer";
 import { Species, Dwarf, Halfling, HighElf, Human, WoodElf } from "./species";
 import { Class, Career, Scholar } from './career';
 import { Skill } from './skill';
 import { SkillLibrary } from './skillLibrary';
+
 
 const constCharacteristics: string[] = ['WeaponSkill', 'BallisticSkill', 'Strength', 'Toughness', 'Initiative', 'Agility', 'Dexterity', 'Intelligence', 'Willpower', 'Fellowship'];
 
@@ -24,6 +26,7 @@ export class Character {
   CharacteristicSum: number = 0;
   CharacteristicPct: number = 0;
   Characteristics: Characteristic[] = [];
+
 
   get WeaponSkill(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.WeaponSkill });
@@ -73,10 +76,10 @@ export class Character {
   constructor() {
     this.dicer = new Dicer();
     this.Species = new Human();
-    //this.rollANewCharacter();
   }
 
   rollANewCharacter(): void {
+    //this.openSelectSpecies();
     this.rollSpecies();
     this.rollClassAndCareer();
     this.rollCharacteristics();

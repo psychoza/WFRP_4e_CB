@@ -1,6 +1,6 @@
-import { Characteristic } from './../../src/characteristic';
-import { Career } from './../../src/career';
-import { Academics, Rogues, Scholar, Outlaw } from '../../src/career';
+import { Characteristic } from '../../src/objects/characteristic';
+import { Career } from '../../src/objects/career';
+import { Academics, Rogues, Scholar, Outlaw } from '../../src/objects/career';
 
 describe('Class / Career - ', () => {
 

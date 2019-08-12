@@ -1,5 +1,5 @@
-import { DiceResult } from './../../src/dicer';
-import { Dicer } from '../../src/dicer';
+import { DiceResult } from '../../src/objects/dicer';
+import { Dicer } from '../../src/objects/dicer';
 
 describe('Dicer - ', () => {
   let dicer: Dicer;
