@@ -1,6 +1,8 @@
 import { Scholar, Outlaw } from './career';
 import { SpeciesClassCareer } from './speciesClassCareer';
 import { computedFrom } from "aurelia-binding";
+import { Skill } from './skill';
+import { SkillLibrary } from './skillLibrary';
 
 export class Species {
   Description: string = "Not Specified";
@@ -22,6 +24,8 @@ export class Species {
 
   AvailableCareers:SpeciesClassCareer[] = [];
 
+  Skills: Skill[] = [];
+
   @computedFrom('Strength', 'Toughness', 'Willpower')
   get Wounds(): number {
     return this.Strength;
@@ -29,7 +33,6 @@ export class Species {
 
   constructor() {
   }
-  // class and career table page 30
 }
 
 export class Dwarf extends Species {
@@ -105,6 +108,20 @@ export class Human extends Species {
     this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,79));
     this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),80,83));
     this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),84,100));
+    this.Skills = [
+      SkillLibrary.AnimalCare,
+      SkillLibrary.Charm,
+      SkillLibrary.ConsumeAlcohol,
+      SkillLibrary.Cool,
+      SkillLibrary.Evaluate,
+      SkillLibrary.Gossip,
+      SkillLibrary.Language_Bretonnian,
+      SkillLibrary.Language_Wastelander,
+      SkillLibrary.Leadership,
+      SkillLibrary.Lore_Reikland,
+      SkillLibrary.Melee_Basic,
+      SkillLibrary.Ranged_Bow
+    ];
   }
 }
 

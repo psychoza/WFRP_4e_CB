@@ -1,5 +1,6 @@
 import { Characteristic } from './characteristic';
 import { Skill, ISkill } from "./skill";
+import { SkillLibrary } from './skillLibrary';
 
 // #region Classes
 export class Class {
@@ -74,22 +75,22 @@ export class Scholar extends Career {
     super();
     this.Class = new Academics();
     this.Skills = [
-      new Skill({ Description: "Consume Alcohol", CharacteristicType: CharacteristicType.Toughness } as ISkill),
-      new Skill({ Description: "Entertain (Storytelling)", CharacteristicType: CharacteristicType.Fellowship } as ISkill),
-      new Skill({ Description: "Gamble", CharacteristicType: CharacteristicType.Intelligence } as ISkill),
-      new Skill({ Description: "Gossip", CharacteristicType: CharacteristicType.Fellowship } as ISkill),
-      new Skill({ Description: "Haggle", CharacteristicType: CharacteristicType.Fellowship } as ISkill),
-      new Skill({ Description: "Language (Classical)", CharacteristicType: CharacteristicType.Dexterity } as ISkill),
-      new Skill({ Description: "Lore (Engineering)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true } as ISkill),
-      new Skill({ Description: "Lore (Geology)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true } as ISkill),
-      new Skill({ Description: "Lore (Heraldry)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true } as ISkill),
-      new Skill({ Description: "Lore (History)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true } as ISkill),
-      new Skill({ Description: "Lore (Law)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true } as ISkill),
-      new Skill({ Description: "Lore (Magick)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true } as ISkill),
-      new Skill({ Description: "Lore (Metallurgy)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true } as ISkill),
-      new Skill({ Description: "Lore (Science)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true } as ISkill),
-      new Skill({ Description: "Lore (Theology)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true } as ISkill),
-      new Skill({ Description: "Research", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true } as ISkill),
+      SkillLibrary.ConsumeAlcohol,
+      SkillLibrary.Entertain_Storytelling,
+      SkillLibrary.Gamble,
+      SkillLibrary.Gossip,
+      SkillLibrary.Haggle,
+      SkillLibrary.Language_Classical,
+      SkillLibrary.Lore_Engineering,
+      SkillLibrary.Lore_Geology,
+      SkillLibrary.Lore_Heraldry,
+      SkillLibrary.Lore_History,
+      SkillLibrary.Lore_Law,
+      SkillLibrary.Lore_Magick,
+      SkillLibrary.Lore_Metallurgy,
+      SkillLibrary.Lore_Science,
+      SkillLibrary.Lore_Theology,
+      SkillLibrary.Research
     ];
   }
 }

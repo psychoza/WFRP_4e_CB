@@ -223,6 +223,14 @@ describe('Character - ', () => {
       expect(character.RandomSpecies.Description).toBe("Human");
       expect(character.Species.Description).toBe("Wood Elf");
     });
+
+    it('has a list of skills inherent to humans', () => {
+      setFakeSumDicResult(10);
+      setFakePercentileDiceResult(1);
+      character.rollANewCharacter();
+      expect(character.Species.Skills).toBeDefined();
+      expect(character.Species.Skills.length).toEqual(12);
+    });
   });
 
   describe('Class / Career - ', () => {

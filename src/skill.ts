@@ -1,4 +1,4 @@
-export interface ISkill{
+export interface ISkill {
   Description: string;
   CharacteristicType: CharacteristicType;
   IsAdvanced: boolean;
@@ -20,7 +20,7 @@ export class Skill {
     this.CharacteristicType = obj && obj.CharacteristicType || null;
     this.IsAdvanced = obj && obj.IsAdvanced || false;
     this.IsGrouped = obj && obj.IsGrouped || false;
-    this.Advances =obj && obj.Advances || 0;
+    this.Advances = obj && obj.Advances || 0;
   }
 
   Advance(currentXp: number): number {
