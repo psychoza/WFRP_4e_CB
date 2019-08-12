@@ -1,20 +1,126 @@
 <template>
   <ux-dialog>
     <ux-dialog-header>
-      <h3>Select Species</h3>
+      <h4>Select a species</h4>
     </ux-dialog-header>
     <ux-dialog-body>
-      <div class="container">
-        <select attach-focus class="custom-select" id="inputGroupSelect02">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="randomSpecies" class="col-form-label">Random Species:</label>
+            <span id="randomSpecies" class="form-control" readonly>${character.RandomSpecies.Description}
+              (${character.SpeciesRoll})</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="speciesSelect" class="col-form-label">Species</label>
+            <select attach-focus id="speciesSelect" class="form-control" value.bind="selectedSpecies"
+              change.delegate="selectSpecies($event)">
+              <option repeat.for="species of availableSpecies" model.bind="species">
+                ${species.Description}
+              </option>
+            </select>
+          </div>
+        </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="speciesSelect" class="col-form-label">${character.Species.Description} Characteristics</label>
+            <table id="characteristics" class="table table-bordered table-sm" readonly>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    WS
+                  </th>
+                  <th scope="col">
+                    BS
+                  </th>
+                  </th>
+                  <th scope="col">
+                    S
+                  </th>
+                  </th>
+                  <th scope="col">
+                    T
+                  </th>
+                  </th>
+                  <th scope="col">
+                    I
+                  </th>
+                  </th>
+                  <th scope="col">
+                    Ag
+                  </th>
+                  </th>
+                  <th scope="col">
+                    Dex
+                  </th>
+                  </th>
+                  <th scope="col">
+                    Int
+                  </th>
+                  </th>
+                  <th scope="col">
+                    WP
+                  </th>
+                  </th>
+                  <th scope="col">
+                    Fel
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    ${character.Species.WeaponSkill}
+                  </td>
+                  <td>
+                    ${character.Species.BallisticSkill}
+                  </td>
+                  <td>
+                    ${character.Species.Strength}
+                  </td>
+                  <td>
+                    ${character.Species.Toughness}
+                  </td>
+                  <td>
+                    ${character.Species.Initiative}
+                  </td>
+                  <td>
+                    ${character.Species.Agility}
+                  </td>
+                  <td>
+                    ${character.Species.Dexterity}
+                  </td>
+                  <td>
+                    ${character.Species.Intelligence}
+                  </td>
+                  <td>
+                    ${character.Species.Willpower}
+                  </td>
+                  <td>
+                    ${character.Species.Fellowship}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="skills" class="col-form-label">${character.Species.Description} Skills:</label>
+            <div class="form-control" readonly>
+              <span repeat.for="skill of character.Species.Skills" id="skills">${skill.Description}<span
+                  if.bind="$last === false">, </span></span>
+            </div>
+          </div>
+        </div>
+      </form>
     </ux-dialog-body>
     <ux-dialog-footer>
-      <button type="button" class="btn btn-outline-success" click.trigger="dialogController.ok()">Ok</button>
+      <button type="button" class="btn btn-outline-success" click.trigger="dialogController.ok()">Select
+        ${character.Species.Description}</button>
       <!-- <button  click.trigger="dialogController.cancel()">Cancel</button> -->
     </ux-dialog-footer>
   </ux-dialog>

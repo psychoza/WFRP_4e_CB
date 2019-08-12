@@ -12,9 +12,13 @@ export class CharacterBuilder {
     this.createCharacter();
   }
 
+  attached() {
+    this.openSelectSpecies();
+  }
+
   public createCharacter() {
     let newCharacter = new Character();
-    newCharacter.rollANewCharacter();
+    //newCharacter.rollANewCharacter();
     this.character = newCharacter;
   }
 
@@ -31,13 +35,10 @@ export class CharacterBuilder {
   }
 
   openSelectSpecies() {
-    this.dialogService.open({ viewModel: SelectSpecies, model: 'test', lock: true, keyboard: true }).whenClosed(response => {
+    this.dialogService.open({ viewModel: SelectSpecies, model: this.character, lock: true, }).whenClosed(response => {
       if (!response.wasCancelled) {
-        console.log('good - ', response.output);
-      } else {
-        console.log('bad');
+        this.character.rollANewCharacter();
       }
-      console.log(response.output);
     });
   }
 }

@@ -78,9 +78,8 @@ export class Character {
     this.Species = new Human();
   }
 
-  rollANewCharacter(): void {
-    //this.openSelectSpecies();
-    this.rollSpecies();
+  rollANewCharacter(): void {    
+    //this.rollSpecies();
     this.rollClassAndCareer();
     this.rollCharacteristics();
     this.setCharacteristicRollNumbers();
@@ -96,7 +95,7 @@ export class Character {
     return this.dicer.RollDice().PercentileResult();
   }
 
-  private rollSpecies(): void {
+  public rollSpecies(): void {
     let species: Species;
     this.SpeciesRoll = this.rollPercentile();
     if (this.SpeciesRoll >= 1 && this.SpeciesRoll <= 90)
@@ -119,7 +118,7 @@ export class Character {
     this.Movement = this.Species.Movement;
   }
 
-  private rollClassAndCareer(): void {
+  public rollClassAndCareer(): void {
     this.CareerRoll = this.rollPercentile();
     let rolledCareer = this.Species.AvailableCareers.find((ac) => { return ac.MinimumRange <= this.CareerRoll && this.CareerRoll <= ac.MaximumRange });
     if (rolledCareer) {
@@ -129,7 +128,7 @@ export class Character {
     }
   }
 
-  private rollCharacteristics(): void {
+  public rollCharacteristics(): void {
     this.Characteristics = [];
     constCharacteristics.forEach((characteristic) => {
       this.addCharacteristic(characteristic, this.rollSum());

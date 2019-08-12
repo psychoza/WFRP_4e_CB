@@ -12,5 +12,5 @@ h6 {
 
 ux-dialog-overlay.active {
   background-color: black;
-  opacity: .6;
+  opacity: 1;
 }

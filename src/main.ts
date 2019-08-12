@@ -6,7 +6,9 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .feature('resources')
-    .plugin(PLATFORM.moduleName('aurelia-dialog'));
+    .plugin(PLATFORM.moduleName('aurelia-dialog'), (config) => {
+      //config.useCSS('');
+    });
 
   if (environment.debug) {
     aurelia.use.developmentLogging();
