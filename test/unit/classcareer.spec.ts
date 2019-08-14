@@ -1,6 +1,7 @@
 import { Characteristic } from '../../src/objects/characteristic';
 import { Career } from '../../src/objects/career';
 import { Academics, Rogues, Scholar, Outlaw } from '../../src/objects/career';
+import { CharacteristicType } from '../../src/objects/characteristicType';
 
 describe('Class / Career - ', () => {
 

@@ -1,4 +1,4 @@
-enum CharacteristicType {
+export enum CharacteristicType {
   WeaponSkill = "WS",
   BallisticSkill = "BS",
   Strength = "S",

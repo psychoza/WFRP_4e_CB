@@ -1,5 +1,5 @@
-import { Academics } from './career';
 import { Skill, ISkill } from "./skill";
+import { CharacteristicType } from './characteristicType';
 
 export abstract class SkillLibrary {
   static AnimalCare: Skill = new Skill({ Description: "Animal Care", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true } as ISkill);
@@ -69,6 +69,7 @@ export abstract class SkillLibrary {
   static Language_Wastelander: Skill = new Skill({ Description: "Language (Wastelander)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Leadership: Skill = new Skill({ Description: "Leadership", CharacteristicType: CharacteristicType.Fellowship } as ISkill);
   static Lore: Skill = new Skill({ Description: "Lore", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
+  static Lore_Dwarfs: Skill = new Skill({ Description: "Lore (Dwarfs)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Engineering: Skill = new Skill({ Description: "Lore (Engineering)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Geology: Skill = new Skill({ Description: "Lore (Geology)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Heraldry: Skill = new Skill({ Description: "Lore (Heraldry)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);

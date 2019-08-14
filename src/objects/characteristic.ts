@@ -1,3 +1,5 @@
+import { CharacteristicType } from "./characteristicType";
+
 export class Characteristic {
   Description: string = '';
   CharacteristicType: CharacteristicType;

@@ -1,3 +1,5 @@
+import { CharacteristicType } from "./characteristicType";
+
 export interface ISkill {
   Description: string;
   CharacteristicType: CharacteristicType;

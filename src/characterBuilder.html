@@ -60,7 +60,30 @@
     <hr>
     <div class="row">
       <div class="col-sm">
-        <characteristics-table characteristics.bind="character.Characteristics"></characteristics-table>
+        <div class="row">
+          <div class="col-sm">
+            <characteristics-table characteristics.bind="character.Characteristics"></characteristics-table>
+          </div>
+          <div class="col-sm">
+              <h6>Wounds</h6>
+              <table class="table table-bordered table-hover table-sm">
+                  <thead>
+                      <tr>
+                        <th scope="col">Current Wounds</th>
+                        <th scope="col">Total Wounds</th>
+                        <th scope="col">Critical Wounds</th>
+                      </tr>
+                    </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="number" value="0"></td>                    
+                    <td>${character.Wounds}</td>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
       </div>
       <div class="col-sm">
         <div class="row">
@@ -135,7 +158,7 @@
       </div>
     </div>
     <hr>
-    <div class="row">      
+    <div class="row">
       <div class="col-sm-4" repeat.for="a of getCeilingValue(character.Skills.length/numberOfSkillsPerColumn)">
         <h6>Skills</h6>
         <table class="table table-bordered table-hover table-sm">

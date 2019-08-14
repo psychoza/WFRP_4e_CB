@@ -5,6 +5,7 @@ import { Species, Dwarf, Halfling, HighElf, Human, WoodElf } from "./species";
 import { Class, Career, Scholar } from './career';
 import { Skill } from './skill';
 import { SkillLibrary } from './skillLibrary';
+import { CharacteristicType } from './characteristicType';
 
 
 const constCharacteristics: string[] = ['WeaponSkill', 'BallisticSkill', 'Strength', 'Toughness', 'Initiative', 'Agility', 'Dexterity', 'Intelligence', 'Willpower', 'Fellowship'];
@@ -73,18 +74,33 @@ export class Character {
 
   Skills: Skill[] = [];
 
+  Wounds: number = 0;
+
   constructor() {
     this.dicer = new Dicer();
     this.Species = new Human();
   }
 
   rollANewCharacter(): void {    
-    //this.rollSpecies();
+    this.rollSpecies();
     this.rollClassAndCareer();
     this.rollCharacteristics();
     this.setCharacteristicRollNumbers();
     this.Experience = this.getExperience();
     this.figureOutSkills();
+    this.figureOutWounds();
+  }
+
+
+
+  finishRollingANewCharacter(): void {    
+    //this.rollSpecies();
+    //this.rollClassAndCareer();
+    //this.rollCharacteristics();
+    this.setCharacteristicRollNumbers();
+    this.Experience = this.getExperience();
+    this.figureOutSkills();
+    this.figureOutWounds();
   }
 
   rollSum(): number {
@@ -159,6 +175,7 @@ export class Character {
 
   selectCareer(career: Career) {
     this.Career = career;
+    this.Class = career.Class;
     this.Experience = this.getExperience();
   }
 
@@ -208,6 +225,16 @@ export class Character {
       }
     }
 
+    if (this.Species && this.Species.Skills) {
+      let speciesSkills = this.Species.Skills;
+      if (speciesSkills) {
+        speciesSkills.forEach(skill => {
+          if (!skills.some((s) => { return s.Description === skill.Description; }))
+            skills.push(skill);
+        });
+      }
+    }
+
     this.Skills = skills.sort((left: Skill, right: Skill) => {
       let l = left.Description.toLowerCase();
       let r = right.Description.toLowerCase();
@@ -220,6 +247,10 @@ export class Character {
       };
       return comparisonResult;
     });
+  }
+
+  private figureOutWounds():void{
+    this.Wounds = this.Species.GetWounds(this.Strength.GetScoreBonus(),this.Toughness.GetScoreBonus(),this.Willpower.GetScoreBonus());
   }
 
   private getCharacteristicScore(type: CharacteristicType): number {

@@ -1,0 +1,42 @@
+<template>
+  <ux-dialog>
+    <ux-dialog-header>
+      <h4>Select a class and career</h4>
+    </ux-dialog-header>
+    <ux-dialog-body>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="randomSpecies" class="col-form-label">Random Class/Career:</label>
+            <span id="randomSpecies" class="form-control" readonly>${character.RandomCareer.Class.Description} -
+              ${character.RandomCareer.Description} (${character.CareerRoll})</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="careerSelect" class="col-form-label">Career</label>
+            <select attach-focus id="careerSelect" class="form-control" value.bind="selectedCareer">
+              <option repeat.for="career of availableCareers" model.bind="career">
+                ${career.Class.Description} - ${career.Description}
+              </option>
+            </select>
+          </div>
+        </div>        
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="skills" class="col-form-label">${selectedCareer} Skills:</label>
+            <div class="form-control" readonly>
+              <span repeat.for="skill of selectedCareer.Skills" id="skills">${skill.Description}<span
+                  if.bind="$last === false">, </span></span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button type="button" class="btn btn-outline-success" click.trigger="confirmCareer()">Select
+        ${selectedCareer.Description}</button>
+      <!-- <button  click.trigger="dialogController.cancel()">Cancel</button> -->
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>

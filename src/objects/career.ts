@@ -1,6 +1,7 @@
 import { Characteristic } from './characteristic';
 import { Skill, ISkill } from "./skill";
 import { SkillLibrary } from './skillLibrary';
+import { CharacteristicType } from './characteristicType';
 
 // #region Classes
 export class Class {
@@ -13,6 +14,11 @@ export class Academics extends Class {
 
 export class Rogues extends Class {
   Description: string = "Rogues";
+}
+
+
+export class Burghers extends Class {
+  Description: string = "Burghers";
 }
 // #endregion
 
@@ -95,6 +101,66 @@ export class Scholar extends Career {
   }
 }
 // #endregion
+
+export class Merchant extends Career {
+  Description: string = "Merchant";
+  Class: Class;
+  get CareerPath(): string {
+    if (this.Level == 1)
+      return "Trader"
+    else if (this.Level == 2)
+      return "Merchant";
+    else if (this.Level == 3)
+      return "Master Merchant";
+    else if (this.Level == 4)
+      return "Merchant Prince";
+    else
+      return "";
+  }
+  set CareerPath(v: string) { };
+  get Status(): string {
+    if (this.Level == 1)
+      return "Silver 2"
+    else if (this.Level == 2)
+      return "Silver 5";
+    else if (this.Level == 3)
+      return "Gold 1";
+    else if (this.Level == 4)
+      return "Gold 3";
+    else
+      return "";
+  }
+  set Status(v: string) { };
+  Skills: Skill[] = [];
+  get Characteristics(): CharacteristicType[] {
+    let characteristics = [CharacteristicType.WeaponSkill, CharacteristicType.Agility, CharacteristicType.Fellowship];
+    if (this.Level > 1) {
+      characteristics.push(CharacteristicType.Intelligence);
+      if (this.Level > 2) {
+        characteristics.push(CharacteristicType.Initiative);
+        if (this.Level > 3)
+          characteristics.push(CharacteristicType.Willpower);
+      }
+    }
+    return characteristics;
+  };
+  set Characteristics(v: CharacteristicType[]) { };
+
+  constructor() {
+    super();
+    this.Class = new Burghers();
+    this.Skills = [
+      SkillLibrary.AnimalCare,
+      SkillLibrary.Bribery,
+      SkillLibrary.Charm,
+      SkillLibrary.ConsumeAlcohol,
+      SkillLibrary.Drive,
+      SkillLibrary.Gamble,
+      SkillLibrary.Gossip,
+      SkillLibrary.Haggle
+    ];
+  }
+}
 
 export class Outlaw extends Career {
   Description: string = "Outlaw";

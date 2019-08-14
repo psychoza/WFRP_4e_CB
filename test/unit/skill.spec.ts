@@ -1,4 +1,5 @@
 import { Skill, ISkill } from "../../src/objects/skill";
+import { CharacteristicType } from "../../src/objects/characteristicType";
 
 describe('Skill - ', () => {
   let skill: Skill = null;

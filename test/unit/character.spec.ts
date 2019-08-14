@@ -3,6 +3,8 @@ import { Character } from '../../src/objects/character';
 import { WoodElf } from '../../src/objects/species';
 import { Academics, Rogues, Scholar, Outlaw } from '../../src/objects/career';
 import { SkillLibrary } from '../../src/objects/skillLibrary';
+import { CharacteristicType } from '../../src/objects/characteristicType';
+import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 
 describe('Character - ', () => {
   let character: Character = null;
@@ -105,6 +107,12 @@ describe('Character - ', () => {
       expect(character.Resolve).toEqual(1);
       expect(character.ExtraPoints).toEqual(3);
       expect(character.Movement).toEqual(4);
+
+      let strengthBonus = character.Strength.GetScoreBonus();
+      let toughnessBonus = character.Toughness.GetScoreBonus();
+      let willpowerBonus = character.Willpower.GetScoreBonus();
+      let expectedWounds = strengthBonus + (2 * toughnessBonus) + willpowerBonus;
+      expect(character.Wounds).toEqual(expectedWounds);
     });
 
     it('has attributes of a halfling', () => {
@@ -129,6 +137,12 @@ describe('Character - ', () => {
       expect(character.Resolve).toEqual(2);
       expect(character.ExtraPoints).toEqual(3);
       expect(character.Movement).toEqual(3);
+
+      let strengthBonus = character.Strength.GetScoreBonus();
+      let toughnessBonus = character.Toughness.GetScoreBonus();
+      let willpowerBonus = character.Willpower.GetScoreBonus();
+      let expectedWounds = (2 * toughnessBonus) + willpowerBonus;
+      expect(character.Wounds).toEqual(expectedWounds);
     });
 
     it('has attributes of a dwarf', () => {
@@ -228,6 +242,43 @@ describe('Character - ', () => {
       setFakeSumDicResult(10);
       setFakePercentileDiceResult(1);
       character.rollANewCharacter();
+      expect(character.Species.Description).toEqual('Human');
+      expect(character.Species.Skills).toBeDefined();
+      expect(character.Species.Skills.length).toEqual(12);
+    });
+
+    it('has a list of skills inherent to dwarves', () => {
+      setFakeSumDicResult(10);
+      setFakePercentileDiceResult(96);
+      character.rollANewCharacter();
+      expect(character.Species.Description).toEqual('Dwarf');
+      expect(character.Species.Skills).toBeDefined();
+      expect(character.Species.Skills.length).toEqual(19);
+    });
+
+    it('has a list of skills inherent to halflings', () => {
+      setFakeSumDicResult(10);
+      setFakePercentileDiceResult(92);
+      character.rollANewCharacter();
+      expect(character.Species.Description).toEqual('Halfling');
+      expect(character.Species.Skills).toBeDefined();
+      expect(character.Species.Skills.length).toEqual(12);
+    });
+
+    it('has a list of skills inherent to high elves', () => {
+      setFakeSumDicResult(10);
+      setFakePercentileDiceResult(99);
+      character.rollANewCharacter();
+      expect(character.Species.Description).toEqual('High Elf');
+      expect(character.Species.Skills).toBeDefined();
+      expect(character.Species.Skills.length).toEqual(11);
+    });
+
+    it('has a list of skills inherent to wood elves', () => {
+      setFakeSumDicResult(10);
+      setFakePercentileDiceResult(100);
+      character.rollANewCharacter();
+      expect(character.Species.Description).toEqual('Wood Elf');
       expect(character.Species.Skills).toBeDefined();
       expect(character.Species.Skills.length).toEqual(12);
     });
