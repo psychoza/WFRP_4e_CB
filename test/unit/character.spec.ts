@@ -407,12 +407,12 @@ describe('Character - ', () => {
       expect(character.getSkillLevel(character.Skills[0])).toEqual(characteristic.GetTotalScore() + advances);
     });
 
-    it('has a more skills from the random Class and Career of Academics - Scholar', () => {
+    it('has more skills from the random Class and Career of Academics - Scholar', () => {
       setFakePercentileDiceResult(12);
       character.rollANewCharacter();
       expect(character.Career.Description).toEqual("Scholar");
       expect(character.Skills.length).toBeGreaterThan(SkillLibrary.BasicSkills.length);
-      expect(character.Skills.length).toEqual(38);
+      expect(character.Skills.length).toEqual(44);
       expect(character.Skills.some((s) => { return s.Description === "Research"})).toBeTruthy();      
       expect(character.Skills.filter((s) => { return s.Description === "Consume Alcohol"}).length).toEqual(1);
     });
