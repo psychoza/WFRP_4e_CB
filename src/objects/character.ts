@@ -7,7 +7,6 @@ import { Skill } from './skill';
 import { SkillLibrary } from './skillLibrary';
 import { CharacteristicType } from './characteristicType';
 
-
 const constCharacteristics: string[] = ['WeaponSkill', 'BallisticSkill', 'Strength', 'Toughness', 'Initiative', 'Agility', 'Dexterity', 'Intelligence', 'Willpower', 'Fellowship'];
 
 export class Character {
@@ -86,12 +85,12 @@ export class Character {
     this.rollClassAndCareer();
     this.rollCharacteristics();
     this.setCharacteristicRollNumbers();
+    // set species skills
+    // set class skills
     this.Experience = this.getExperience();
     this.figureOutSkills();
     this.figureOutWounds();
   }
-
-
 
   finishRollingANewCharacter(): void {    
     //this.rollSpecies();

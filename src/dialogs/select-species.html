@@ -108,7 +108,7 @@
         </div>
         <div class="form-row">
           <div class="form-group col-sm-12">
-            <label for="skills" class="col-form-label">${character.Species.Description} Skills:</label>
+            <label for="skills" class="col-form-label">${selectedSpecies.Description} Skills:</label>
             <div class="form-control" readonly>
               <span repeat.for="skill of character.Species.Skills" id="skills">${skill.Description}<span
                   if.bind="$last === false">, </span></span>

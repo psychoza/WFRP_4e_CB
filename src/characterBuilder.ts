@@ -1,9 +1,11 @@
 import { autoinject } from "aurelia-framework";
 import { Character } from "./objects/character";
 import { DialogService } from 'aurelia-dialog';
+
 import { SelectSpecies } from './dialogs/select-species'
 import { SelectCareer } from './dialogs/select-career'
 import { SelectCharacteristics } from "./dialogs/select-characteristics";
+import { SelectSpeciesSkills } from './dialogs/select-species-skills';
 
 @autoinject()
 export class CharacterBuilder {
@@ -54,8 +56,27 @@ export class CharacterBuilder {
   openSelectCharacteristics(){
     this.dialogService.open({ viewModel: SelectCharacteristics, model: this.character, lock: true, }).whenClosed(response => {
       if (!response.wasCancelled) {
+        this.openSelectSpeciesSkills();        
+      }
+    });
+  }
+
+  openSelectSpeciesSkills(){
+    this.dialogService.open({ viewModel: SelectSpeciesSkills, model: this.character, lock: true, }).whenClosed(response => {
+      if (!response.wasCancelled) {
         this.character.finishRollingANewCharacter();
       }
     });
+    //3 skills to gain 5 advances
+    //3 skills to gain 3 advances
+    //TODO: TALENTS
+    // Get the talents provided
+  }
+
+  openSelectCareerSkills(){
+    // Allocate 40 points across 8 skills
+    // no more than 10 per skill
+    // TODO: TALENTS
+    // choose 1 of the 4
   }
 }

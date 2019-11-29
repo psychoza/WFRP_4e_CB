@@ -1,0 +1,59 @@
+<template>
+  <ux-dialog>
+    <ux-dialog-header>
+      <h4>Select species skills</h4>
+    </ux-dialog-header>
+    <ux-dialog-body>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="randomSpecies" class="col-form-label">Species:</label>
+            <span id="randomSpecies" class="form-control" readonly>${character.Species.Description}</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-6">
+            <label class="col-form-label">Choose <mark>3</mark> skills to give <mark>5</mark> advances to.</label>
+            <select attach-focus id="fiveAdvances" class="form-control" value.bind="chosenFiveAdvanceSkill"
+              disabled.bind="fiveAdvanceSkills.length === 3">
+              <option repeat.for="skill of availableSkills" model.bind="skill">
+                ${skill.Description}
+              </option>
+            </select>
+            <button type="button" class="btn btn-primary py-2" click.delegate="addFiveSkill()"
+              disabled.bind="fiveAdvanceSkills.length === 3">Add Skill</button>
+            <div class="list-group list-group-flush py-2">
+              <button type="button" class="list-group-item list-group-item-action"
+                repeat.for="skill of fiveAdvanceSkills" click.delegate="removeFiveSkill(skill)">
+                ${skill.Description} + 5
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group col-sm-6">
+            <label class="col-form-label">Choose <mark>3</mark> skills to give <mark>3</mark> advances to.</label>
+            <select id="threeAdvances" class="form-control" value.bind="chosenThreeAdvanceSkill"
+              disabled.bind="threeAdvanceSkills.length === 3">
+              <option repeat.for="skill of availableSkills" model.bind="skill">
+                ${skill.Description}
+              </option>
+            </select>
+            <button type="button" class="btn btn-primary py-2" click.delegate="addThreeSkill()"
+              disabled.bind="threeAdvanceSkills.length === 3">Add Skill</button>
+            <div class="list-group list-group-flush py-2">
+              <button type="button" class="list-group-item list-group-item-action"
+                repeat.for="skill of threeAdvanceSkills" click.delegate="removeThreeSkill(skill)">
+                ${skill.Description} + 3
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button type="button" class="btn btn-outline-success" click.delegate="confirmSelection()"
+        disabled.bind="fiveAdvanceSkills.length !== 3 && threeAdvanceSkills.length !== 3">Confirm Skill
+        Selection</button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>
