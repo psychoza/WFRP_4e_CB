@@ -1,0 +1,35 @@
+<template>
+  <ux-dialog>
+    <ux-dialog-header>
+      <h4>Select species skills</h4>
+    </ux-dialog-header>
+    <ux-dialog-body>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="randomSpecies" class="col-form-label">Career:</label>
+            <span id="randomSpecies" class="form-control" readonly>${character.Career.Description}</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-6">
+            <label class="col-form-label">Allocate <mark>40</mark> advancements up to a maximum of
+              <mark>10</mark>.</label>
+            <div class="row" repeat.for="skill of availableSkills">
+              <div class="col-3">
+                ${skill.Description}
+              </div>
+              <div class="col-3">
+                <input attach-focus type="number" min="0" max="10" value.bind="skill.Advances" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button type="button" class="btn btn-outline-success" click.delegate="confirmSelection()">Confirm Skill
+        Selection</button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>

@@ -3,8 +3,15 @@ import { Career } from '../../src/objects/career';
 import { Academics, Rogues, Scholar, Outlaw } from '../../src/objects/career';
 import { CharacteristicType } from '../../src/objects/characteristicType';
 
-describe('Class / Career - ', () => {
+//TODO: Each Class has a trappings list.
+//TODO: Each Career has a trappings list.
+//TODO: Starting Wealth based on your Class / Career status level
+//    Brass: 2d10 brass pennies / status level
+//    Silver 1d10 silver shillings / status level
+//    Gold: 1 Gold crown / status level
 
+
+describe('Class / Career - ', () => {
   describe('the Academics Class - ', () => {
     it('has a description of Academics', () => {
       let testClass = new Academics();
