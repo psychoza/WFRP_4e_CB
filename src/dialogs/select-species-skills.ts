@@ -74,7 +74,7 @@ export class SelectSpeciesSkills {
   addSkillToCharacter(skill: Skill, advances: number) {
     let existingSkill = this.character.Skills.find((s) => { return s.Description === skill.Description; });
     if (existingSkill) {
-      existingSkill.Advances += advances;
+      existingSkill.Advances =Number.parseInt(existingSkill.Advances.toString()) + advances;
     }
     else {
       skill.Advances = advances;
