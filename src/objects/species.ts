@@ -1,4 +1,4 @@
-import { Scholar, Outlaw, Merchant } from './career';
+import { Scholar, Outlaw, Merchant, Apothecary, Engineer, Lawyer, Physician, Agitator, Artisan, Artist, Advisor, Watchman, Townsman, RatCatcher, Investigator, Beggar, Wizard, Nun, Priest } from './career';
 import { SpeciesClassCareer } from './speciesClassCareer';
 import { computedFrom } from "aurelia-binding";
 import { Skill } from './skill';
@@ -51,9 +51,23 @@ export class Dwarf extends Species {
 
   constructor(){
     super();
-    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,20));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Apothecary(),1,1));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Engineer(),2,4));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Lawyer(),5,6));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Physician(),7,7));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),8,9));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Agitator(),10,11));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Artisan(),12,17));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Beggar(),18,18));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Investigator(),19,20));
     this.AvailableCareers.push(new SpeciesClassCareer(new Merchant(),21,24));
-    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),25,100));
+    this.AvailableCareers.push(new SpeciesClassCareer(new RatCatcher(),25,25));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Townsman(),26,31));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Watchman(),32,34));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Advisor(),35,36));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Artist(),37,37));
+    
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),38,100));
     this.Skills = [
       SkillLibrary.ConsumeAlcohol,
       SkillLibrary.Cool,
@@ -94,9 +108,23 @@ export class Halfling extends Species {
 
   constructor(){
     super();
-    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,21));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Apothecary(),1,1));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Engineer(),2,2));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Lawyer(),3,4));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Physician(),5,6));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),7,8));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Agitator(),9,10));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Artisan(),11,15));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Beggar(),16,19));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Investigator(),20,21));
     this.AvailableCareers.push(new SpeciesClassCareer(new Merchant(),22,25));
-    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),26,100));
+    this.AvailableCareers.push(new SpeciesClassCareer(new RatCatcher(),26,28));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Townsman(),29,31));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Watchman(),32,33));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Advisor(),34,34));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Artist(),35,36));
+
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),37,100));
     this.Skills = [
       SkillLibrary.Charm,
       SkillLibrary.ConsumeAlcohol,
@@ -135,9 +163,20 @@ export class HighElf extends Species {
 
   constructor(){
     super();
-    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,100));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Apothecary(),1,2));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Lawyer(),3,6));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Physician(),7,8));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),9,12));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Wizard(),13,16));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Artisan(),17,19));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Investigator(),20,21));
     this.AvailableCareers.push(new SpeciesClassCareer(new Merchant(),22,26));
-    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),27,100));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Townsman(),27,28));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Watchman(),29,29));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Advisor(),30,31));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Artist(),32,32));
+
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),33,100));
     this.Skills = [
       SkillLibrary.Cool,
       SkillLibrary.Entertain_Singing,
@@ -163,11 +202,26 @@ export class Human extends Species {
 
   constructor(){
     super();
-    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,21));
-    this.AvailableCareers.push(new SpeciesClassCareer(new Merchant(),22,22));
-    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),22,79));
-    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),80,83));
-    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),84,100));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Apothecary(),1,1));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Engineer(),2,2));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Lawyer(),3,3));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Nun(),4,5));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Physician(),6,6));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Priest(),7,11));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),12,13));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Wizard(),14,14));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Agitator(),15,15));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Artisan(),16,17));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Beggar(),18,19));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Investigator(),20,20));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Merchant(),21,21));
+    this.AvailableCareers.push(new SpeciesClassCareer(new RatCatcher(),22,23));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Townsman(),24,26));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Watchman(),27,27));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Advisor(),28,28));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Artist(),29,29));
+
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),30,100));
     this.Skills = [
       SkillLibrary.AnimalCare,
       SkillLibrary.Charm,
@@ -202,7 +256,13 @@ export class WoodElf extends Species {
 
   constructor(){
     super();
-    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,100));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Scholar(),1,1));;
+    this.AvailableCareers.push(new SpeciesClassCareer(new Wizard(),2,5));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Artisan(),6,10));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Advisor(),11,14));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Artist(),15,18));
+
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),19,100));
     this.Skills = [
       SkillLibrary.Athletics,
       SkillLibrary.Climb,

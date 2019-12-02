@@ -12,11 +12,8 @@ export class SelectCareer {
   }
 
   activate(character: Character) {
-    this.availableCareers = [
-      new Scholar(),
-      new Merchant()
-    ];
     this.character = character;
+    this.availableCareers = [...this.character.Species.AvailableCareers.map(c => c.Career)];
     this.character.rollClassAndCareer();
     this.selectedCareer = this.availableCareers.find((c)=> {return c.Description === this.character.RandomCareer.Description; });
   }

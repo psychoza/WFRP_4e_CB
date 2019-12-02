@@ -226,7 +226,6 @@ export class Character {
 
     setArrayPropertyToNumber(this.Skills, 'Advances');
     setArrayPropertyToNumber(skills, 'Advances');
-    debugger;
     skills.forEach((skill) => {
       skill.Advances = Number.parseInt(skill.Advances.toString());
       let existingSkill = this.Skills.find((s) => { return s.Description === skill.Description; });

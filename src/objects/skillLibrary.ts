@@ -10,6 +10,7 @@ export abstract class SkillLibrary {
   static AnimalTraining_Pegasus: Skill = new Skill({ Description: "Animal Training (Pegasus)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static AnimalTraining_Pigeon: Skill = new Skill({ Description: "Animal Training (Pigeon)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Art: Skill = new Skill({ Description: "Art", CharacteristicType: CharacteristicType.Dexterity, IsGrouped: true } as ISkill);
+  static Art_Calligraphy: Skill = new Skill({ Description: "Art (Calligraphy)", CharacteristicType: CharacteristicType.Dexterity, IsGrouped: true } as ISkill);
   static Art_Cartography: Skill = new Skill({ Description: "Art (Cartography)", CharacteristicType: CharacteristicType.Dexterity, IsGrouped: true } as ISkill);
   static Art_Engraving: Skill = new Skill({ Description: "Art (Engraving)", CharacteristicType: CharacteristicType.Dexterity, IsGrouped: true } as ISkill);
   static Art_Mosaics: Skill = new Skill({ Description: "Art (Mosaics)", CharacteristicType: CharacteristicType.Dexterity, IsGrouped: true } as ISkill);
@@ -17,6 +18,7 @@ export abstract class SkillLibrary {
   static Art_Sculpture: Skill = new Skill({ Description: "Art (Sculpture)", CharacteristicType: CharacteristicType.Dexterity, IsGrouped: true } as ISkill);
   static Art_Tattoo: Skill = new Skill({ Description: "Art (Tattoo)", CharacteristicType: CharacteristicType.Dexterity, IsGrouped: true } as ISkill);
   static Art_Weaving: Skill = new Skill({ Description: "Art (Weaving)", CharacteristicType: CharacteristicType.Dexterity, IsGrouped: true } as ISkill);
+  static Art_Writing: Skill = new Skill({ Description: "Art (Writing)", CharacteristicType: CharacteristicType.Dexterity, IsGrouped: true } as ISkill);
   static Athletics: Skill = new Skill({ Description: "Athletics", CharacteristicType: CharacteristicType.Agility } as ISkill);
   static Bribery: Skill = new Skill({ Description: "Bribery", CharacteristicType: CharacteristicType.Fellowship } as ISkill);
   static Channelling: Skill = new Skill({ Description: "Channelling", CharacteristicType: CharacteristicType.Willpower, IsAdvanced: true, IsGrouped: true } as ISkill);
@@ -69,6 +71,7 @@ export abstract class SkillLibrary {
   static Language_Wastelander: Skill = new Skill({ Description: "Language (Wastelander)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Leadership: Skill = new Skill({ Description: "Leadership", CharacteristicType: CharacteristicType.Fellowship } as ISkill);
   static Lore: Skill = new Skill({ Description: "Lore", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
+  static Lore_Chemistry: Skill = new Skill({ Description: "Lore (Chemistry)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Dwarfs: Skill = new Skill({ Description: "Lore (Dwarfs)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Engineering: Skill = new Skill({ Description: "Lore (Engineering)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Geology: Skill = new Skill({ Description: "Lore (Geology)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
@@ -76,7 +79,10 @@ export abstract class SkillLibrary {
   static Lore_History: Skill = new Skill({ Description: "Lore (History)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Law: Skill = new Skill({ Description: "Lore (Law)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Magick: Skill = new Skill({ Description: "Lore (Magick)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
+  static Lore_Medicine: Skill = new Skill({ Description: "Lore (Medicine)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Metallurgy: Skill = new Skill({ Description: "Lore (Metallurgy)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
+  static Lore_Plants: Skill = new Skill({ Description: "Lore (Plants)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
+  static Lore_Politics: Skill = new Skill({ Description: "Lore (Politics)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Reikland: Skill = new Skill({ Description: "Lore (Reikland)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Science: Skill = new Skill({ Description: "Lore (Science)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Lore_Theology: Skill = new Skill({ Description: "Lore (Theology)", CharacteristicType: CharacteristicType.Intelligence, IsAdvanced: true, IsGrouped: true } as ISkill);
@@ -153,6 +159,9 @@ export abstract class SkillLibrary {
   static Trade_Carpenter: Skill = new Skill({ Description: "Trade (Carpenter)", CharacteristicType: CharacteristicType.Dexterity, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Trade_Cook: Skill = new Skill({ Description: "Trade (Cook)", CharacteristicType: CharacteristicType.Dexterity, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Trade_Embalmer: Skill = new Skill({ Description: "Trade (Embalmer)", CharacteristicType: CharacteristicType.Dexterity, IsAdvanced: true, IsGrouped: true } as ISkill);
+  static Trade_Engineer: Skill = new Skill({ Description: "Trade (Engineer)", CharacteristicType: CharacteristicType.Dexterity, IsAdvanced: true, IsGrouped: true } as ISkill);
+  static Trade_Poisoner: Skill = new Skill({ Description: "Trade (Poisoner)", CharacteristicType: CharacteristicType.Dexterity, IsAdvanced: true, IsGrouped: true } as ISkill);
+  static Trade_Printing: Skill = new Skill({ Description: "Trade (Printing)", CharacteristicType: CharacteristicType.Dexterity, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Trade_Smith: Skill = new Skill({ Description: "Trade (Smith)", CharacteristicType: CharacteristicType.Dexterity, IsAdvanced: true, IsGrouped: true } as ISkill);
   static Trade_Tanner: Skill = new Skill({ Description: "Trade (Tanner)", CharacteristicType: CharacteristicType.Dexterity, IsAdvanced: true, IsGrouped: true } as ISkill);
 
