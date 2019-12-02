@@ -1,7 +1,7 @@
 import { DialogController } from 'aurelia-dialog';
 import { autoinject } from 'aurelia-framework';
 import { Character } from '../objects/character';
-import { Skill } from '../objects/skill';
+import { Skill, ISkill } from '../objects/skill';
 import { sortArrayByProperty } from '../utilities/array-utilities';
 
 @autoinject()
@@ -13,7 +13,9 @@ export class SelectSpeciesSkills {
   chosenThreeAdvanceSkill: Skill = null;
 
   get availableSkills(): Skill[] {
-    let skills = [...this.character.Species.Skills];
+    let skills = this.character.Species.Skills.map((s)=>{
+      return new Skill({ Description: s.Description, CharacteristicType: s.CharacteristicType, IsAdvanced: s.IsAdvanced, IsGrouped: s.IsAdvanced, Advances: 0 } as ISkill);
+    });
     let fives = this.fiveAdvanceSkills;
     let threes = this.threeAdvanceSkills;
     if (skills.length === 0)
@@ -72,9 +74,10 @@ export class SelectSpeciesSkills {
   }
 
   addSkillToCharacter(skill: Skill, advances: number) {
+    skill.Advances = Number.parseInt(skill.Advances.toString());
     let existingSkill = this.character.Skills.find((s) => { return s.Description === skill.Description; });
     if (existingSkill) {
-      existingSkill.Advances =Number.parseInt(existingSkill.Advances.toString()) + advances;
+      existingSkill.Advances = Number.parseInt(existingSkill.Advances.toString()) + advances;
     }
     else {
       skill.Advances = advances;

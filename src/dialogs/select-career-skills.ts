@@ -32,7 +32,6 @@ export class SelectCareerSkills {
     else if (skill.Advances < 0)
       skill.Advances = 0;
 
-
     let remainingAdvances = 40 - currentAdvances;
     if (remainingAdvances > 10)
       remainingAdvances = 10;
@@ -53,6 +52,7 @@ export class SelectCareerSkills {
   }
 
   addSkillToCharacter(skill: Skill) {
+    skill.Advances = Number.parseInt(skill.Advances.toString());
     let existingSkill = this.character.Skills.find((s) => { return s.Description === skill.Description; });
     if (existingSkill) {
       existingSkill.Advances += skill.Advances;

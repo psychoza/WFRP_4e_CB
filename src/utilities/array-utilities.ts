@@ -12,3 +12,9 @@ export function sortArrayByProperty(collection: any[], propertyName: string, isD
       return isDescending ? comparisonResult * -1 : comparisonResult;
   });
 }
+
+export function setArrayPropertyToNumber(collection: any[], propertyName: string){
+  collection.forEach((i) => {
+    i[propertyName] = Number.parseInt(i[propertyName].toString());
+  });
+}

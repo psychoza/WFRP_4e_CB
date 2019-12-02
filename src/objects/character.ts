@@ -6,6 +6,7 @@ import { Class, Career, Scholar } from './career';
 import { Skill } from './skill';
 import { SkillLibrary } from './skillLibrary';
 import { CharacteristicType } from './characteristicType';
+import { sortArrayByProperty, setArrayPropertyToNumber } from '../utilities/array-utilities';
 
 const constCharacteristics: string[] = ['WeaponSkill', 'BallisticSkill', 'Strength', 'Toughness', 'Initiative', 'Agility', 'Dexterity', 'Intelligence', 'Willpower', 'Fellowship'];
 
@@ -80,7 +81,7 @@ export class Character {
     this.Species = new Human();
   }
 
-  rollANewCharacter(): void {    
+  rollANewCharacter(): void {
     this.rollSpecies();
     this.rollClassAndCareer();
     this.rollCharacteristics();
@@ -92,7 +93,7 @@ export class Character {
     this.figureOutWounds();
   }
 
-  finishRollingANewCharacter(): void {    
+  finishRollingANewCharacter(): void {
     //this.rollSpecies();
     //this.rollClassAndCareer();
     //this.rollCharacteristics();
@@ -214,42 +215,32 @@ export class Character {
 
   private figureOutSkills() {
     let skills = [...SkillLibrary.BasicSkills];
+
     if (this.Career && this.Career.Skills) {
-      let careerSkills = this.Career.Skills;
-      if (careerSkills) {
-        careerSkills.forEach(skill => {
-          if (!skills.some((s) => { return s.Description === skill.Description; }))
-            skills.push(skill);
-        });
-      }
+      skills.push(...this.Career.Skills);
     }
 
     if (this.Species && this.Species.Skills) {
-      let speciesSkills = this.Species.Skills;
-      if (speciesSkills) {
-        speciesSkills.forEach(skill => {
-          if (!skills.some((s) => { return s.Description === skill.Description; }))
-            skills.push(skill);
-        });
-      }
+      skills.push(...this.Species.Skills);
     }
 
-    this.Skills = skills.sort((left: Skill, right: Skill) => {
-      let l = left.Description.toLowerCase();
-      let r = right.Description.toLowerCase();
-      let comparisonResult: number = 0;
-      if (l < r) {
-        comparisonResult = -1;
+    setArrayPropertyToNumber(this.Skills, 'Advances');
+    setArrayPropertyToNumber(skills, 'Advances');
+    debugger;
+    skills.forEach((skill) => {
+      skill.Advances = Number.parseInt(skill.Advances.toString());
+      let existingSkill = this.Skills.find((s) => { return s.Description === skill.Description; });
+      if (!existingSkill) {
+        this.Skills.push(skill);
       }
-      else if (l > r) {
-        comparisonResult = 1;
-      };
-      return comparisonResult;
     });
+
+
+    sortArrayByProperty(this.Skills, 'Description');
   }
 
-  private figureOutWounds():void{
-    this.Wounds = this.Species.GetWounds(this.Strength.GetScoreBonus(),this.Toughness.GetScoreBonus(),this.Willpower.GetScoreBonus());
+  private figureOutWounds(): void {
+    this.Wounds = this.Species.GetWounds(this.Strength.GetScoreBonus(), this.Toughness.GetScoreBonus(), this.Willpower.GetScoreBonus());
   }
 
   private getCharacteristicScore(type: CharacteristicType): number {
