@@ -1,7 +1,4 @@
-import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
-import { initialize } from 'aurelia-pal-browser';
-import { Characteristic } from './characteristic';
-import { Skill, ISkill } from "./skill";
+import { Skill } from "./skill";
 import { SkillLibrary } from './skillLibrary';
 import { CharacteristicType } from './characteristicType';
 
