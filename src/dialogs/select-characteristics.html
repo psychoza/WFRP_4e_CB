@@ -4,65 +4,29 @@
       <h4>Assign characteristics</h4>
     </ux-dialog-header>
     <ux-dialog-body>
-        <form class="form-inline strong">
-            <div class="col-3 text-nowrap">
-              <label>Characteristic:</label>
-            </div>
-            <div class="col-1">
-              <span readonly>Roll</span>
-            </div>
-            
-            <div class="col-1">
-                <span readonly>+</span>
-              </div>
-            <div class="col-2">
-              <span readonly>${character.Species.Description}</span>
-            </div>
-            
-            <div class="col-1">
-                <span readonly>=</span>
-              </div>
-            <div class="col-1">
-              <span readonly>Total</span>
-            </div>
-          </form>
-      <div repeat.for="characteristic of character.Characteristics">
-        <form class="form-inline">
-          <div class="col-3 text-nowrap">
-            <label>${characteristic.Description}:</label>
-          </div>
-          <div class="col-1">
-            <span readonly>${characteristic.StartingScore}</span>
-          </div>
-          
-          <div class="col-1">
-              <span readonly>+</span>
-            </div>
-          <div class="col-2">
-            <span readonly>${characteristic.SpeciesScore}</span>
-          </div>
-          
-          <div class="col-1">
-              <span readonly>=</span>
-            </div>
-          <div class="col-1">
-            <span readonly>${characteristic.GetInitialScore()}</span>
-          </div>
-          <!-- <div class="col-5">
-            <select attach-focus value.bind="swapTargetCharacteristic"
-              change.delegate="selectType($event, characteristic)">
-              <option repeat.for="subCharacteristic of character.Characteristics" model.bind="swapTargetCharacteristic">
-                ${subCharacteristic.Description}
-              </option>
-            </select>
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-secondary">Swap</button>
-          </div> -->
-        </form>
-      </div>
-      </div>
-      </div>
+      <table id="characteristics" class="table table-bordered table-sm" readonly>
+        <thead>
+          <tr>
+            <th scope="col">Characteristic</th>
+            <th scope="col">Roll</th>
+            <th scope="col">+</th>
+            <th scope="col">${character.Species.Description}</th>
+            <th scope="col">=</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr repeat.for="characteristic of character.Characteristics">
+            <td><span class="fa fa-skull-crossbones fa-xs" show.bind="characteristic.CanBeAdvanced"> </span>
+              ${characteristic.Description}</td>
+            <td>${characteristic.StartingScore}</td>
+            <td>+</td>
+            <td>${characteristic.SpeciesScore}</td>
+            <td>=</td>
+            <td>${characteristic.GetInitialScore()} <span class="fa fa-skull-crossbones fa-xs" show.bind="characteristic.CanBeAdvanced"></span></td>
+          </tr>
+        </tbody>
+      </table>
     </ux-dialog-body>
     <ux-dialog-footer>
       <button type="button" class="btn btn-outline-success" click.trigger="dialogController.ok()">Confirm
