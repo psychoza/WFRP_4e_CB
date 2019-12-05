@@ -115,6 +115,26 @@
             </div>
           </div>
         </div>
+        <div class="form-row">
+            <div class="form-group col-sm-12">
+              <label for="trappings" class="col-form-label">${selectedSpecies.Description} Talents:</label>
+              <div class="form-control" readonly>
+                Under Construction...
+                <!-- <span repeat.for="talent of character.Species.Talents" id="talent">${talent.Description}<span
+                    if.bind="$last === false">, </span></span> -->
+              </div>
+            </div>
+          </div>
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="trappings" class="col-form-label">${selectedSpecies.Description} Trappings:</label>
+            <div class="form-control" readonly>
+              Under Construction...
+              <!-- <span repeat.for="trapping of character.Species.Trappings" id="trappings">${trapping.Description}<span
+                  if.bind="$last === false">, </span></span> -->
+            </div>
+          </div>
+        </div>
       </form>
     </ux-dialog-body>
     <ux-dialog-footer>

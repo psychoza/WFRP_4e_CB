@@ -9,6 +9,12 @@ export class SelectCareerSkills {
   character: Character;
   availableSkills: Skill[] = [];
 
+  get allSkillsAllocated():boolean{
+    let sum = 0;
+    this.availableSkills.forEach((s)=> {sum += s.Advances;});
+    return sum === 40;
+  }
+
   constructor(public dialogController: DialogController) {
   }
 

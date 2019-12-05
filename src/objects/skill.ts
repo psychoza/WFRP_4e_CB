@@ -6,6 +6,7 @@ export interface ISkill {
   IsAdvanced: boolean;
   IsGrouped: boolean;
   Advances: number;
+  CanBeAdvanced: boolean;
 }
 
 export class Skill {
@@ -14,6 +15,7 @@ export class Skill {
   IsAdvanced: boolean;
   IsGrouped: boolean;
   Advances: number;
+  CanBeAdvanced: boolean = false;
 
   constructor();
   constructor(obj: ISkill);
@@ -23,6 +25,7 @@ export class Skill {
     this.IsAdvanced = obj && obj.IsAdvanced || false;
     this.IsGrouped = obj && obj.IsGrouped || false;
     this.Advances = obj && obj.Advances || 0;
+    this.CanBeAdvanced = obj && obj.CanBeAdvanced || false;
   }
 
   Advance(currentXp: number): number {

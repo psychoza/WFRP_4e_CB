@@ -17,15 +17,17 @@
             <select attach-focus id="fiveAdvances" class="form-control" value.bind="chosenFiveAdvanceSkill"
               disabled.bind="fiveAdvanceSkills.length === 3">
               <option repeat.for="skill of availableSkills" model.bind="skill">
-                ${skill.Description}
+                  ${skill.CanBeAdvanced ? '+' : ''} ${skill.Description} (${skill.CharacteristicType} [${character.getCharacteristicScore(skill.CharacteristicType)}])
               </option>
             </select>
             <button type="button" class="btn btn-primary py-2" click.delegate="addFiveSkill()"
               disabled.bind="fiveAdvanceSkills.length === 3">Add Skill</button>
+              <br/>
+              <label>+5 Advance Skills:</label>
             <div class="list-group list-group-flush py-2">
               <button type="button" class="list-group-item list-group-item-action"
                 repeat.for="skill of fiveAdvanceSkills" click.delegate="removeFiveSkill(skill)">
-                ${skill.Description} + 5
+                <small><span show.bind="skill.CanBeAdvanced"><i class="fa fa-skull-crossbones fa-xs"></i></span> ${skill.Description} (${skill.CharacteristicType} [${character.getCharacteristicScore(skill.CharacteristicType)}]) + 5 = ${character.getCharacteristicScore(skill.CharacteristicType) + 5}</small>
               </button>
             </div>
           </div>
@@ -35,15 +37,17 @@
             <select id="threeAdvances" class="form-control" value.bind="chosenThreeAdvanceSkill"
               disabled.bind="threeAdvanceSkills.length === 3">
               <option repeat.for="skill of availableSkills" model.bind="skill">
-                ${skill.Description}
+                  ${skill.CanBeAdvanced ? '+' : ''} ${skill.Description} (${skill.CharacteristicType} [${character.getCharacteristicScore(skill.CharacteristicType)}])
               </option>
             </select>
             <button type="button" class="btn btn-primary py-2" click.delegate="addThreeSkill()"
               disabled.bind="threeAdvanceSkills.length === 3">Add Skill</button>
+              <br/>
+              <label>+3 Advance Skills:</label>
             <div class="list-group list-group-flush py-2">
               <button type="button" class="list-group-item list-group-item-action"
                 repeat.for="skill of threeAdvanceSkills" click.delegate="removeThreeSkill(skill)">
-                ${skill.Description} + 3
+                <small><span show.bind="skill.CanBeAdvanced"><i class="fa fa-skull-crossbones fa-xs"></i></span> ${skill.Description} (${skill.CharacteristicType} [${character.getCharacteristicScore(skill.CharacteristicType)}]) + 3 = ${character.getCharacteristicScore(skill.CharacteristicType) + 3}</small>
               </button>
             </div>
           </div>

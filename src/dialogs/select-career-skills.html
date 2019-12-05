@@ -28,7 +28,7 @@
       </form>
     </ux-dialog-body>
     <ux-dialog-footer>
-      <button type="button" class="btn btn-outline-success" click.delegate="confirmSelection()">Confirm Skill
+      <button type="button" class="btn btn-outline-success" click.delegate="confirmSelection()" disabled.bind="!allSkillsAllocated">Confirm Skill
         Selection</button>
     </ux-dialog-footer>
   </ux-dialog>

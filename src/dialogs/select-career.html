@@ -21,16 +21,121 @@
               </option>
             </select>
           </div>
-        </div>        
+        </div>
         <div class="form-row">
           <div class="form-group col-sm-12">
-            <label for="skills" class="col-form-label">${selectedCareer.Description} Skills:</label>
+            <label for="skills" class="col-form-label">${selectedCareer.Class.Description} Trappings:</label>
             <div class="form-control" readonly>
-              <span repeat.for="skill of selectedCareer.Skills" id="skills">${skill.Description}<span
-                  if.bind="$last === false">, </span></span>
+              Under Construction...
+              <!-- <span repeat.for="trapping of selectedCareer.Class.Trappings" id="trappings">${trapping.Description}<span
+                    if.bind="$last === false">, </span></span> -->
             </div>
           </div>
         </div>
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="skills" class="col-form-label">Career Advance Scheme:</label>
+            <div class="form-control " readonly>
+              <table id="characteristics" class="table table-bordered table-sm" readonly>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      WS
+                    </th>
+                    <th scope="col">
+                      BS
+                    </th>
+                    </th>
+                    <th scope="col">
+                      S
+                    </th>
+                    </th>
+                    <th scope="col">
+                      T
+                    </th>
+                    </th>
+                    <th scope="col">
+                      I
+                    </th>
+                    </th>
+                    <th scope="col">
+                      Ag
+                    </th>
+                    </th>
+                    <th scope="col">
+                      Dex
+                    </th>
+                    </th>
+                    <th scope="col">
+                      Int
+                    </th>
+                    </th>
+                    <th scope="col">
+                      WP
+                    </th>
+                    </th>
+                    <th scope="col">
+                      Fel
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">
+                      <span class.bind="WeaponSkill ? 'fa fa-skull-crossbones' : ''"></span>
+                    </td>
+                    <td class="text-center">
+                      <span class.bind="BallisticSkill ? 'fa fa-skull-crossbones' : ''"></span>
+                    </td>
+                    <td class="text-center">
+                      <span class.bind="Strength ? 'fa fa-skull-crossbones' : ''"></span>
+                    </td>
+                    <td class="text-center">
+                      <span class.bind="Toughness ? 'fa fa-skull-crossbones' : ''"></span>
+                    </td>
+                    <td class="text-center">
+                      <span class.bind="Initiative ? 'fa fa-skull-crossbones' : ''"></span>
+                    </td>
+                    <td class="text-center">
+                      <span class.bind="Agility ? 'fa fa-skull-crossbones' : ''"></span>
+                    </td>
+                    <td class="text-center">
+                      <span class.bind="Dexterity ? 'fa fa-skull-crossbones' : ''"></span>
+                    </td>
+                    <td class="text-center">
+                      <span class.bind="Intelligence ? 'fa fa-skull-crossbones' : ''"></span>
+                    </td>
+                    <td class="text-center">
+                      <span class.bind="Willpower ? 'fa fa-skull-crossbones' : ''"></span>
+                    </td>
+                    <td class="text-center">
+                      <span class.bind="Fellowship ? 'fa fa-skull-crossbones' : ''"></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="col-sm-12">
+                <span class="font-weight-bold">${selectedCareer.CareerPath} - ${selectedCareer.Status}</span>
+              </div>
+              <div class="col-sm-12">
+                <label for="skills" class="col-form-label font-weight-bold">Skills:</label>
+                <span repeat.for="skill of selectedCareer.Skills" id="skills">${skill.Description}<span
+                    if.bind="$last === false">, </span></span>
+              </div>
+              <div class="col-sm-12">
+                <label for="skills" class="col-form-label font-weight-bold">Talents:</label>
+                Under Construction...
+                <!-- <span repeat.for="talent of selectedCareer.Talents" id="talents">${talent.Description}<span
+                            if.bind="$last === false">, </span></span> -->
+              </div>
+              <div class="col-sm-12">
+                <label for="skills" class="col-form-label font-weight-bold">Trappings:</label>
+                Under Construction...
+                <!-- <span repeat.for="trapping of selectedCareer.Trappings" id="trappings">${trapping.Description}<span
+                            if.bind="$last === false">, </span></span> -->
+              </div>
+            </div>
+          </div>
       </form>
     </ux-dialog-body>
     <ux-dialog-footer>

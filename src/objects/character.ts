@@ -242,7 +242,7 @@ export class Character {
     this.Wounds = this.Species.GetWounds(this.Strength.GetScoreBonus(), this.Toughness.GetScoreBonus(), this.Willpower.GetScoreBonus());
   }
 
-  private getCharacteristicScore(type: CharacteristicType): number {
+  getCharacteristicScore(type: CharacteristicType): number {
     return this.Characteristics.find((c) => { return c.CharacteristicType === type; }).GetTotalScore();
   }
 
