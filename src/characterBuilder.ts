@@ -39,7 +39,7 @@ export class CharacterBuilder {
   }
 
   openSelectSpecies() {
-    this.dialogService.open({ viewModel: SelectSpecies, model: this.character, lock: true, }).whenClosed(response => {
+    this.dialogService.open({ viewModel: SelectSpecies, model: this.character, lock: true }).whenClosed(response => {
       if (!response.wasCancelled) {
         this.openSelectCareer();
       }

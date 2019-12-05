@@ -1,4 +1,4 @@
-import { Scholar, Outlaw, Merchant, Apothecary, Engineer, Lawyer, Physician, Agitator, Artisan, Artist, Advisor, Watchman, Townsman, RatCatcher, Investigator, Beggar, Wizard, Nun, Priest } from './career';
+import { Scholar, Outlaw, Merchant, Apothecary, Engineer, Lawyer, Physician, Agitator, Artisan, Artist, Advisor, Watchman, Townsman, RatCatcher, Investigator, Beggar, Wizard, Nun, Priest, Duelist, Envoy, Noble, Spy, Servant, Warden, Bailiff, HedgeWitch, Herbalist, Hunter, Miner, Mystic, Scout, Villager, BountyHunter, Coachman, Entertainer, Flagellant, Messenger, Pedlar, RoadWarden, WitchHunter, Boatman, Huffer, Riverwarden, Riverwoman, Seaman, Smuggler, Stevedore, Wrecker, Bawd, Charlatan, Fence, GraveRobber, Racketeer, Thief, Witch, Cavalryman, Guard, Knight, PitFighter, Protagonist, Soldier, Slayer, WarriorPriest } from './career';
 import { SpeciesClassCareer } from './speciesClassCareer';
 import { computedFrom } from "aurelia-binding";
 import { Skill } from './skill';
@@ -66,8 +66,15 @@ export class Dwarf extends Species {
     this.AvailableCareers.push(new SpeciesClassCareer(new Watchman(),32,34));
     this.AvailableCareers.push(new SpeciesClassCareer(new Advisor(),35,36));
     this.AvailableCareers.push(new SpeciesClassCareer(new Artist(),37,37));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Duelist(),38,38));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Envoy(),39,40));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Noble(),41,41));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Servant(),42,42));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Spy(),43,43));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Warden(),44,45));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Bailiff(),46,47));
     
-    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),38,100));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),48,100));
     this.Skills = [
       SkillLibrary.ConsumeAlcohol,
       SkillLibrary.Cool,
@@ -123,8 +130,13 @@ export class Halfling extends Species {
     this.AvailableCareers.push(new SpeciesClassCareer(new Watchman(),32,33));
     this.AvailableCareers.push(new SpeciesClassCareer(new Advisor(),34,34));
     this.AvailableCareers.push(new SpeciesClassCareer(new Artist(),35,36));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Envoy(),37,37));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Servant(),38,43));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Spy(),44,44));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Warden(),45,46));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Bailiff(),47,47));
 
-    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),37,100));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),48,100));
     this.Skills = [
       SkillLibrary.Charm,
       SkillLibrary.ConsumeAlcohol,
@@ -175,8 +187,18 @@ export class HighElf extends Species {
     this.AvailableCareers.push(new SpeciesClassCareer(new Watchman(),29,29));
     this.AvailableCareers.push(new SpeciesClassCareer(new Advisor(),30,31));
     this.AvailableCareers.push(new SpeciesClassCareer(new Artist(),32,32));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Duelist(),33,34));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Envoy(),35,37));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Noble(),38,40));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Spy(),41,43));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Warden(),44,45));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),46,47));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),48,50));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),51,56));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),57,59));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),60,62));
 
-    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),33,100));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),63,100));
     this.Skills = [
       SkillLibrary.Cool,
       SkillLibrary.Entertain_Singing,
@@ -220,8 +242,16 @@ export class Human extends Species {
     this.AvailableCareers.push(new SpeciesClassCareer(new Watchman(),27,27));
     this.AvailableCareers.push(new SpeciesClassCareer(new Advisor(),28,28));
     this.AvailableCareers.push(new SpeciesClassCareer(new Artist(),29,29));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Duelist(),30,30));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Envoy(),31,31));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Noble(),32,32));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Servant(),33,35));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Spy(),36,36));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Warden(),37,37));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Bailiff(),38,38));
+    this.AvailableCareers.push(new SpeciesClassCareer(new HedgeWitch(),39,39));
 
-    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),30,100));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),40,100));
     this.Skills = [
       SkillLibrary.AnimalCare,
       SkillLibrary.Charm,
@@ -261,8 +291,11 @@ export class WoodElf extends Species {
     this.AvailableCareers.push(new SpeciesClassCareer(new Artisan(),6,10));
     this.AvailableCareers.push(new SpeciesClassCareer(new Advisor(),11,14));
     this.AvailableCareers.push(new SpeciesClassCareer(new Artist(),15,18));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Envoy(),19,25));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Noble(),26,31));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Spy(),32,35));   
 
-    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),19,100));
+    this.AvailableCareers.push(new SpeciesClassCareer(new Outlaw(),36,100));
     this.Skills = [
       SkillLibrary.Athletics,
       SkillLibrary.Climb,
