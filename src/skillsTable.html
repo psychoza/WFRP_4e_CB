@@ -23,7 +23,7 @@
           <td>${skill.Description}</td>
           <td>${skill.CharacteristicType}</td>
           <td>${getCharacteristicScore(skill.CharacteristicType)}</td>
-          <td>${skill.Advances}</td>
+          <td>${skill.Advances > 0 ? skill.Advances : ''}</td>
           <td>${getSkillLevel(skill)}</td>
         </tr>
       </tbody>
