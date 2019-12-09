@@ -54,8 +54,8 @@ describe('Character - ', () => {
     let c = character.Characteristics[0];
     c.Advances = 10;
     expect(c.GetInitialScore).toBeDefined();
-    expect(c.GetInitialScore()).toEqual(c.StartingScore + c.SpeciesScore, "Initial Score did not equal the sum of starting score and species score");
-    expect(c.GetTotalScore()).toEqual(c.StartingScore + c.SpeciesScore + c.Advances, "Total Score did not equal the sum of starting score, species score, and number of advances");
+    expect(c.GetInitialScore()).toEqual(c.StartingScore + c.SpeciesScore);
+    expect(c.GetTotalScore()).toEqual(c.StartingScore + c.SpeciesScore + c.Advances);
   });
 
   describe('Species - ', () => {

@@ -76,9 +76,9 @@ describe('Class / Career - ', () => {
         let testCareer = new Scholar();
         expect(testCareer.Level).toEqual(1);
         expect(testCareer.Characteristics.length).toEqual(3);
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy("Missing Characteristic Toughness");
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy("Missing Characteristic Intelligence");
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy("Missing Characteristic Willpower");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy();
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy();
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy();
       });
       
       it('When it has a level of 2, it has 4 characteristics to advance', () => {
@@ -86,10 +86,10 @@ describe('Class / Career - ', () => {
         testCareer.Level = 2;
         expect(testCareer.Level).toEqual(2);
         expect(testCareer.Characteristics.length).toEqual(4);
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy("Missing Characteristic Toughness");
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy("Missing Characteristic Intelligence");
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy("Missing Characteristic Willpower");
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Initiative)).toBeTruthy("Missing Characteristic Initiative");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy();
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy();
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy();
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Initiative)).toBeTruthy();
       });
             
       it('When it has a level of 3, it has 5 characteristics to advance', () => {
@@ -97,11 +97,11 @@ describe('Class / Career - ', () => {
         testCareer.Level = 3;
         expect(testCareer.Level).toEqual(3);
         expect(testCareer.Characteristics.length).toEqual(5);
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy("Missing Characteristic Toughness");
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy("Missing Characteristic Intelligence");
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy("Missing Characteristic Willpower");
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Initiative)).toBeTruthy("Missing Characteristic Initiative");        
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Fellowship)).toBeTruthy("Missing Characteristic Fellowship");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy();
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy();
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy();
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Initiative)).toBeTruthy();        
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Fellowship)).toBeTruthy();
       });      
             
       it('When it has a level of 4, it has 6 characteristics to advance', () => {
@@ -109,12 +109,12 @@ describe('Class / Career - ', () => {
         testCareer.Level = 4;
         expect(testCareer.Level).toEqual(4);
         expect(testCareer.Characteristics.length).toEqual(6);
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy("Missing Characteristic Toughness");
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy("Missing Characteristic Intelligence");
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy("Missing Characteristic Willpower");
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Initiative)).toBeTruthy("Missing Characteristic Initiative");        
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Fellowship)).toBeTruthy("Missing Characteristic Fellowship");                
-        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Dexterity)).toBeTruthy("Missing Characteristic Dexterity");
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Toughness)).toBeTruthy();
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Intelligence)).toBeTruthy();
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Willpower)).toBeTruthy();
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Initiative)).toBeTruthy();        
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Fellowship)).toBeTruthy();                
+        expect(testCareer.Characteristics.some((c) => c === CharacteristicType.Dexterity)).toBeTruthy();
       });
 
       //careers have levels
