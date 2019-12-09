@@ -184,7 +184,7 @@
               <td class="text-nowrap">${skill.Description}</td>
               <td>${skill.CharacteristicType}</td>
               <td>${character.getCharacteristicScore(skill.CharacteristicType)}</td>
-              <td>${skill.Advances}</td>
+              <td>${skill.Advances > 0 ? skill.Advances : ''}</td>
               <td>${character.getSkillLevel(skill)}</td>
             </tr>
           </tbody>

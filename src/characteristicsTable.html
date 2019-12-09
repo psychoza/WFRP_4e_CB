@@ -39,6 +39,10 @@
         <th scope="col">${CharacteristicSum}/200 (${CharacteristicPct}%)</th>
         <th scope="col" repeat.for="c of Characteristics" class.bind="c.CanBeAdvanced ? 'table-primary' : ''">
           ${c.CharacteristicType}
+          <div show.bind="c.CanBeAdvanced">
+              <br>
+              <i class="fa fa-skull-crossbones fa-xs"></i>
+          </div>
         </th>
       </tr>
     </thead>

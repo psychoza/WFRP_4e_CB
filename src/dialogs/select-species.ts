@@ -20,8 +20,12 @@ export class SelectSpecies {
       new WoodElf()
     ];
     this.character = character;
+    this.RollForSpecies();
+  }
+
+  private RollForSpecies() {
     this.character.rollSpecies();
-    this.selectedSpecies = this.availableSpecies.find((s)=> {return s.Description === this.character.RandomSpecies.Description; });
+    this.selectedSpecies = this.availableSpecies.find((s) => { return s.Description === this.character.RandomSpecies.Description; });
   }
 
   selectSpecies(event){
@@ -31,7 +35,6 @@ export class SelectSpecies {
   ifThisIsTheRandomSpecies(species:Species):boolean{
     return species.Description === this.character.RandomSpecies.Description;
   }
-  
 }
 
 
