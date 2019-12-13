@@ -37,12 +37,12 @@
     <thead>
       <tr>
         <th scope="col">${CharacteristicSum}/200 (${CharacteristicPct}%)</th>
-        <th scope="col" repeat.for="c of Characteristics" class.bind="c.CanBeAdvanced ? 'table-primary' : ''">
+        <th scope="col" repeat.for="c of Characteristics" class.bind="c.CanBeAdvanced ? 'table-primary text-center' : 'text-center'">
+          <span show.bind="c.CanBeAdvanced">
+            <small><i class="fa fa-skull-crossbones fa-xs"></i></small>
+            <br>
+          </span>
           ${c.CharacteristicType}
-          <div show.bind="c.CanBeAdvanced">
-              <br>
-              <i class="fa fa-skull-crossbones fa-xs"></i>
-          </div>
         </th>
       </tr>
     </thead>
@@ -50,7 +50,7 @@
       <tr>
         <th scope="row">Initial</th>
         <td repeat.for="c of Characteristics" class.bind="c.CanBeAdvanced ? 'table-primary' : ''">
-            ${c.GetInitialScore()}
+          ${c.GetInitialScore()}
         </td>
       </tr>
       <tr>

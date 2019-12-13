@@ -159,8 +159,8 @@
     </div>
     <hr>
     <div class="row">
-      <div class="col-sm-4" repeat.for="a of getCeilingValue(character.Skills.length/numberOfSkillsPerColumn)">
-        <h6>Skills</h6>
+      <div class="col-sm-4" repeat.for="a of getCeilingValue(character.BasicSkills.length/13)">
+        <h6>Basic Skills</h6>
         <table class="table table-bordered table-hover table-sm">
           <thead>
             <tr>
@@ -180,7 +180,38 @@
           </thead>
           <tbody>
             <tr
-              repeat.for="skill of character.Skills.slice($index*numberOfSkillsPerColumn,$index*numberOfSkillsPerColumn+numberOfSkillsPerColumn)">
+              repeat.for="skill of character.BasicSkills.slice($index*13,$index*13+13)">
+              <td class="text-nowrap">${skill.Description}</td>
+              <td>${skill.CharacteristicType}</td>
+              <td>${character.getCharacteristicScore(skill.CharacteristicType)}</td>
+              <td>${skill.Advances > 0 ? skill.Advances : ''}</td>
+              <td>${character.getSkillLevel(skill)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm-4">
+        <h6> Grouped &amp; Advanced Skills</h6>
+        <table class="table table-bordered table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">
+                Name
+              </th>
+              <th colspan="2" scope="col">
+                Characteristic
+              </th>
+              <th scope="col">
+                Adv
+              </th>
+              <th scope="col">
+                Skill
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              repeat.for="skill of character.AdvancedSkills">
               <td class="text-nowrap">${skill.Description}</td>
               <td>${skill.CharacteristicType}</td>
               <td>${character.getCharacteristicScore(skill.CharacteristicType)}</td>

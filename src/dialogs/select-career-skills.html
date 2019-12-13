@@ -1,5 +1,5 @@
 <template>
-  <ux-dialog>
+  <ux-dialog style="width:700px">
     <ux-dialog-header>
       <h4>Select ${character.Career.Description} skills</h4>
     </ux-dialog-header>
@@ -26,7 +26,7 @@
                     ${skill.Description}
                   </th>
                   <td>
-                    <input class="form-control" attach-focus type="number" min="0" max="10" value.bind="skill.Advances"
+                    <input class="form-control" attach-focus.bind="$index == 0" type="number" min="0" max="10" value.bind="skill.Advances"
                       change.delegate="updateAdvances($index)" />
                   </td>
                   <td>${skill.PreviousAdvances}</td>

@@ -1,4 +1,4 @@
-import { autoinject } from 'aurelia-framework';
+import { autoinject, computedFrom } from 'aurelia-framework';
 import { Characteristic } from './characteristic';
 import { Dicer } from "./dicer";
 import { Species, Dwarf, Halfling, HighElf, Human, WoodElf } from "./species";
@@ -73,6 +73,17 @@ export class Character {
   };
 
   Skills: Skill[] = [];
+
+  @computedFrom('Skills.length')
+  get BasicSkills() : Skill[]{
+    return this.Skills.filter((s) => { return SkillLibrary.BasicSkills.some((s2)=>{ return s2.Description == s.Description; }); });
+  }
+
+  @computedFrom('Skills.length')
+  get AdvancedSkills() : Skill[]{
+    
+    return this.Skills.filter((s) => { return !SkillLibrary.BasicSkills.some((s2)=>{ return s2.Description == s.Description; }); });
+  }
 
   Wounds: number = 0;
 
