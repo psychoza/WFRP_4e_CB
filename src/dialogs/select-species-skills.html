@@ -7,7 +7,7 @@
       <form>
         <div class="form-row">
           <div class="form-group col-sm-6">
-            <label class="col-form-label">Choose <mark>3</mark> skills to give <mark>5</mark> advances to.</label>
+            <label class="col-form-label">Choose <mark>${3 - fiveAdvanceSkills.length}</mark> skills to give <mark>5</mark> advances to.</label>
             <select attach-focus id="fiveAdvances" class="form-control" value.bind="chosenFiveAdvanceSkill"
               disabled.bind="fiveAdvanceSkills.length === 3">
               <option repeat.for="skill of availableSkills" model.bind="skill">
@@ -27,7 +27,7 @@
           </div>
 
           <div class="form-group col-sm-6">
-            <label class="col-form-label">Choose <mark>3</mark> skills to give <mark>3</mark> advances to.</label>
+            <label class="col-form-label">Choose <mark>${3 - threeAdvanceSkills.length}</mark> skills to give <mark>3</mark> advances to.</label>
             <select id="threeAdvances" class="form-control" value.bind="chosenThreeAdvanceSkill"
               disabled.bind="threeAdvanceSkills.length === 3">
               <option repeat.for="skill of availableSkills" model.bind="skill">
