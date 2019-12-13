@@ -32,7 +32,8 @@ export class SelectCareerSkills {
         IsGrouped: s.IsAdvanced, 
         Advances: 0, 
         PreviousAdvances: skill && skill.Advances || 0,
-        CharacteristicScore: character.getCharacteristicScore(s.CharacteristicType) 
+        CharacteristicScore: character.getCharacteristicScore(s.CharacteristicType),
+        CanBeAdvanced: true
       } as ISkill);
     });
   }

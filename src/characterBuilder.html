@@ -181,11 +181,11 @@
           <tbody>
             <tr
               repeat.for="skill of character.BasicSkills.slice($index*13,$index*13+13)">
-              <td class="text-nowrap">${skill.Description}</td>
-              <td>${skill.CharacteristicType}</td>
-              <td>${character.getCharacteristicScore(skill.CharacteristicType)}</td>
-              <td>${skill.Advances > 0 ? skill.Advances : ''}</td>
-              <td>${character.getSkillLevel(skill)}</td>
+              <td class.bind="skill.CanBeAdvanced ? 'table-primary text-nowrap' : 'text-nowrap'">${skill.Description}</td>
+              <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.CharacteristicType}</td>
+              <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${character.getCharacteristicScore(skill.CharacteristicType)}</td>
+              <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.Advances > 0 ? skill.Advances : ''}</td>
+              <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${character.getSkillLevel(skill)}</td>
             </tr>
           </tbody>
         </table>
@@ -212,11 +212,11 @@
           <tbody>
             <tr
               repeat.for="skill of character.AdvancedSkills">
-              <td class="text-nowrap">${skill.Description}</td>
-              <td>${skill.CharacteristicType}</td>
-              <td>${character.getCharacteristicScore(skill.CharacteristicType)}</td>
-              <td>${skill.Advances > 0 ? skill.Advances : ''}</td>
-              <td>${character.getSkillLevel(skill)}</td>
+              <td class.bind="skill.CanBeAdvanced ? 'table-primary text-nowrap' : 'text-nowrap'">${skill.Description}</td>
+              <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.CharacteristicType}</td>
+              <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${character.getCharacteristicScore(skill.CharacteristicType)}</td>
+              <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.Advances > 0 ? skill.Advances : ''}</td>
+              <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${character.getSkillLevel(skill)}</td>
             </tr>
           </tbody>
         </table>
