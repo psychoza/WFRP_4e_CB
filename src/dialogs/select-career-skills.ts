@@ -1,5 +1,5 @@
 import { DialogController } from 'aurelia-dialog';
-import { autoinject } from 'aurelia-framework';
+import { autoinject, computedFrom } from 'aurelia-framework';
 import { Character } from '../objects/character';
 import { Skill, ISkill } from '../objects/skill';
 import { sortArrayByProperty } from '../utilities/array-utilities';
@@ -7,12 +7,15 @@ import { sortArrayByProperty } from '../utilities/array-utilities';
 @autoinject()
 export class SelectCareerSkills {
   character: Character;
-  availableSkills: Skill[] = [];
+  availableSkills: CareerSkill[] = [];
+  allSkillsAllocated:boolean = false;
 
-  get allSkillsAllocated():boolean{
-    let sum = 0;
-    this.availableSkills.forEach((s)=> {sum += s.Advances;});
-    return sum === 40;
+  get totalAdvances():number {
+    let currentAdvances:number = 0;
+    this.availableSkills.forEach((s) => {
+        currentAdvances += Number.parseInt(s.Advances.toString());
+    });
+    return currentAdvances;
   }
 
   constructor(public dialogController: DialogController) {
@@ -21,11 +24,20 @@ export class SelectCareerSkills {
   activate(character: Character) {
     this.character = character;
     this.availableSkills = this.character.Career.Skills.map((s)=>{
-      return new Skill({ Description: s.Description, CharacteristicType: s.CharacteristicType, IsAdvanced: s.IsAdvanced, IsGrouped: s.IsAdvanced, Advances: 0 } as ISkill);
+      let skill = this.character.Skills.find((skill)=> { return skill.Description == s.Description; });
+      return new CareerSkill({ 
+        Description: s.Description, 
+        CharacteristicType: s.CharacteristicType, 
+        IsAdvanced: s.IsAdvanced, 
+        IsGrouped: s.IsAdvanced, 
+        Advances: 0, 
+        PreviousAdvances: skill && skill.Advances || 0,
+        CharacteristicScore: character.getCharacteristicScore(s.CharacteristicType) 
+      } as ISkill);
     });
   }
 
-  updateAdvances(index) {
+  updateAdvances(index: number) {
     let skill = this.availableSkills[index];
     let currentAdvances = 0;
     this.availableSkills.forEach((s) => {
@@ -37,6 +49,8 @@ export class SelectCareerSkills {
       skill.Advances = 10;
     else if (skill.Advances < 0)
       skill.Advances = 0;
+    else
+      skill.Advances = Number.parseInt(skill.Advances.toString());
 
     let remainingAdvances = 40 - currentAdvances;
     if (remainingAdvances > 10)
@@ -44,6 +58,8 @@ export class SelectCareerSkills {
 
     if (skill.Advances > remainingAdvances)
       skill.Advances = remainingAdvances;
+
+    this.allSkillsAllocated = skill.Advances + currentAdvances === 40;
   }
 
   confirmSelection() {
@@ -66,5 +82,25 @@ export class SelectCareerSkills {
     else {
       this.character.Skills.push(skill);
     }
+  }
+}
+
+
+export class CareerSkill extends Skill{
+  PreviousAdvances: number = 0;
+  CharacteristicScore: number = 0;
+  @computedFrom('PreviousAdvances', 'Advances')
+  get TotalAdvances():number{
+    let result = this.PreviousAdvances + Number.parseInt(this.Advances.toString());
+    result += this.CharacteristicScore;
+    return result;
+  }
+
+  constructor();
+  constructor(obj: ISkill);
+  constructor(obj: ISkill = {} as ISkill) {
+    super(obj);
+    this.PreviousAdvances = obj && obj.PreviousAdvances || 0;
+    this.CharacteristicScore = obj && obj.CharacteristicScore || 0;
   }
 }

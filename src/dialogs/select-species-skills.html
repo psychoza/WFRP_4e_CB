@@ -1,16 +1,10 @@
 <template>
   <ux-dialog>
     <ux-dialog-header>
-      <h4>Select species skills</h4>
+      <h4>Select ${character.Species.Description} skills</h4>
     </ux-dialog-header>
     <ux-dialog-body>
       <form>
-        <div class="form-row">
-          <div class="form-group col-sm-12">
-            <label for="randomSpecies" class="col-form-label">Species:</label>
-            <span id="randomSpecies" class="form-control" readonly>${character.Species.Description}</span>
-          </div>
-        </div>
         <div class="form-row">
           <div class="form-group col-sm-6">
             <label class="col-form-label">Choose <mark>3</mark> skills to give <mark>5</mark> advances to.</label>

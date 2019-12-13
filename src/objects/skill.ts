@@ -7,6 +7,8 @@ export interface ISkill {
   IsGrouped: boolean;
   Advances: number;
   CanBeAdvanced: boolean;
+  PreviousAdvances: number;
+  CharacteristicScore: number;
 }
 
 export class Skill {

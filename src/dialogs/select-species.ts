@@ -8,6 +8,7 @@ export class SelectSpecies {
   character:Character;
   availableSpecies: Species[] = [];
   selectedSpecies: Species = null;
+  speciesHasBeenRolled:boolean = false;
   constructor(public dialogController: DialogController) {    
   }
 
@@ -26,6 +27,7 @@ export class SelectSpecies {
   private RollForSpecies() {
     this.character.rollSpecies();
     this.selectedSpecies = this.availableSpecies.find((s) => { return s.Description === this.character.RandomSpecies.Description; });
+    this.speciesHasBeenRolled = true; 
   }
 
   selectSpecies(event){
