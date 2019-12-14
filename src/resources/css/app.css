@@ -1,0 +1,28 @@
+item-list {
+  width: 100px;
+}
+
+td dragzone span {
+  border: 1px dotted gray;
+  padding: 3px;
+  margin: 1px;
+}
+
+characteristics.dragging td dragzone span {
+  border: 1px dotted black;
+  background: yellow;
+}
+
+.drag-and-drop {
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+/* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.drag-and-drop:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}

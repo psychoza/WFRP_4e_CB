@@ -1,10 +1,11 @@
 <template>
+  <require from="resources/css/app.css"></require>
   <ux-dialog style="width:700px">
     <ux-dialog-header>
       <h4>Assign characteristics</h4>
     </ux-dialog-header>
     <ux-dialog-body>
-      <table id="characteristics" class="table table-bordered table-sm" readonly>
+      <table id="characteristics" class="table table-bordered table-sm" readonly ref="list">
         <thead>
           <tr>
             <th scope="col">Characteristic</th>
@@ -19,11 +20,18 @@
           <tr repeat.for="characteristic of character.Characteristics">
             <td><span class="fa fa-skull-crossbones fa-xs" show.bind="characteristic.CanBeAdvanced"> </span>
               ${characteristic.Description}</td>
-            <td>${characteristic.StartingScore}</td>
+            <td class="text-center">
+                <dragzone dragover.delegate="dragover(characteristic)" class="drag-and-drop">
+                    <span class="" draggable="true" drag.delegate="drag(characteristic)" dragend.delegate="drop()">
+                        ${characteristic.StartingScore}
+                      </span>
+                </dragzone>              
+            </td>
             <td>+</td>
             <td>${characteristic.SpeciesScore}</td>
             <td>=</td>
-            <td>${characteristic.GetInitialScore()} <span class="fa fa-skull-crossbones fa-xs" show.bind="characteristic.CanBeAdvanced"></span></td>
+            <td>${characteristic.GetInitialScore()} <span class="fa fa-skull-crossbones fa-xs"
+                show.bind="characteristic.CanBeAdvanced"></span></td>
           </tr>
         </tbody>
       </table>
