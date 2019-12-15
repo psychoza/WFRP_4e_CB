@@ -1,11 +1,19 @@
 import { CharacteristicType } from "./characteristicType";
+import { observable, computedFrom } from "aurelia-framework";
 
 export class Characteristic {
   Description: string = '';
   CharacteristicType: CharacteristicType;
-  StartingScore: number = 0;
+  
+  @observable StartingScore: number = 0;
+  StartingScoreChanged(newValue, oldValue){
+    
+  }
   SpeciesScore: number = 0;
-  Advances: number = 0;
+  @observable Advances: number = 0;
+  AdvancesChanged(newValue, oldValue){
+    
+  }
   private OriginalScore: number = 0;
   CanBeAdvanced: boolean = false;
 
@@ -18,24 +26,32 @@ export class Characteristic {
     this.CanBeAdvanced = canBeAdvanced;
   }
 
-  GetInitialScore(): number {
+  @computedFrom('StartingScore', 'SpeciesScore')
+  get InitialScore(): number {
     return this.StartingScore + this.SpeciesScore;
   };
 
-  GetTotalScore(): number {
+  @computedFrom('StartingScore','SpeciesScore','Advances')
+  get TotalScore(): number {
     return this.StartingScore + this.SpeciesScore + this.Advances;
   };
-  GetScoreBonus(): number {
-    return Math.floor(this.GetTotalScore() / 10);
+
+  @computedFrom('TotalScore')
+  get ScoreBonus(): number {
+    return Math.floor(this.TotalScore / 10);
   };
+
   SwapStartingScores(swappingCharacteristic: Characteristic): void {
     let tempScore = this.StartingScore;
     this.StartingScore = swappingCharacteristic.StartingScore;
     swappingCharacteristic.StartingScore = tempScore;
   }
-  HasOriginalScore(): boolean {
+
+  @computedFrom('OriginalScore', 'StartingScore')
+  get HasOriginalScore(): boolean {
     return this.OriginalScore === this.StartingScore;
   }
+  
   Advance(currentXp: number): number {
     let remainingXp = currentXp - this.GetAdvanceCost();
     if (remainingXp >= 0) {

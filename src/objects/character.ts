@@ -1,4 +1,4 @@
-import { autoinject, computedFrom } from 'aurelia-framework';
+import { autoinject, computedFrom, observable } from 'aurelia-framework';
 import { Characteristic } from './characteristic';
 import { Dicer } from "./dicer";
 import { Species, Dwarf, Halfling, HighElf, Human, WoodElf } from "./species";
@@ -26,8 +26,10 @@ export class Character {
 
   CharacteristicSum: number = 0;
   CharacteristicPct: number = 0;
-  Characteristics: Characteristic[] = [];
+  @observable Characteristics: Characteristic[] = [];
+  CharacteristicsChanged(newValue, oldValue){
 
+  }
 
   get WeaponSkill(): Characteristic {
     return this.Characteristics.find((c) => { return c.CharacteristicType == CharacteristicType.WeaponSkill });
@@ -214,7 +216,7 @@ export class Character {
   private isUsingTheirRandomCharacteristics(): boolean {
     let result = true
     this.Characteristics.forEach(c => {
-      if (!c.HasOriginalScore())
+      if (!c.HasOriginalScore)
         result = false;
     });
     return result;
@@ -250,11 +252,11 @@ export class Character {
   }
 
   private figureOutWounds(): void {
-    this.Wounds = this.Species.GetWounds(this.Strength.GetScoreBonus(), this.Toughness.GetScoreBonus(), this.Willpower.GetScoreBonus());
+    this.Wounds = this.Species.GetWounds(this.Strength.ScoreBonus, this.Toughness.ScoreBonus, this.Willpower.ScoreBonus);
   }
 
   getCharacteristicScore(type: CharacteristicType): number {
-    return this.Characteristics.find((c) => { return c.CharacteristicType === type; }).GetTotalScore();
+    return this.Characteristics.find((c) => { return c.CharacteristicType === type; }).TotalScore;
   }
 
   getSkillLevel(skill: Skill): number {

@@ -50,7 +50,7 @@
       <tr>
         <th scope="row">Initial</th>
         <td repeat.for="c of Characteristics" class.bind="c.CanBeAdvanced ? 'table-primary' : ''">
-          ${c.GetInitialScore()}
+          ${c.InitialScore}
         </td>
       </tr>
       <tr>
@@ -62,7 +62,7 @@
       <tr>
         <th scope="row">Current</th>
         <td repeat.for="c of Characteristics" class.bind="c.CanBeAdvanced ? 'table-primary' : ''">
-          ${c.GetTotalScore()}
+          ${c.TotalScore}
         </td>
       </tr>
     </tbody>
