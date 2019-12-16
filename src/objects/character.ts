@@ -27,7 +27,7 @@ export class Character {
   CharacteristicSum: number = 0;
   CharacteristicPct: number = 0;
   @observable Characteristics: Characteristic[] = [];
-  CharacteristicsChanged(newValue, oldValue){
+  CharacteristicsChanged(newValue, oldValue) {
 
   }
 
@@ -77,14 +77,13 @@ export class Character {
   Skills: Skill[] = [];
 
   @computedFrom('Skills.length')
-  get BasicSkills() : Skill[]{
-    return this.Skills.filter((s) => { return SkillLibrary.BasicSkills.some((s2)=>{ return s2.Description == s.Description; }); });
+  get BasicSkills(): Skill[] {
+    return this.Skills.filter((s) => { return SkillLibrary.BasicSkills.some((s2) => { return s2.Description == s.Description; }); });
   }
 
   @computedFrom('Skills.length')
-  get AdvancedSkills() : Skill[]{
-    
-    return this.Skills.filter((s) => { return !SkillLibrary.BasicSkills.some((s2)=>{ return s2.Description == s.Description; }); });
+  get AdvancedSkills(): Skill[] {
+    return this.Skills.filter((s) => { return !SkillLibrary.BasicSkills.some((s2) => { return s2.Description == s.Description; }) && s.Advances !== 0; });
   }
 
   Wounds: number = 0;
