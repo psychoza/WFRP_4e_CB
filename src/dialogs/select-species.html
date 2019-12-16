@@ -7,7 +7,7 @@
     <ux-dialog-body>
       <form>
         <div class="form-row">
-          <div class="form-group col-sm-12">
+          <div class="form-group col">
             <label for="randomSpecies" class="col-form-label">Random Species:</label>
             <span id="randomSpecies" class="form-control" readonly>${character.RandomSpecies.Description}
               (${character.SpeciesRoll})</span>
@@ -17,7 +17,7 @@
         </div>
         <div>
           <div class="form-row">
-            <div class="form-group col-sm-12">
+            <div class="form-group col">
               <label for="speciesSelect" class="col-form-label">Species</label>
               <select attach-focus id="speciesSelect" class="form-control" value.bind="selectedSpecies"
                 change.delegate="selectSpecies($event)">
@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-sm-12">
+            <div class="form-group col">
               <label for="speciesSelect" class="col-form-label">${character.Species.Description} Characteristics</label>
               <table id="characteristics" class="table table-bordered table-sm" readonly>
                 <thead>
@@ -111,7 +111,7 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-sm-12">
+            <div class="form-group col">
               <label for="skills" class="col-form-label">${selectedSpecies.Description} Skills:</label>
               <div class="form-control" readonly>
                 <span repeat.for="skill of character.Species.Skills" id="skills">${skill.Description}<span
@@ -120,7 +120,7 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-sm-12">
+            <div class="form-group col">
               <label for="trappings" class="col-form-label">${selectedSpecies.Description} Talents:</label>
               <div class="form-control" readonly>
                 Under Construction...
@@ -130,7 +130,7 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-sm-12">
+            <div class="form-group col">
               <label for="trappings" class="col-form-label">${selectedSpecies.Description} Trappings:</label>
               <div class="form-control" readonly>
                 Under Construction...
@@ -143,7 +143,7 @@
       </form>
     </ux-dialog-body>
     <ux-dialog-footer>
-      <button type="button" class="btn btn-outline-success" click.trigger="dialogController.ok()" disabled.bind="!speciesHasBeenRolled">Select
+      <button type="button" class="btn btn-success" click.trigger="dialogController.ok()" disabled.bind="!speciesHasBeenRolled">Select
         <span show.bind="speciesHasBeenRolled">${character.Species.Description}</span></button>
       <!-- <button  click.trigger="dialogController.cancel()">Cancel</button> -->
     </ux-dialog-footer>

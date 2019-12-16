@@ -1,48 +1,65 @@
 <template>
-    <require from="resources/css/dialog.css"></require>
-    <ux-dialog class="standard-modal">
+  <require from="resources/css/dialog.css"></require>
+  <ux-dialog class="standard-modal">
     <ux-dialog-header>
       <h4>Select ${character.Species.Description} skills</h4>
     </ux-dialog-header>
     <ux-dialog-body>
       <form>
         <div class="form-row">
-          <div class="form-group col-sm-6">
-            <label class="col-form-label">Choose <mark>${3 - fiveAdvanceSkills.length}</mark> skills to give <mark>5</mark> advances to.</label>
-            <select attach-focus id="fiveAdvances" class="form-control" value.bind="chosenFiveAdvanceSkill"
-              disabled.bind="fiveAdvanceSkills.length === 3">
-              <option repeat.for="skill of availableSkills" model.bind="skill">
-                  ${skill.CanBeAdvanced ? '+' : ''} ${skill.Description} (${skill.CharacteristicType} [${character.getCharacteristicScore(skill.CharacteristicType)}])
-              </option>
-            </select>
-            <button type="button" class="btn btn-primary py-2" click.delegate="addFiveSkill()"
-              disabled.bind="fiveAdvanceSkills.length === 3">Add Skill</button>
-              <br/>
-              <label>+5 Advance Skills:</label>
+          <div class="form-group col">
+            <label class="col-form-label">Choose <mark>${3 - fiveAdvanceSkills.length}</mark> skills to give
+              <mark>5</mark> advances to.</label>
+            <div class="input-group mb-3">
+              <select attach-focus id="fiveAdvances" class="form-control" value.bind="chosenFiveAdvanceSkill"
+                disabled.bind="fiveAdvanceSkills.length === 3">
+                <option repeat.for="skill of availableSkills" model.bind="skill">
+                  ${skill.CanBeAdvanced ? '+' : ''} ${skill.Description} (${skill.CharacteristicType}
+                  [${character.getCharacteristicScore(skill.CharacteristicType)}])
+                </option>
+              </select>
+              <div class="input-group-append">
+                <button type="button" class="btn btn-outline-primary" click.delegate="addFiveSkill()"
+                  disabled.bind="fiveAdvanceSkills.length === 3">Add Skill</button>
+              </div>
+            </div>
+            <br />
+            <label>+5 Advance Skills:</label>
             <div class="list-group list-group-flush py-2">
               <button type="button" class="list-group-item list-group-item-action"
                 repeat.for="skill of fiveAdvanceSkills" click.delegate="removeFiveSkill(skill)">
-                <small><span show.bind="skill.CanBeAdvanced"><i class="fa fa-skull-crossbones fa-xs"></i></span> ${skill.Description} (${skill.CharacteristicType} [${character.getCharacteristicScore(skill.CharacteristicType)}]) + 5 = ${character.getCharacteristicScore(skill.CharacteristicType) + 5}</small>
+                <small><span show.bind="skill.CanBeAdvanced"><i class="fa fa-skull-crossbones fa-xs"></i></span>
+                  ${skill.Description} (${skill.CharacteristicType}
+                  [${character.getCharacteristicScore(skill.CharacteristicType)}]) + 5 =
+                  ${character.getCharacteristicScore(skill.CharacteristicType) + 5}</small>
               </button>
             </div>
           </div>
-
-          <div class="form-group col-sm-6">
-            <label class="col-form-label">Choose <mark>${3 - threeAdvanceSkills.length}</mark> skills to give <mark>3</mark> advances to.</label>
-            <select id="threeAdvances" class="form-control" value.bind="chosenThreeAdvanceSkill"
-              disabled.bind="threeAdvanceSkills.length === 3">
-              <option repeat.for="skill of availableSkills" model.bind="skill">
-                  ${skill.CanBeAdvanced ? '+' : ''} ${skill.Description} (${skill.CharacteristicType} [${character.getCharacteristicScore(skill.CharacteristicType)}])
-              </option>
-            </select>
-            <button type="button" class="btn btn-primary py-2" click.delegate="addThreeSkill()"
-              disabled.bind="threeAdvanceSkills.length === 3">Add Skill</button>
-              <br/>
-              <label>+3 Advance Skills:</label>
+          <div class="form-group col">
+            <label class="col-form-label">Choose <mark>${3 - threeAdvanceSkills.length}</mark> skills to give
+              <mark>3</mark> advances to.</label>
+            <div class="input-group mb-3">
+              <select id="threeAdvances" class="form-control" value.bind="chosenThreeAdvanceSkill"
+                disabled.bind="threeAdvanceSkills.length === 3">
+                <option repeat.for="skill of availableSkills" model.bind="skill">
+                  ${skill.CanBeAdvanced ? '+' : ''} ${skill.Description} (${skill.CharacteristicType}
+                  [${character.getCharacteristicScore(skill.CharacteristicType)}])
+                </option>
+              </select>
+              <div class="input-group-append">
+                <button type="button" class="btn btn-outline-primary" click.delegate="addThreeSkill()"
+                  disabled.bind="threeAdvanceSkills.length === 3">Add Skill</button>
+              </div>
+            </div>
+            <br />
+            <label>+3 Advance Skills:</label>
             <div class="list-group list-group-flush py-2">
               <button type="button" class="list-group-item list-group-item-action"
                 repeat.for="skill of threeAdvanceSkills" click.delegate="removeThreeSkill(skill)">
-                <small><span show.bind="skill.CanBeAdvanced"><i class="fa fa-skull-crossbones fa-xs"></i></span> ${skill.Description} (${skill.CharacteristicType} [${character.getCharacteristicScore(skill.CharacteristicType)}]) + 3 = ${character.getCharacteristicScore(skill.CharacteristicType) + 3}</small>
+                <small><span show.bind="skill.CanBeAdvanced"><i class="fa fa-skull-crossbones fa-xs"></i></span>
+                  ${skill.Description} (${skill.CharacteristicType}
+                  [${character.getCharacteristicScore(skill.CharacteristicType)}]) + 3 =
+                  ${character.getCharacteristicScore(skill.CharacteristicType) + 3}</small>
               </button>
             </div>
           </div>
@@ -50,8 +67,8 @@
       </form>
     </ux-dialog-body>
     <ux-dialog-footer>
-      <button type="button" class="btn btn-outline-success" click.delegate="confirmSelection()"
-        disabled.bind="fiveAdvanceSkills.length !== 3 && threeAdvanceSkills.length !== 3">Confirm Skill
+      <button type="button" class="btn btn-success" click.delegate="confirmSelection()"
+        disabled.bind="isDisabled">Confirm Skill
         Selection</button>
     </ux-dialog-footer>
   </ux-dialog>

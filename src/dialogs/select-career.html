@@ -7,14 +7,14 @@
     <ux-dialog-body>
       <form>
         <div class="form-row">
-          <div class="form-group col-sm-12">
+          <div class="form-group col">
             <label for="randomSpecies" class="col-form-label">Random Class/Career:</label>
             <span id="randomSpecies" class="form-control" readonly>${character.RandomCareer.Class.Description} -
               ${character.RandomCareer.Description} (${character.CareerRoll})</span>
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-sm-12">
+          <div class="form-group col">
             <label for="careerSelect" class="col-form-label">Career</label>
             <select attach-focus id="careerSelect" class="form-control" value.bind="selectedCareer">
               <option repeat.for="career of availableCareers" model.bind="career">
@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-sm-12">
+          <div class="form-group col">
             <label for="skills" class="col-form-label">${selectedCareer.Class.Description} Trappings:</label>
             <div class="form-control" readonly>
               Under Construction...
@@ -34,10 +34,10 @@
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-sm-12">
+          <div class="form-group col">
             <label for="skills" class="col-form-label">Career Advance Scheme:</label>
             <div class="form-control " readonly>
-              <table id="characteristics" class="table table-bordered table-sm" readonly>
+              <table id="characteristics" class="table table-bordered table-xs table-responsive" readonly>
                 <thead>
                   <tr>
                     <th scope="col">
@@ -115,21 +115,21 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="col-sm-12">
+              <div class="col">
                 <span class="font-weight-bold">${selectedCareer.CareerPath} - ${selectedCareer.Status}</span>
               </div>
-              <div class="col-sm-12">
+              <div class="col">
                 <label for="skills" class="col-form-label font-weight-bold">Skills:</label>
                 <span repeat.for="skill of selectedCareer.Skills" id="skills">${skill.Description}<span
                     if.bind="$last === false">, </span></span>
               </div>
-              <div class="col-sm-12">
+              <div class="col">
                 <label for="skills" class="col-form-label font-weight-bold">Talents:</label>
                 Under Construction...
                 <!-- <span repeat.for="talent of selectedCareer.Talents" id="talents">${talent.Description}<span
                             if.bind="$last === false">, </span></span> -->
               </div>
-              <div class="col-sm-12">
+              <div class="col">
                 <label for="skills" class="col-form-label font-weight-bold">Trappings:</label>
                 Under Construction...
                 <!-- <span repeat.for="trapping of selectedCareer.Trappings" id="trappings">${trapping.Description}<span
@@ -141,7 +141,7 @@
       </form>
     </ux-dialog-body>
     <ux-dialog-footer>
-      <button type="button" class="btn btn-outline-success" click.trigger="confirmCareer()">Select
+      <button type="button" class="btn btn-success" click.trigger="confirmCareer()">Select
         ${selectedCareer.Description}</button>
       <!-- <button  click.trigger="dialogController.cancel()">Cancel</button> -->
     </ux-dialog-footer>

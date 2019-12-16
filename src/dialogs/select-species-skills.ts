@@ -3,7 +3,6 @@ import { autoinject } from 'aurelia-framework';
 import { Character } from '../objects/character';
 import { Skill, ISkill } from '../objects/skill';
 import { sortArrayByProperty } from '../utilities/array-utilities';
-import { SIGUSR1 } from 'constants';
 
 @autoinject()
 export class SelectSpeciesSkills {
@@ -13,15 +12,20 @@ export class SelectSpeciesSkills {
   chosenFiveAdvanceSkill: Skill = null;
   chosenThreeAdvanceSkill: Skill = null;
 
+  get isDisabled(): boolean {
+    return this.fiveAdvanceSkills.length !== 3 && this.threeAdvanceSkills.length !== 3;
+
+  }
+
   get availableSkills(): Skill[] {
-    let skills = this.character.Species.Skills.map((skill)=>{
+    let skills = this.character.Species.Skills.map((skill) => {
       var careerSkills = this.character.Career.Skills;
-      var result = this.character.Career.Skills.some((careerSkill) => { return careerSkill.Description === skill.Description;});
-      var mappedSkill = new Skill({ 
-        Description: skill.Description, 
-        CharacteristicType: skill.CharacteristicType, 
-        IsAdvanced: skill.IsAdvanced, 
-        IsGrouped: skill.IsAdvanced, 
+      var result = this.character.Career.Skills.some((careerSkill) => { return careerSkill.Description === skill.Description; });
+      var mappedSkill = new Skill({
+        Description: skill.Description,
+        CharacteristicType: skill.CharacteristicType,
+        IsAdvanced: skill.IsAdvanced,
+        IsGrouped: skill.IsAdvanced,
         Advances: 0,
         CanBeAdvanced: result
       } as ISkill);

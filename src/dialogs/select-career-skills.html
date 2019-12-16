@@ -7,11 +7,11 @@
     <ux-dialog-body>
       <form>
         <div class="form-row">
-          <div class="form-group col-sm-12">
+          <div class="form-group col">
             <label class="col-form-label">Allocate <mark>${40 - totalAdvances}</mark> advancements up to a maximum of
               <mark>10</mark>.</label>
 
-            <table class="table table-hover">
+            <table class="table table-bordered table-hover table-xs table-responsive">
               <thead>
                 <tr>
                   <th scope="col">Career Skill</th>
@@ -54,7 +54,7 @@
       </form>
     </ux-dialog-body>
     <ux-dialog-footer>
-      <button type="button" class="btn btn-outline-success" click.delegate="confirmSelection()"
+      <button type="button" class="btn btn-success" click.delegate="confirmSelection()"
         disabled.bind="allSkillsAllocated === false">Confirm Skill
         Selection</button>
     </ux-dialog-footer>

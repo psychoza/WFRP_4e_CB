@@ -6,7 +6,7 @@
       <h4>Assign characteristics</h4>
     </ux-dialog-header>
     <ux-dialog-body>
-      <table id="characteristics" class="table table-bordered table-sm" readonly ref="list">
+      <table id="characteristics" class="table table-bordered table-sm table-hover" readonly ref="list">
         <thead>
           <tr>
             <th scope="col">Characteristic</th>
@@ -38,7 +38,7 @@
       </table>
     </ux-dialog-body>
     <ux-dialog-footer>
-      <button type="button" class="btn btn-outline-success" click.trigger="dialogController.ok()">Confirm
+      <button type="button" class="btn btn-success" click.trigger="dialogController.ok()">Confirm
         Characteristics</button>
       <!-- <button  click.trigger="dialogController.cancel()">Cancel</button> -->
     </ux-dialog-footer>
