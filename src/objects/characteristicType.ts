@@ -10,3 +10,4 @@ export enum CharacteristicType {
   Willpower = "WP",
   Fellowship = "Fel",
 }
+

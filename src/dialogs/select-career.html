@@ -8,8 +8,16 @@
       <form>
         <div class="form-row">
           <div class="form-group col">
-            <label for="randomSpecies" class="col-form-label">Random Class/Career:</label>
-            <span id="randomSpecies" class="form-control" readonly>${character.RandomCareer.Class.Description} -
+            <label for="rollResult" class="col-form-label">Random Roll:</label>
+            <input type="number" class="form-control" id="rollResult"
+                   min="1" max="100" disabled.bind="character.UseRandomRolls"
+                   value.bind="character.CareerRoll" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="col-form-label">Random Class/Career:</label>
+            <span class="form-control" readonly>${character.RandomCareer.Class.Description} -
               ${character.RandomCareer.Description} (${character.CareerRoll})</span>
           </div>
         </div>
@@ -142,8 +150,14 @@
     </ux-dialog-body>
     <ux-dialog-footer>
       <button type="button" class="btn btn-success" click.trigger="confirmCareer()">Select
-        ${selectedCareer.Description}</button>
-      <!-- <button  click.trigger="dialogController.cancel()">Cancel</button> -->
+        ${selectedCareer.Description}
+        <span class="strong" if.bind="doesGrantBonus">(+50xp)</span>
+      </button>
+      <button type="button" class="btn btn-info" click.trigger="resync()"
+              data-toggle="tooltip" title="Resync with ${character.RandomCareer.Description} for bonus experience."
+              if.bind="!doesGrantBonus">
+        <i class="fas fa-sync"></i> Resync
+      </button>
     </ux-dialog-footer>
   </ux-dialog>
 </template>

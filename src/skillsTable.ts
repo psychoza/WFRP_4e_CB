@@ -11,7 +11,7 @@ export class SkillsTable {
    };
 
   private getCharacteristicScore(type: CharacteristicType): number {
-    return this.Characteristics.find((c) => { return c.CharacteristicType === type; }).GetTotalScore();
+    return this.Characteristics.find((c) => { return c.CharacteristicType === type; }).TotalScore;
   }
 
   private getSkillLevel(skill: Skill): number {

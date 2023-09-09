@@ -1,0 +1,35 @@
+<template>
+    <require from="resources/css/dialog.css"></require>
+    <ux-dialog class="standard-modal">
+    <ux-dialog-header>
+      <h4>Select a build mode</h4>
+    </ux-dialog-header>
+    <ux-dialog-body>
+      <form>
+        <div class="form-row">
+          <div class="form-group col">
+            How do you want to build your character?
+            <div class="form-check" data-toggle="tooltip" title="All random results come prefilled">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="mode1" checked.bind="useRandomRolls" model.bind="true">
+              <label class="form-check-label" for="mode1">
+                Random
+              </label>
+            </div>
+            <div class="form-check" data-toggle="tooltip" title="All random results will manually entered">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="mode2" checked.bind="useRandomRolls" model.bind="false">
+              <label class="form-check-label" for="mode2">
+                Manual
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button type="button" class="btn btn-success" click.trigger="confirm()">Select
+        <span if.bind="useRandomRolls">Random</span>
+        <span else>Manual</span>
+      </button>     
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>

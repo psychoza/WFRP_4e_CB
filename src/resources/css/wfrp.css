@@ -14,3 +14,17 @@ ux-dialog-overlay.active {
   background-color: black;
   opacity: 1;
 }
+
+.strong {
+  font-weight: bold;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+

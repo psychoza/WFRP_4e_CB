@@ -1,7 +1,7 @@
-import { DialogController } from 'aurelia-dialog';
-import { autoinject } from 'aurelia-framework';
-import { Character } from '../objects/character';
-import { Species, Human, Dwarf, Halfling, HighElf, WoodElf } from '../objects/species';
+import {DialogController} from 'aurelia-dialog';
+import {autoinject, computedFrom} from 'aurelia-framework';
+import {Character} from '../objects/character';
+import {Dwarf, Halfling, HighElf, Human, Species, WoodElf} from '../objects/species';
 
 @autoinject()
 export class SelectSpecies {
@@ -9,6 +9,13 @@ export class SelectSpecies {
   availableSpecies: Species[] = [];
   selectedSpecies: Species = null;
   speciesHasBeenRolled:boolean = false;
+  hideStats: boolean = false;
+  
+  @computedFrom('character', 'character.Species', 'character.Species.Description', 'selectedSpecies', 'selectedSpecies.Description')
+  get doesGrantBonus(): boolean {
+    return this.character.RandomSpecies.Description === this.selectedSpecies.Description;
+  }
+  
   constructor(public dialogController: DialogController) {    
   }
 
@@ -26,16 +33,27 @@ export class SelectSpecies {
 
   private RollForSpecies() {
     this.character.rollSpecies();
-    this.selectedSpecies = this.availableSpecies.find((s) => { return s.Description === this.character.RandomSpecies.Description; });
+    this.resync();
     this.speciesHasBeenRolled = true; 
   }
 
-  selectSpecies(event){
+  selectSpecies(){
     this.character.selectSpecies(this.selectedSpecies);
+    this.dialogController.ok();
   }
   
   ifThisIsTheRandomSpecies(species:Species):boolean{
     return species.Description === this.character.RandomSpecies.Description;
+  }
+  
+  resync():void {
+    this.selectedSpecies = this.findSpecies(this.character.RandomSpecies);
+  }
+  
+  findSpecies(species: Species): Species {
+    return this.availableSpecies.find((s) => {
+      return s.Description === species.Description;
+    });
   }
 }
 

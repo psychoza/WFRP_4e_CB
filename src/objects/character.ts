@@ -5,21 +5,30 @@ import { Species, Dwarf, Halfling, HighElf, Human, WoodElf } from "./species";
 import { Class, Career, Scholar } from './career';
 import { Skill } from './skill';
 import { SkillLibrary } from './skillLibrary';
-import { CharacteristicType } from './characteristicType';
+import {CharacteristicType} from './characteristicType';
 import { sortArrayByProperty, setArrayPropertyToNumber } from '../utilities/array-utilities';
+import {CharacteristicDescriptions} from "./characteristicDescriptions";
 
-const constCharacteristics: string[] = ['WeaponSkill', 'BallisticSkill', 'Strength', 'Toughness', 'Initiative', 'Agility', 'Dexterity', 'Intelligence', 'Willpower', 'Fellowship'];
+//const constCharacteristics: string[] = ['WeaponSkill', 'BallisticSkill', 'Strength', 'Toughness', 'Initiative', 'Agility', 'Dexterity', 'Intelligence', 'Willpower', 'Fellowship'];
 
 export class Character {
   private dicer: Dicer = null;
-
+  UseRandomRolls: boolean = true;
+  
   Name: string = "Bob";
 
   Species: Species = null;
   RandomSpecies: Species = null;
-  SpeciesRoll: number = 0;
+  @observable SpeciesRoll: number = 0;
+  SpeciesRollChanged(newValue: number, oldValue: number): void {
+    this.setSpecies();
+  }
 
-  CareerRoll: number = 0;
+  @observable CareerRoll: number = 0;
+  CareerRollChanged(newValue: number, oldValue: number): void {
+    this.setCareer();
+  }
+  
   Class: Class;
   Career: Career;
   RandomCareer: Career;
@@ -123,9 +132,16 @@ export class Character {
     return this.dicer.RollDice().PercentileResult();
   }
 
-  public rollSpecies(): void {
+  public rollSpecies(value: number = 0): void {    
+    this.SpeciesRoll = this.UseRandomRolls || value === 0 ? this.rollPercentile() : value;  
+  }
+  
+  private setSpecies(): void {
+    if(this.SpeciesRoll < 1 || this.SpeciesRoll > 100) {
+      this.SpeciesRoll = 1;
+    }
+      
     let species: Species;
-    this.SpeciesRoll = this.rollPercentile();
     if (this.SpeciesRoll >= 1 && this.SpeciesRoll <= 90)
       species = new Human();
     else if (this.SpeciesRoll >= 91 && this.SpeciesRoll <= 94)
@@ -146,8 +162,11 @@ export class Character {
     this.Movement = this.Species.Movement;
   }
 
-  public rollClassAndCareer(): void {
-    this.CareerRoll = this.rollPercentile();
+  public rollClassAndCareer(value: number = 0): void {
+    this.CareerRoll = this.UseRandomRolls || value === 0 ? this.rollPercentile() : value;    
+  }
+  
+  private setCareer(): void {
     let rolledCareer = this.Species.AvailableCareers.find((ac) => { return ac.MinimumRange <= this.CareerRoll && this.CareerRoll <= ac.MaximumRange });
     if (rolledCareer) {
       this.Career = rolledCareer.Career;
@@ -158,12 +177,12 @@ export class Character {
 
   public rollCharacteristics(): void {
     this.Characteristics = [];
-    constCharacteristics.forEach((characteristic) => {
+    CharacteristicDescriptions.Characteristics.forEach((characteristic) => {
       this.addCharacteristic(characteristic, this.rollSum());
     });
   }
 
-  private addCharacteristic(type: string, score: number): void {
+  public addCharacteristic(type: string, score: number): void {
     let characteristicType = CharacteristicType[type];
     let speciesCharacteristicScore = this.Species[type];
     let canBeAdvanced = this.Career.Characteristics.some((c) => { return c === characteristicType; });

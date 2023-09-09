@@ -1,6 +1,6 @@
 import { Career, Scholar, Merchant } from './../objects/career';
 import { DialogController } from 'aurelia-dialog';
-import { autoinject } from 'aurelia-framework';
+import {autoinject, computedFrom} from 'aurelia-framework';
 import { Character } from '../objects/character';
 import { CharacteristicType } from '../objects/characteristicType';
 
@@ -10,6 +10,11 @@ export class SelectCareer {
   availableCareers: Career[] = [];
   selectedCareer: Career = null;
 
+  @computedFrom('character', 'character.Career', 'character.Career.Description', 'selectedCareer', 'selectedCareer.Description')
+  get doesGrantBonus(): boolean {
+    return this.character.RandomCareer.Description === this.selectedCareer.Description;
+  }
+  
   get WeaponSkill():boolean{
     return this.selectedCareer.Characteristics.some( (c) => { return c === CharacteristicType.WeaponSkill; });
   }
@@ -56,11 +61,19 @@ export class SelectCareer {
     this.character = character;
     this.availableCareers = [...this.character.Species.AvailableCareers.map(c => c.Career)];
     this.character.rollClassAndCareer();
-    this.selectedCareer = this.availableCareers.find((c)=> {return c.Description === this.character.RandomCareer.Description; });
+    this.resync();
   }
 
   confirmCareer():void{
     this.character.selectCareer(this.selectedCareer);
     this.dialogController.ok();
+  }
+
+  findCareer(career: Career): Career {
+    return this.availableCareers.find((c)=> {return c.Description === career.Description; });
+  }
+  
+  resync():void {
+    this.selectedCareer = this.findCareer(this.character.RandomCareer);
   }
 }

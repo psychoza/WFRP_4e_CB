@@ -1,5 +1,5 @@
 import { DialogController } from 'aurelia-dialog';
-import { autoinject } from 'aurelia-framework';
+import {autoinject, computedFrom} from 'aurelia-framework';
 import { Character } from '../objects/character';
 import { Skill, ISkill } from '../objects/skill';
 import { sortArrayByProperty } from '../utilities/array-utilities';
@@ -12,8 +12,9 @@ export class SelectSpeciesSkills {
   chosenFiveAdvanceSkill: Skill = null;
   chosenThreeAdvanceSkill: Skill = null;
 
+  @computedFrom('fiveAdvanceSkills', 'fiveAdvanceSkills.length', 'threeAdvanceSkills', 'threeAdvanceSkills.length')
   get isDisabled(): boolean {
-    return this.fiveAdvanceSkills.length !== 3 && this.threeAdvanceSkills.length !== 3;
+    return this.fiveAdvanceSkills.length !== 3 || this.threeAdvanceSkills.length !== 3;
 
   }
 

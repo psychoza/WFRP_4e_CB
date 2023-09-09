@@ -8,9 +8,18 @@
       <form>
         <div class="form-row">
           <div class="form-group col">
-            <label for="randomSpecies" class="col-form-label">Random Species:</label>
-            <span id="randomSpecies" class="form-control" readonly>${character.RandomSpecies.Description}
-              (${character.SpeciesRoll})</span>
+            <label for="rollResult" class="col-form-label">Random Roll:</label>
+            <input type="number" class="form-control" id="rollResult" 
+                   min="1" max="100" disabled.bind="character.UseRandomRolls" 
+                   value.bind="character.SpeciesRoll" />
+            <button class="btn btn-outline-primary" type="button" click.delegate="RollForSpecies()" show.bind="!speciesHasBeenRolled">Roll for
+              species</button>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="col-form-label">Random Species:</label>
+            <span class="form-control" readonly>${character.RandomSpecies.Description}</span>
               <button class="btn btn-outline-primary" type="button" click.delegate="RollForSpecies()" show.bind="!speciesHasBeenRolled">Roll for
                   species</button>
           </div>
@@ -19,8 +28,7 @@
           <div class="form-row">
             <div class="form-group col">
               <label for="speciesSelect" class="col-form-label">Species</label>
-              <select attach-focus id="speciesSelect" class="form-control" value.bind="selectedSpecies"
-                change.delegate="selectSpecies($event)">
+              <select attach-focus id="speciesSelect" class="form-control" value.bind="selectedSpecies">
                 <option repeat.for="species of availableSpecies" model.bind="species">
                   ${species.Description}
                 </option>
@@ -29,7 +37,7 @@
           </div>
           <div class="form-row">
             <div class="form-group col">
-              <label for="speciesSelect" class="col-form-label">${character.Species.Description} Characteristics</label>
+              <label class="col-form-label">${selectedSpecies.Description} Characteristics</label>
               <table id="characteristics" class="table table-bordered table-sm" readonly>
                 <thead>
                   <tr>
@@ -76,34 +84,34 @@
                 <tbody>
                   <tr>
                     <td>
-                      ${character.Species.WeaponSkill}
+                      ${selectedSpecies.WeaponSkill}
                     </td>
                     <td>
-                      ${character.Species.BallisticSkill}
+                      ${selectedSpecies.BallisticSkill}
                     </td>
                     <td>
-                      ${character.Species.Strength}
+                      ${selectedSpecies.Strength}
                     </td>
                     <td>
-                      ${character.Species.Toughness}
+                      ${selectedSpecies.Toughness}
                     </td>
                     <td>
-                      ${character.Species.Initiative}
+                      ${selectedSpecies.Initiative}
                     </td>
                     <td>
-                      ${character.Species.Agility}
+                      ${selectedSpecies.Agility}
                     </td>
                     <td>
-                      ${character.Species.Dexterity}
+                      ${selectedSpecies.Dexterity}
                     </td>
                     <td>
-                      ${character.Species.Intelligence}
+                      ${selectedSpecies.Intelligence}
                     </td>
                     <td>
-                      ${character.Species.Willpower}
+                      ${selectedSpecies.Willpower}
                     </td>
                     <td>
-                      ${character.Species.Fellowship}
+                      ${selectedSpecies.Fellowship}
                     </td>
                   </tr>
                 </tbody>
@@ -112,16 +120,24 @@
           </div>
           <div class="form-row">
             <div class="form-group col">
-              <label for="skills" class="col-form-label">${selectedSpecies.Description} Skills:</label>
+              ${selectedSpecies.Description} Skills:              
               <div class="form-control" readonly>
-                <span repeat.for="skill of character.Species.Skills" id="skills">${skill.Description}<span
-                    if.bind="$last === false">, </span></span>
+                <span repeat.for="skill of selectedSpecies.Skills" id="skills">
+                  <span class="strong" if.bind="!hideStats">[${skill.CharacteristicType}]</span>
+                  ${skill.Description}<span if.bind="$last === false">, </span>
+                </span>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" checked.bind="hideStats" id="hideStats">
+                <label class="form-check-label" for="hideStats">
+                  Hide stats
+                </label>
               </div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col">
-              <label for="trappings" class="col-form-label">${selectedSpecies.Description} Talents:</label>
+              <label class="col-form-label">${selectedSpecies.Description} Talents:</label>
               <div class="form-control" readonly>
                 Under Construction...
                 <!-- <span repeat.for="talent of character.Species.Talents" id="talent">${talent.Description}<span
@@ -131,7 +147,7 @@
           </div>
           <div class="form-row">
             <div class="form-group col">
-              <label for="trappings" class="col-form-label">${selectedSpecies.Description} Trappings:</label>
+              <label class="col-form-label">${selectedSpecies.Description} Trappings:</label>
               <div class="form-control" readonly>
                 Under Construction...
                 <!-- <span repeat.for="trapping of character.Species.Trappings" id="trappings">${trapping.Description}<span
@@ -142,10 +158,15 @@
         </div>
       </form>
     </ux-dialog-body>
-    <ux-dialog-footer>
-      <button type="button" class="btn btn-success" click.trigger="dialogController.ok()" disabled.bind="!speciesHasBeenRolled">Select
-        <span show.bind="speciesHasBeenRolled">${character.Species.Description}</span></button>
-      <!-- <button  click.trigger="dialogController.cancel()">Cancel</button> -->
+    <ux-dialog-footer>      
+      <button type="button" class="btn btn-success" click.trigger="selectSpecies()" disabled.bind="!speciesHasBeenRolled">Select
+        <span show.bind="speciesHasBeenRolled">${selectedSpecies.Description}</span>
+        <span class="strong" if.bind="doesGrantBonus">(+20xp)</span></button>
+      <button type="button" class="btn btn-info" click.trigger="resync()"
+              data-toggle="tooltip" title="Resync with ${character.RandomSpecies.Description} for bonus experience."
+              if.bind="!doesGrantBonus">
+        <i class="fas fa-sync"></i> Resync
+      </button>
     </ux-dialog-footer>
   </ux-dialog>
 </template>

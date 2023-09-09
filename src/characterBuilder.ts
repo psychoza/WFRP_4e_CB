@@ -2,6 +2,7 @@ import { autoinject } from "aurelia-framework";
 import { Character } from "./objects/character";
 import { DialogService } from 'aurelia-dialog';
 
+import { SelectMode } from "./dialogs/select-mode";
 import { SelectSpecies } from './dialogs/select-species'
 import { SelectCareer } from './dialogs/select-career'
 import { SelectCharacteristics } from "./dialogs/select-characteristics";
@@ -17,13 +18,11 @@ export class CharacterBuilder {
   }
 
   attached() {
-    this.openSelectSpecies();
+    this.openSelectMode();
   }
 
-  public createCharacter() {
-    let newCharacter = new Character();
-    //newCharacter.rollANewCharacter();
-    this.character = newCharacter;
+  public createCharacter() {    
+    this.character = new Character();
   }
 
   public getCeilingValue(value) {
@@ -38,6 +37,14 @@ export class CharacterBuilder {
       return 0;
   }
 
+  openSelectMode() {
+    this.dialogService.open({ viewModel: SelectMode, model: this.character, lock: true }).whenClosed(response => {
+      if (!response.wasCancelled) {
+        this.openSelectSpecies();
+      }
+    });
+  }
+  
   openSelectSpecies() {
     this.dialogService.open({ viewModel: SelectSpecies, model: this.character, lock: true }).whenClosed(response => {
       if (!response.wasCancelled) {
@@ -78,8 +85,6 @@ export class CharacterBuilder {
         this.character.finishRollingANewCharacter();
       }
     });
-    // Allocate 40 points across 8 skills
-    // no more than 10 per skill
     // TODO: TALENTS
     // choose 1 of the 4
   }
