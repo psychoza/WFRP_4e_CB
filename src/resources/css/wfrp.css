@@ -27,4 +27,6 @@ ux-dialog-overlay.active {
   cursor: pointer;
 }
 
-
+.input[type=button]:disabled {
+  cursor: not-allowed;
+}

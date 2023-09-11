@@ -22,36 +22,36 @@ describe('Characteristic - ', () => {
     expect(stat.SpeciesScore).toBeDefined();
   });
 
-  it('has a GetTotalScore', () => {
-    expect(stat.GetTotalScore).toBeDefined();
+  it('has a TotalScore', () => {
+    expect(stat.TotalScore).toBeDefined();
   });
 
-  it('the GetTotalScore returns the starting score plus the species score', () => {
+  it('the TotalScore returns the starting score plus the species score', () => {
     stat.StartingScore = 15;
     stat.SpeciesScore = 20;
-    expect(stat.GetTotalScore()).toEqual(stat.StartingScore + stat.SpeciesScore);
+    expect(stat.TotalScore).toEqual(stat.StartingScore + stat.SpeciesScore);
   });
 
-  it('has a GetScoreBonus', () => {
-    expect(stat.GetScoreBonus).toBeDefined();
+  it('has a ScoreBonus', () => {
+    expect(stat.ScoreBonus).toBeDefined();
   });
 
   it('the GetScoreBonus returns a 3 with a TotalScore of 30', () => {
     stat.StartingScore = 10;
     stat.SpeciesScore = 20;
-    expect(stat.GetScoreBonus()).toEqual(3);
+    expect(stat.ScoreBonus).toEqual(3);
   });
 
   it('the GetScoreBonus returns a 2 with a TotalScore of 29', () => {
     stat.StartingScore = 9;
     stat.SpeciesScore = 20;
-    expect(stat.GetScoreBonus()).toEqual(2);
+    expect(stat.ScoreBonus).toEqual(2);
   });
 
   it('the GetScoreBonus returns a 4 with a TotalScore of 41', () => {
     stat.StartingScore = 11;
     stat.SpeciesScore = 30;
-    expect(stat.GetScoreBonus()).toEqual(4);
+    expect(stat.ScoreBonus).toEqual(4);
   });
 
   it('can swap scores with another characteristic', () => {
@@ -69,11 +69,11 @@ describe('Characteristic - ', () => {
     stat = new Characteristic(CharacteristicType.WeaponSkill,'test', 18, 20);
     let stat2 = new Characteristic(CharacteristicType.BallisticSkill,'best', 2, 20);
     stat.SwapStartingScores(stat2);
-    expect(stat.HasOriginalScore()).toEqual(false);
-    expect(stat2.HasOriginalScore()).toEqual(false);
+    expect(stat.HasOriginalScore).toEqual(false);
+    expect(stat2.HasOriginalScore).toEqual(false);
     stat.SwapStartingScores(stat2);
-    expect(stat.HasOriginalScore()).toEqual(true);
-    expect(stat2.HasOriginalScore()).toEqual(true);
+    expect(stat.HasOriginalScore).toEqual(true);
+    expect(stat2.HasOriginalScore).toEqual(true);
   });
 
   it('it can be advanced', () => {

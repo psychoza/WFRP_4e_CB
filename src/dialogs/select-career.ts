@@ -1,8 +1,8 @@
-import { Career, Scholar, Merchant } from './../objects/career';
 import { DialogController } from 'aurelia-dialog';
 import {autoinject, computedFrom} from 'aurelia-framework';
 import { Character } from '../objects/character';
 import { CharacteristicType } from '../objects/characteristicType';
+import {Career} from "../objects/career";
 
 @autoinject()
 export class SelectCareer {

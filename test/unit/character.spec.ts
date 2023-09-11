@@ -1,10 +1,8 @@
 import { Career } from '../../src/objects/career';
 import { Character } from '../../src/objects/character';
-import { WoodElf } from '../../src/objects/species';
-import { Academics, Rogues, Scholar, Outlaw } from '../../src/objects/career';
 import { SkillLibrary } from '../../src/objects/skillLibrary';
 import { CharacteristicType } from '../../src/objects/characteristicType';
-import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
+import { WoodElf } from "../../src/objects/species/woodElf";
 
 describe('Character - ', () => {
   let character: Character = null;
@@ -53,9 +51,9 @@ describe('Character - ', () => {
     character.rollANewCharacter();
     let c = character.Characteristics[0];
     c.Advances = 10;
-    expect(c.GetInitialScore).toBeDefined();
-    expect(c.GetInitialScore()).toEqual(c.StartingScore + c.SpeciesScore);
-    expect(c.GetTotalScore()).toEqual(c.StartingScore + c.SpeciesScore + c.Advances);
+    expect(c.InitialScore).toBeDefined();
+    expect(c.InitialScore).toEqual(c.StartingScore + c.SpeciesScore);
+    expect(c.TotalScore).toEqual(c.StartingScore + c.SpeciesScore + c.Advances);
   });
 
   describe('Species - ', () => {
@@ -90,16 +88,16 @@ describe('Character - ', () => {
       setFakeSumDicResult(10);
       setFakePercentileDiceResult(1);
       character.rollANewCharacter();
-      expect(character.WeaponSkill.GetTotalScore()).toBe(30);
-      expect(character.BallisticSkill.GetTotalScore()).toBe(30);
-      expect(character.Strength.GetTotalScore()).toBe(30);
-      expect(character.Toughness.GetTotalScore()).toBe(30);
-      expect(character.Initiative.GetTotalScore()).toBe(30);
-      expect(character.Agility.GetTotalScore()).toBe(30);
-      expect(character.Dexterity.GetTotalScore()).toBe(30);
-      expect(character.Intelligence.GetTotalScore()).toBe(30);
-      expect(character.Willpower.GetTotalScore()).toBe(30);
-      expect(character.Fellowship.GetTotalScore()).toBe(30);
+      expect(character.WeaponSkill.TotalScore).toBe(30);
+      expect(character.BallisticSkill.TotalScore).toBe(30);
+      expect(character.Strength.TotalScore).toBe(30);
+      expect(character.Toughness.TotalScore).toBe(30);
+      expect(character.Initiative.TotalScore).toBe(30);
+      expect(character.Agility.TotalScore).toBe(30);
+      expect(character.Dexterity.TotalScore).toBe(30);
+      expect(character.Intelligence.TotalScore).toBe(30);
+      expect(character.Willpower.TotalScore).toBe(30);
+      expect(character.Fellowship.TotalScore).toBe(30);
 
       expect(character.Fate).toEqual(2);
       expect(character.Fortune).toEqual(2);
@@ -108,9 +106,9 @@ describe('Character - ', () => {
       expect(character.ExtraPoints).toEqual(3);
       expect(character.Movement).toEqual(4);
 
-      let strengthBonus = character.Strength.GetScoreBonus();
-      let toughnessBonus = character.Toughness.GetScoreBonus();
-      let willpowerBonus = character.Willpower.GetScoreBonus();
+      let strengthBonus = character.Strength.ScoreBonus;
+      let toughnessBonus = character.Toughness.ScoreBonus;
+      let willpowerBonus = character.Willpower.ScoreBonus;
       let expectedWounds = strengthBonus + (2 * toughnessBonus) + willpowerBonus;
       expect(character.Wounds).toEqual(expectedWounds);
     });
@@ -120,16 +118,16 @@ describe('Character - ', () => {
       setFakeSumDicResult(10);
       character.rollANewCharacter();
       expect(character.Species.Description).toBe('Halfling');
-      expect(character.WeaponSkill.GetTotalScore()).toBe(20);
-      expect(character.BallisticSkill.GetTotalScore()).toBe(40);
-      expect(character.Strength.GetTotalScore()).toBe(20);
-      expect(character.Toughness.GetTotalScore()).toBe(30);
-      expect(character.Initiative.GetTotalScore()).toBe(30);
-      expect(character.Agility.GetTotalScore()).toBe(30);
-      expect(character.Dexterity.GetTotalScore()).toBe(40);
-      expect(character.Intelligence.GetTotalScore()).toBe(30);
-      expect(character.Willpower.GetTotalScore()).toBe(40);
-      expect(character.Fellowship.GetTotalScore()).toBe(40);
+      expect(character.WeaponSkill.TotalScore).toBe(20);
+      expect(character.BallisticSkill.TotalScore).toBe(40);
+      expect(character.Strength.TotalScore).toBe(20);
+      expect(character.Toughness.TotalScore).toBe(30);
+      expect(character.Initiative.TotalScore).toBe(30);
+      expect(character.Agility.TotalScore).toBe(30);
+      expect(character.Dexterity.TotalScore).toBe(40);
+      expect(character.Intelligence.TotalScore).toBe(30);
+      expect(character.Willpower.TotalScore).toBe(40);
+      expect(character.Fellowship.TotalScore).toBe(40);
 
       expect(character.Fate).toEqual(0);
       expect(character.Fortune).toEqual(0);
@@ -138,9 +136,9 @@ describe('Character - ', () => {
       expect(character.ExtraPoints).toEqual(3);
       expect(character.Movement).toEqual(3);
 
-      let strengthBonus = character.Strength.GetScoreBonus();
-      let toughnessBonus = character.Toughness.GetScoreBonus();
-      let willpowerBonus = character.Willpower.GetScoreBonus();
+      let strengthBonus = character.Strength.ScoreBonus;
+      let toughnessBonus = character.Toughness.ScoreBonus;
+      let willpowerBonus = character.Willpower.ScoreBonus;
       let expectedWounds = (2 * toughnessBonus) + willpowerBonus;
       expect(character.Wounds).toEqual(expectedWounds);
     });
@@ -150,16 +148,16 @@ describe('Character - ', () => {
       setFakeSumDicResult(10);
       character.rollANewCharacter();
       expect(character.Species.Description).toBe('Dwarf');
-      expect(character.WeaponSkill.GetTotalScore()).toBe(40);
-      expect(character.BallisticSkill.GetTotalScore()).toBe(30);
-      expect(character.Strength.GetTotalScore()).toBe(30);
-      expect(character.Toughness.GetTotalScore()).toBe(40);
-      expect(character.Initiative.GetTotalScore()).toBe(30);
-      expect(character.Agility.GetTotalScore()).toBe(20);
-      expect(character.Dexterity.GetTotalScore()).toBe(40);
-      expect(character.Intelligence.GetTotalScore()).toBe(30);
-      expect(character.Willpower.GetTotalScore()).toBe(50);
-      expect(character.Fellowship.GetTotalScore()).toBe(20);
+      expect(character.WeaponSkill.TotalScore).toBe(40);
+      expect(character.BallisticSkill.TotalScore).toBe(30);
+      expect(character.Strength.TotalScore).toBe(30);
+      expect(character.Toughness.TotalScore).toBe(40);
+      expect(character.Initiative.TotalScore).toBe(30);
+      expect(character.Agility.TotalScore).toBe(20);
+      expect(character.Dexterity.TotalScore).toBe(40);
+      expect(character.Intelligence.TotalScore).toBe(30);
+      expect(character.Willpower.TotalScore).toBe(50);
+      expect(character.Fellowship.TotalScore).toBe(20);
 
       expect(character.Fate).toEqual(0);
       expect(character.Fortune).toEqual(0);
@@ -174,16 +172,16 @@ describe('Character - ', () => {
       setFakeSumDicResult(10);
       character.rollANewCharacter();
       expect(character.Species.Description).toBe('High Elf');
-      expect(character.WeaponSkill.GetTotalScore()).toBe(40);
-      expect(character.BallisticSkill.GetTotalScore()).toBe(40);
-      expect(character.Strength.GetTotalScore()).toBe(30);
-      expect(character.Toughness.GetTotalScore()).toBe(30);
-      expect(character.Initiative.GetTotalScore()).toBe(50);
-      expect(character.Agility.GetTotalScore()).toBe(40);
-      expect(character.Dexterity.GetTotalScore()).toBe(40);
-      expect(character.Intelligence.GetTotalScore()).toBe(40);
-      expect(character.Willpower.GetTotalScore()).toBe(40);
-      expect(character.Fellowship.GetTotalScore()).toBe(30);
+      expect(character.WeaponSkill.TotalScore).toBe(40);
+      expect(character.BallisticSkill.TotalScore).toBe(40);
+      expect(character.Strength.TotalScore).toBe(30);
+      expect(character.Toughness.TotalScore).toBe(30);
+      expect(character.Initiative.TotalScore).toBe(50);
+      expect(character.Agility.TotalScore).toBe(40);
+      expect(character.Dexterity.TotalScore).toBe(40);
+      expect(character.Intelligence.TotalScore).toBe(40);
+      expect(character.Willpower.TotalScore).toBe(40);
+      expect(character.Fellowship.TotalScore).toBe(30);
 
       expect(character.Fate).toEqual(0);
       expect(character.Fortune).toEqual(0);
@@ -198,16 +196,16 @@ describe('Character - ', () => {
       setFakeSumDicResult(10);
       character.rollANewCharacter();
       expect(character.Species.Description).toBe('Wood Elf');
-      expect(character.WeaponSkill.GetTotalScore()).toBe(40);
-      expect(character.BallisticSkill.GetTotalScore()).toBe(40);
-      expect(character.Strength.GetTotalScore()).toBe(30);
-      expect(character.Toughness.GetTotalScore()).toBe(30);
-      expect(character.Initiative.GetTotalScore()).toBe(50);
-      expect(character.Agility.GetTotalScore()).toBe(40);
-      expect(character.Dexterity.GetTotalScore()).toBe(40);
-      expect(character.Intelligence.GetTotalScore()).toBe(40);
-      expect(character.Willpower.GetTotalScore()).toBe(40);
-      expect(character.Fellowship.GetTotalScore()).toBe(30);
+      expect(character.WeaponSkill.TotalScore).toBe(40);
+      expect(character.BallisticSkill.TotalScore).toBe(40);
+      expect(character.Strength.TotalScore).toBe(30);
+      expect(character.Toughness.TotalScore).toBe(30);
+      expect(character.Initiative.TotalScore).toBe(50);
+      expect(character.Agility.TotalScore).toBe(40);
+      expect(character.Dexterity.TotalScore).toBe(40);
+      expect(character.Intelligence.TotalScore).toBe(40);
+      expect(character.Willpower.TotalScore).toBe(40);
+      expect(character.Fellowship.TotalScore).toBe(30);
 
       expect(character.Fate).toEqual(0);
       expect(character.Fortune).toEqual(0);
@@ -395,7 +393,7 @@ describe('Character - ', () => {
       character.rollANewCharacter();
       let skillType = character.Skills[0].CharacteristicType;
       let characteristic = character.Characteristics.find((c)=> { return c.CharacteristicType === skillType; });
-      expect(character.getSkillLevel(character.Skills[0])).toEqual(characteristic.GetTotalScore());
+      expect(character.getSkillLevel(character.Skills[0])).toEqual(characteristic.TotalScore);
     });
     
     it('can calculate a skills level on advances', () => {
@@ -404,7 +402,7 @@ describe('Character - ', () => {
       character.Skills[0].Advances = advances;
       let skillType = character.Skills[0].CharacteristicType;
       let characteristic = character.Characteristics.find((c)=> { return c.CharacteristicType === skillType; });
-      expect(character.getSkillLevel(character.Skills[0])).toEqual(characteristic.GetTotalScore() + advances);
+      expect(character.getSkillLevel(character.Skills[0])).toEqual(characteristic.TotalScore + advances);
     });
 
     it('has more skills from the random Class and Career of Academics - Scholar', () => {

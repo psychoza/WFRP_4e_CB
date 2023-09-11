@@ -1,15 +1,28 @@
 <template>
   <require from="./resources/css/bootstrap.min.css"></require>
-  <require from="./resources/css/bootstrap.min.css"></require>
   <require from="./resources/css/wfrp.css"></require>
   <require from="./characterBuilder"></require>
+
   <div class="container">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item" repeat.for="nav of router.navigation">
+        <a href.bind="nav.href" class="${nav.isActive ? 'nav-link active' : 'nav-link'}">${nav.title}</a>
+      </li>
+    </ul>
+    <hr>
     <div class="row">
-      <div class="col">
-        This is a test
+      <div class="col-sm">
+        <h1>${currentRouteTitle}</h1>
+      </div>
+      <div class="col-sm">
+        <h1>
+          <a href="https://github.com/psychoza/WFRP_4e_CB">
+            <i class="fa fa-github" title="WFRP_4e_CB GitHub repository"></i>
+          </a>
+        </h1>
       </div>
     </div>
+    <hr>
+    <router-view></router-view>
   </div>
-  <router-view></router-view>
-  <character-builder></character-builder>
 </template>

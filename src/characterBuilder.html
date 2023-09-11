@@ -1,237 +1,229 @@
 <template>
   <require from="./characteristicsTable"></require>
-  <require from="./skillsTable"></require>
-  <div class="container" show.bind="character.Skills.length > 0">
-    <div class="row">
-      <div class="col-sm">
-        <h1>Character Builder</h1>
-      </div>
-      <div class="col-sm">
-        <!-- <input type="button" class="btn btn-primary" click.delegate="createCharacter()" value="Create Character" /> -->
-        <!-- <input type="button" class="btn btn-danger" click.delegate="openSelectSpecies()" value="Test Select Species Dialog" /> -->
-      </div>
-      <div class="col-sm">
-        <a href="https://github.com/psychoza/WFRP_4e_CB"><img src="./resources/images/GitHub-Mark-64px.png"
-            alt="WFRP_4e_CB GitHub repository"></a>
-      </div>
+  <require from="./skillsTable"></require>  
+  <div class="container">
+    <div show.bind="character.Skills.length === 0">
+      <input type="button" class="btn btn-primary" click.delegate="openSelectMode()" value="Create Character" />
+      <input type="button" class="btn btn-secondary" value="Load Character" disabled />
     </div>
-    <hr>
-    <div class="row">
-      <div class="col-sm">
-        <span>Name:</span> <input type="text" value.bind="character.Name" />
+    <div show.bind="character.Skills.length > 0">
+      <div class="row">
+        <div class="col-sm">
+          <span>Name:</span> <input type="text" value.bind="character.Name" />
+        </div>
+        <div class="col-sm">
+          <span>Species:</span> ${character.Species.Description} (${character.SpeciesRoll})
+        </div>
+        <div class="col-sm">
+          <span>Class:</span> ${character.Class.Description} ${character.CareerRoll}
+        </div>
       </div>
-      <div class="col-sm">
-        <span>Species:</span> ${character.Species.Description} (${character.SpeciesRoll})
+      <div class="row">
+        <div class="col-sm">
+          <span>Career:</span> ${character.Career.Description}
+        </div>
+        <div class="col-sm">
+          <span>Career Level:</span> ${character.Career.Level}
+        </div>
       </div>
-      <div class="col-sm">
-        <span>Class:</span> ${character.Class.Description} ${character.CareerRoll}
+      <div class="row">
+        <div class="col-sm">
+          <span>Career Path:</span> ${character.Career.CareerPath}
+        </div>
+        <div class="col-sm">
+          <span>Status:</span> ${character.Career.Status}
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-        <span>Career:</span> ${character.Career.Description}
+      <div class="row">
+        <div class="col">
+          <span>Age:</span> <input type="text" />
+        </div>
+        <div class="col">
+          <span>Height:</span> <input type="text" />
+        </div>
+        <div class="col">
+          <span>Hair:</span> <input type="text" />
+        </div>
+        <div class="col">
+          <span>Eyes:</span> <input type="text" />
+        </div>
       </div>
-      <div class="col-sm">
-        <span>Career Level:</span> ${character.Career.Level}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-        <span>Career Path:</span> ${character.Career.CareerPath}
-      </div>
-      <div class="col-sm">
-        <span>Status:</span> ${character.Career.Status}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <span>Age:</span> <input type="text" />
-      </div>
-      <div class="col">
-        <span>Height:</span> <input type="text" />
-      </div>
-      <div class="col">
-        <span>Hair:</span> <input type="text" />
-      </div>
-      <div class="col">
-        <span>Eyes:</span> <input type="text" />
-      </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-sm">
-        <div class="row">
-          <div class="col-sm">
-            <characteristics-table characteristics.two-way="character.Characteristics"></characteristics-table>
+      <hr>
+      <div class="row">
+        <div class="col-sm">
+          <div class="row">
+            <div class="col-sm">
+              <characteristics-table characteristics.two-way="character.Characteristics"></characteristics-table>
+            </div>
+            <div class="col-sm">
+              <h6>Wounds</h6>
+              <table class="table table-bordered table-hover table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Current Wounds</th>
+                    <th scope="col">Total Wounds</th>
+                    <th scope="col">Critical Wounds</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="number" value="0"></td>
+                    <td>${character.Wounds}</td>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="col-sm">
-            <h6>Wounds</h6>
-            <table class="table table-bordered table-hover table-sm">
-              <thead>
-                <tr>
-                  <th scope="col">Current Wounds</th>
-                  <th scope="col">Total Wounds</th>
-                  <th scope="col">Critical Wounds</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><input type="number" value="0"></td>
-                  <td>${character.Wounds}</td>
-                  <td>0</td>
-                </tr>
-              </tbody>
-            </table>
+        </div>
+        <div class="col-sm">
+          <div class="row">
+            <div class="col-sm">
+              <h6>Fate</h6>
+              <table class="table table-bordered table-hover table-sm">
+                <tbody>
+                  <tr>
+                    <td>Fate</td>
+                    <td>${character.Fate}</td>
+                  </tr>
+                  <tr>
+                    <td>Fortune</td>
+                    <td>${character.Fortune}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-sm">
+              <h6>Resilience</h6>
+              <table class="table table-bordered table-hover table-sm">
+                <tbody>
+                  <tr>
+                    <td>Resilience</td>
+                    <td>Resolve</td>
+                    <td>Motivation</td>
+                  </tr>
+                  <tr>
+                    <td>${character.Resilience}</td>
+                    <td>${character.Resolve}</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-sm">
+              <h6>Experience</h6>
+              <table class="table table-bordered table-hover table-sm">
+                <tbody>
+                  <tr>
+                    <td>Current</td>
+                    <td>Spent</td>
+                    <td>Total</td>
+                  </tr>
+                  <tr>
+                    <td>${character.CurrentExperience}</td>
+                    <td>${character.SpentExperience}</td>
+                    <td>${character.Experience}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm">
+              <h6>Movement</h6>
+              <table class="table table-bordered table-hover table-sm">
+                <tbody>
+                  <tr>
+                    <td>Movement</td>
+                    <td>${character.Movement}</td>
+                    <td>Walk</td>
+                    <td>${character.Movement * 2}</td>
+                    <td>Run</td>
+                    <td>${character.Movement * 4}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm">
-        <div class="row">
-          <div class="col-sm">
-            <h6>Fate</h6>
-            <table class="table table-bordered table-hover table-sm">
-              <tbody>
-                <tr>
-                  <td>Fate</td>
-                  <td>${character.Fate}</td>
-                </tr>
-                <tr>
-                  <td>Fortune</td>
-                  <td>${character.Fortune}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-sm">
-            <h6>Resilience</h6>
-            <table class="table table-bordered table-hover table-sm">
-              <tbody>
-                <tr>
-                  <td>Resilience</td>
-                  <td>Resolve</td>
-                  <td>Motivation</td>
-                </tr>
-                <tr>
-                  <td>${character.Resilience}</td>
-                  <td>${character.Resolve}</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-sm">
-            <h6>Experience</h6>
-            <table class="table table-bordered table-hover table-sm">
-              <tbody>
-                <tr>
-                  <td>Current</td>
-                  <td>Spent</td>
-                  <td>Total</td>
-                </tr>
-                <tr>
-                  <td>${character.CurrentExperience}</td>
-                  <td>${character.SpentExperience}</td>
-                  <td>${character.Experience}</td>
-                </tr>
-              </tbody>
-            </table>
+      <hr>
+      <div class="row">
+        <div class="col mb-3" repeat.for="a of getCeilingValue(character.BasicSkills.length/13)">
+          <div class="card">
+            <h5 class="card-header bg-primary text-white">BASIC SKILLS</h5>
+            <div class="card-body">
+              <table class="table table-bordered table-hover table-sm table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      Name
+                    </th>
+                    <th colspan="2" scope="col">
+                      Characteristic
+                    </th>
+                    <th scope="col">
+                      Adv
+                    </th>
+                    <th scope="col">
+                      Skill
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr repeat.for="skill of character.BasicSkills.slice($index*13,$index*13+13)">
+                    <td class.bind="skill.CanBeAdvanced ? 'table-primary text-nowrap' : 'text-nowrap'">
+                      ${skill.Description}</td>
+                    <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.CharacteristicType}</td>
+                    <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">
+                      ${character.getCharacteristicScore(skill.CharacteristicType)}</td>
+                    <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.Advances > 0 ? skill.Advances :
+                      ''}</td>
+                    <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${character.getSkillLevel(skill)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-        <hr>
-        <div class="row">
-          <div class="col-sm">
-            <h6>Movement</h6>
-            <table class="table table-bordered table-hover table-sm">
-              <tbody>
-                <tr>
-                  <td>Movement</td>
-                  <td>${character.Movement}</td>
-                  <td>Walk</td>
-                  <td>${character.Movement * 2}</td>
-                  <td>Run</td>
-                  <td>${character.Movement * 4}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col mb-3" repeat.for="a of getCeilingValue(character.BasicSkills.length/13)">
-        <div class="card">
-          <h5 class="card-header bg-primary text-white">BASIC SKILLS</h5>
-          <div class="card-body">
-            <table class="table table-bordered table-hover table-sm table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">
-                    Name
-                  </th>
-                  <th colspan="2" scope="col">
-                    Characteristic
-                  </th>
-                  <th scope="col">
-                    Adv
-                  </th>
-                  <th scope="col">
-                    Skill
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr repeat.for="skill of character.BasicSkills.slice($index*13,$index*13+13)">
-                  <td class.bind="skill.CanBeAdvanced ? 'table-primary text-nowrap' : 'text-nowrap'">
-                    ${skill.Description}</td>
-                  <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.CharacteristicType}</td>
-                  <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">
-                    ${character.getCharacteristicScore(skill.CharacteristicType)}</td>
-                  <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.Advances > 0 ? skill.Advances :
-                    ''}</td>
-                  <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${character.getSkillLevel(skill)}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-3">
-        <div class="card">
-          <h5 class="card-header bg-primary text-white">GROUPED &amp; ADVANCED SKILLS</h5>
-          <div class="card-body">
-            <table class="table table-bordered table-hover table-sm table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">
-                    Name
-                  </th>
-                  <th colspan="2" scope="col">
-                    Characteristic
-                  </th>
-                  <th scope="col">
-                    Adv
-                  </th>
-                  <th scope="col">
-                    Skill
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr repeat.for="skill of character.AdvancedSkills">
-                  <td class.bind="skill.CanBeAdvanced ? 'table-primary text-nowrap' : 'text-nowrap'">
-                    ${skill.Description}
-                  </td>
-                  <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.CharacteristicType}</td>
-                  <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">
-                    ${character.getCharacteristicScore(skill.CharacteristicType)}</td>
-                  <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.Advances > 0 ? skill.Advances :
-                    ''}
-                  </td>
-                  <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${character.getSkillLevel(skill)}</td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="col mb-3">
+          <div class="card">
+            <h5 class="card-header bg-primary text-white">GROUPED &amp; ADVANCED SKILLS</h5>
+            <div class="card-body">
+              <table class="table table-bordered table-hover table-sm table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      Name
+                    </th>
+                    <th colspan="2" scope="col">
+                      Characteristic
+                    </th>
+                    <th scope="col">
+                      Adv
+                    </th>
+                    <th scope="col">
+                      Skill
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr repeat.for="skill of character.AdvancedSkills">
+                    <td class.bind="skill.CanBeAdvanced ? 'table-primary text-nowrap' : 'text-nowrap'">
+                      ${skill.Description}
+                    </td>
+                    <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.CharacteristicType}</td>
+                    <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">
+                      ${character.getCharacteristicScore(skill.CharacteristicType)}</td>
+                    <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${skill.Advances > 0 ? skill.Advances :
+                      ''}
+                    </td>
+                    <td class.bind="skill.CanBeAdvanced ? 'table-primary' : ''">${character.getSkillLevel(skill)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

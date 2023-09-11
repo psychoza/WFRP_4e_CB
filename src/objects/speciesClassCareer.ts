@@ -1,4 +1,6 @@
-import { Class, Career } from './career';
+import { Career } from './career';
+import { Class } from './class';
+
 export class SpeciesClassCareer {
   Class: Class;
   Career: Career;

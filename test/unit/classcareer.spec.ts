@@ -1,7 +1,7 @@
-import { Characteristic } from '../../src/objects/characteristic';
-import { Career } from '../../src/objects/career';
-import { Academics, Rogues, Scholar, Outlaw } from '../../src/objects/career';
 import { CharacteristicType } from '../../src/objects/characteristicType';
+import {Academics, Rogues} from "../../src/objects/class";
+import {Scholar} from "../../src/objects/careers/scholar";
+import {Outlaw} from "../../src/objects/careers/outlaw";
 
 //TODO: Each Class has a trappings list.
 //TODO: Each Career has a trappings list.

@@ -18,7 +18,7 @@ export class CharacterBuilder {
   }
 
   attached() {
-    this.openSelectMode();
+    //this.openSelectMode();
   }
 
   public createCharacter() {    

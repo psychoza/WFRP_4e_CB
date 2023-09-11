@@ -14,7 +14,7 @@ export function configure(aurelia: Aurelia): void {
       config.settings.centerHorizontalOnly = false;
       config.settings.startingZIndex = 5;
       config.settings.keyboard = true;
-    });;
+    });
 
   if (environment.testing) {
     aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));

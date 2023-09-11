@@ -1,15 +1,19 @@
 import { autoinject, computedFrom, observable } from 'aurelia-framework';
 import { Characteristic } from './characteristic';
 import { Dicer } from "./dicer";
-import { Species, Dwarf, Halfling, HighElf, Human, WoodElf } from "./species";
-import { Class, Career, Scholar } from './career';
+import { Species } from "./species";
+import { Career } from './career';
+import { Class } from './class';
 import { Skill } from './skill';
 import { SkillLibrary } from './skillLibrary';
 import {CharacteristicType} from './characteristicType';
 import { sortArrayByProperty, setArrayPropertyToNumber } from '../utilities/array-utilities';
 import {CharacteristicDescriptions} from "./characteristicDescriptions";
-
-//const constCharacteristics: string[] = ['WeaponSkill', 'BallisticSkill', 'Strength', 'Toughness', 'Initiative', 'Agility', 'Dexterity', 'Intelligence', 'Willpower', 'Fellowship'];
+import {Human} from "./species/human";
+import {Halfling} from "./species/halfling";
+import {Dwarf} from "./species/dwarf";
+import {HighElf} from "./species/highElf";
+import {WoodElf} from "./species/woodElf";
 
 export class Character {
   private dicer: Dicer = null;

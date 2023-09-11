@@ -1,7 +1,12 @@
 import {DialogController} from 'aurelia-dialog';
 import {autoinject, computedFrom} from 'aurelia-framework';
 import {Character} from '../objects/character';
-import {Dwarf, Halfling, HighElf, Human, Species, WoodElf} from '../objects/species';
+import {Species} from "../objects/species";
+import {Human} from "../objects/species/human";
+import {Dwarf} from "../objects/species/dwarf";
+import {Halfling} from "../objects/species/halfling";
+import {HighElf} from "../objects/species/highElf";
+import {WoodElf} from "../objects/species/woodElf";
 
 @autoinject()
 export class SelectSpecies {
