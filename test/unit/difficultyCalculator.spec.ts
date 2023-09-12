@@ -21,8 +21,17 @@ describe('Difficulty Calculator - ', () => {
           return c.actionType == ActionType.RangedAttack; 
         });
 
-    it('has 18 ranged attack challenges', () => {
-      expect(rangedChallenges.length).toEqual(18);
+    it('has 21 ranged attack challenges', () => {
+      expect(rangedChallenges.length).toEqual(21);
+    });
+
+    const meleeChallenges = calculator.challenges
+        .filter((c) => {
+          return c.actionType == ActionType.MeleeAttack;
+        });
+
+    it('has 11 melee attack challenges', () => {
+      expect(meleeChallenges.length).toEqual(11);
     });
   });
   
@@ -98,6 +107,22 @@ describe('Difficulty Calculator - ', () => {
       calculator.selectChallenge(extremeChallenge);
       expect(calculator.selectedChallenges.length).toEqual(2);
       expect(calculator.challengeScore).toEqual(-30);
+    });
+
+    it('when adding ranged challenge and then melee expect only the melee to remain - ', () => {
+      const monstrousTargetChallenge = calculator.challenges.find((c) => {
+        return c.actionType == ActionType.RangedAttack &&
+            c.modifierGroup == ModifierGroup.RangedTargetSize &&
+            c.modifier == 60;
+      });
+      const meleeDarkChallenge = calculator.challenges.find((c) => {
+        return c.actionType == ActionType.MeleeAttack &&
+            c.modifierGroup == ModifierGroup.MeleeDarkness;
+      });
+      calculator.selectChallenge(monstrousTargetChallenge);
+      calculator.selectChallenge(meleeDarkChallenge);
+      expect(calculator.selectedChallenges.length).toEqual(1);
+      expect(calculator.challengeScore).toEqual(-20);
     });
   });
 });

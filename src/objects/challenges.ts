@@ -23,8 +23,17 @@ export enum ModifierGroup {
   RangedTargetGroup,
   RangedTargetDistance,
   RangedTargetConcealed,
+  RangedTargetCover,
   RangedAiming,
-  RangedMoving
+  RangedMoving,
+  MeleeOutnumber,
+  MeleeFlanking,
+  MeleeVsProne,
+  MeleeWhileProne,
+  MeleeOffhand,
+  MeleeSurroundings,
+  MeleePolearm,
+  MeleeDarkness,  
 }
 
 export class Challenges {
@@ -45,8 +54,23 @@ export class Challenges {
     new Challenge(ActionType.RangedAttack, ModifierGroup.RangedTargetDistance, 'Shooting a target at Extreme Range (Range * 3).', -30),
     new Challenge(ActionType.RangedAttack, ModifierGroup.RangedTargetConcealed, 'Shooting targets concealed by fog, mist, or shadow.', -20),
     new Challenge(ActionType.RangedAttack, ModifierGroup.RangedTargetConcealed, 'Shooting in darkness.', -30),
+    new Challenge(ActionType.RangedAttack, ModifierGroup.RangedTargetCover, 'Target in soft cover (behind a hedge).', -10),
+    new Challenge(ActionType.RangedAttack, ModifierGroup.RangedTargetCover, 'Target in medium cover (behind a wooden fence).', -20),
+    new Challenge(ActionType.RangedAttack, ModifierGroup.RangedTargetCover, 'Target in hard cover (behind a stone wall).', -30),
     new Challenge(ActionType.RangedAttack, ModifierGroup.RangedAiming, 'Shooting when you spent your last Action aiming.', 20),
     new Challenge(ActionType.RangedAttack, ModifierGroup.RangedMoving, 'Shooting on a Round where you also use your Move.', -10),
+    
+    new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeSurroundings, 'Attacking whilst in the mud, heavy rain, or difficult terrain.', -10),
+    new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeSurroundings, 'Attacking in a monsoon, hurricane, or other extreme weather.', -20),
+    new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeSurroundings, 'Attacking or dodging in the deep snow, water, or other arduous terrain.', -30),
+    new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeOutnumber, 'Attacking an opponent you outnumber 3 to 1.', 40),
+    new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeOutnumber, 'Attacking an opponent you outnumber 2 to 1.', 20),
+    new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeFlanking, 'Attacking an Engaged opponent in the sides or rear.', 20),
+    new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeVsProne, 'Attacking a target with the Prone condition.', 20),
+    new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeWhileProne, 'Attacking whilst you have the Prone condition, or otherwise beneath your target.', -10),
+    new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeOffhand, 'Using a weapon in your offhand.', -20),
+    new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleePolearm, 'Fighting in an enclosed space with a weapon with a Length longer than Medium.', -20),
+    new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeDarkness, 'Close combat in darkness.', -20),
 
   ];
 
