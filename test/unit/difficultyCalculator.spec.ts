@@ -1,5 +1,5 @@
 import {DifficultyCalculator} from "../../src/difficultyCalculator";
-import {ActionType, ModifierGroup} from "../../src/objects/challenges";
+import {ActionType, Challenges, ModifierGroup} from "../../src/objects/challenges";
 
 describe('Difficulty Calculator - ', () => {
   let calculator = new DifficultyCalculator();
@@ -13,10 +13,10 @@ describe('Difficulty Calculator - ', () => {
   
   describe('Challenges - ', () => {     
     it('has challenges', () => {
-      expect(calculator.challenges).toBeDefined();
+      expect(Challenges.challenges).toBeDefined();
     });
 
-    const rangedChallenges = calculator.challenges
+    const rangedChallenges = Challenges.challenges
         .filter((c) => { 
           return c.actionType == ActionType.RangedAttack; 
         });
@@ -25,7 +25,7 @@ describe('Difficulty Calculator - ', () => {
       expect(rangedChallenges.length).toEqual(21);
     });
 
-    const meleeChallenges = calculator.challenges
+    const meleeChallenges = Challenges.challenges
         .filter((c) => {
           return c.actionType == ActionType.MeleeAttack;
         });
@@ -46,7 +46,7 @@ describe('Difficulty Calculator - ', () => {
     });
     
     it('when adding ranged target Monstrous expect score 60 - ', () => {
-      const monstrousTargetChallenge = calculator.challenges.find((c) => {
+      const monstrousTargetChallenge = Challenges.challenges.find((c) => {
         return c.actionType == ActionType.RangedAttack &&
             c.modifierGroup == ModifierGroup.RangedTargetSize &&
             c.modifier == 60;
@@ -58,12 +58,12 @@ describe('Difficulty Calculator - ', () => {
     });
     
     it('when adding ranged target Monstrous and then Enormous expect score 40 - ', () => {
-      const monstrousTargetChallenge = calculator.challenges.find((c) => {
+      const monstrousTargetChallenge = Challenges.challenges.find((c) => {
         return c.actionType == ActionType.RangedAttack &&
             c.modifierGroup == ModifierGroup.RangedTargetSize &&
             c.modifier == 60;
       });
-      const enormousTargetChallenge = calculator.challenges.find((c) => {
+      const enormousTargetChallenge = Challenges.challenges.find((c) => {
         return c.actionType == ActionType.RangedAttack &&
             c.modifierGroup == ModifierGroup.RangedTargetSize &&
             c.modifier == 40;
@@ -76,12 +76,12 @@ describe('Difficulty Calculator - ', () => {
     });
 
     it('when adding ranged target Monstrous and then range Point Blank expect score 60 - ', () => {
-      const monstrousTargetChallenge = calculator.challenges.find((c) => {
+      const monstrousTargetChallenge = Challenges.challenges.find((c) => {
         return c.actionType == ActionType.RangedAttack &&
             c.modifierGroup == ModifierGroup.RangedTargetSize &&
             c.modifier == 60;
       });
-      const pointBlankChallenge = calculator.challenges.find((c) => {
+      const pointBlankChallenge = Challenges.challenges.find((c) => {
         return c.actionType == ActionType.RangedAttack &&
             c.modifierGroup == ModifierGroup.RangedTargetDistance &&
             c.modifier == 40;
@@ -93,12 +93,12 @@ describe('Difficulty Calculator - ', () => {
     });
 
     it('when adding ranged target Tiny and then range Extreme expect score -30 - ', () => {
-      const tinyTargetChallenge = calculator.challenges.find((c) => {
+      const tinyTargetChallenge = Challenges.challenges.find((c) => {
         return c.actionType == ActionType.RangedAttack &&
             c.modifierGroup == ModifierGroup.RangedTargetSize &&
             c.modifier == -30;
       });
-      const extremeChallenge = calculator.challenges.find((c) => {
+      const extremeChallenge = Challenges.challenges.find((c) => {
         return c.actionType == ActionType.RangedAttack &&
             c.modifierGroup == ModifierGroup.RangedTargetDistance &&
             c.modifier == -30;
@@ -110,12 +110,12 @@ describe('Difficulty Calculator - ', () => {
     });
 
     it('when adding ranged challenge and then melee expect only the melee to remain - ', () => {
-      const monstrousTargetChallenge = calculator.challenges.find((c) => {
+      const monstrousTargetChallenge = Challenges.challenges.find((c) => {
         return c.actionType == ActionType.RangedAttack &&
             c.modifierGroup == ModifierGroup.RangedTargetSize &&
             c.modifier == 60;
       });
-      const meleeDarkChallenge = calculator.challenges.find((c) => {
+      const meleeDarkChallenge = Challenges.challenges.find((c) => {
         return c.actionType == ActionType.MeleeAttack &&
             c.modifierGroup == ModifierGroup.MeleeDarkness;
       });
