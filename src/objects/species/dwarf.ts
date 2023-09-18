@@ -48,6 +48,12 @@ import {PitFighter} from "../careers/pitFighter";
 import {Protagonist} from "../careers/protagonist";
 import {Soldier} from "../careers/soldier";
 import {Slayer} from "../careers/slayer";
+import {Artillerist} from "../careers/expansions/upInArms/artillerist";
+import {Cartographer} from "../careers/expansions/upInArms/cartographer";
+import {CampFollower} from "../careers/expansions/upInArms/campFollower";
+import {Halberdier} from "../careers/expansions/upInArms/halberdier";
+import {Handgunner} from "../careers/expansions/upInArms/handgunner";
+import {SiegeSpecialist} from "../careers/expansions/upInArms/siegeSpecialist";
 
 export class Dwarf extends Species {
     Description: string = "Dwarf";
@@ -112,6 +118,21 @@ export class Dwarf extends Species {
         this.AvailableCareers.push(new SpeciesClassCareer(new Protagonist(), 91, 93));
         this.AvailableCareers.push(new SpeciesClassCareer(new Soldier(), 94, 96));
         this.AvailableCareers.push(new SpeciesClassCareer(new Slayer(), 97, 100));
+
+        //
+        //Expansions
+        //
+
+        //Up In Arms
+        this.AvailableCareers.push(new SpeciesClassCareer(new Artillerist(), 0, 0));
+        this.AvailableCareers.push(new SpeciesClassCareer(new Cartographer(), 0, 0));
+        this.AvailableCareers.push(new SpeciesClassCareer(new CampFollower(), 0, 0));
+        this.AvailableCareers.push(new SpeciesClassCareer(new Halberdier(), 0, 0));
+        this.AvailableCareers.push(new SpeciesClassCareer(new Handgunner(), 0, 0));
+        this.AvailableCareers.push(new SpeciesClassCareer(new SiegeSpecialist(), 0, 0));
+
+        this.AvailableCareers.sort((a, b) => (a.Description < b.Description) ? -1 : 1);
+
         this.Skills = [
             SkillLibrary.ConsumeAlcohol,
             SkillLibrary.Cool,
