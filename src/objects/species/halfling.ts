@@ -49,6 +49,13 @@ import {Thief} from "../careers/thief";
 import {Guard} from "../careers/guard";
 import {PitFighter} from "../careers/pitFighter";
 import {Soldier} from "../careers/soldier";
+import {Artillerist} from "../careers/expansions/upInArms/artillerist";
+import {Cartographer} from "../careers/expansions/upInArms/cartographer";
+import {CampFollower} from "../careers/expansions/upInArms/campFollower";
+import {Archer} from "../careers/expansions/upInArms/archer";
+import {Halberdier} from "../careers/expansions/upInArms/halberdier";
+import {Handgunner} from "../careers/expansions/upInArms/handgunner";
+import {SiegeSpecialist} from "../careers/expansions/upInArms/siegeSpecialist";
 
 export class Halfling extends Species {
     Description: string = "Halfling";
@@ -114,6 +121,22 @@ export class Halfling extends Species {
         this.AvailableCareers.push(new SpeciesClassCareer(new Guard(), 95, 96));
         this.AvailableCareers.push(new SpeciesClassCareer(new PitFighter(), 97, 97));
         this.AvailableCareers.push(new SpeciesClassCareer(new Soldier(), 98, 100));
+
+        //
+        //Expansions
+        //
+
+        //Up In Arms
+        this.AvailableCareers.push(new SpeciesClassCareer(new Artillerist(), 0, 0));
+        this.AvailableCareers.push(new SpeciesClassCareer(new Cartographer(), 0, 0));
+        this.AvailableCareers.push(new SpeciesClassCareer(new CampFollower(), 0, 0));
+        this.AvailableCareers.push(new SpeciesClassCareer(new Archer(), 0, 0));
+        this.AvailableCareers.push(new SpeciesClassCareer(new Halberdier(), 0, 0));
+        this.AvailableCareers.push(new SpeciesClassCareer(new Handgunner(), 0, 0));
+        this.AvailableCareers.push(new SpeciesClassCareer(new SiegeSpecialist(), 0, 0));
+
+        this.AvailableCareers.sort((a, b) => (a.Description < b.Description) ? -1 : 1);
+
         this.Skills = [
             SkillLibrary.Charm,
             SkillLibrary.ConsumeAlcohol,
