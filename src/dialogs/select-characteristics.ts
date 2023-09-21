@@ -7,6 +7,7 @@ import {CharacteristicDescriptions} from "../objects/characteristicDescriptions"
 @autoinject()
 export class SelectCharacteristics {
   character: Character;
+  allCharacteristicsAllocated: boolean = false;
   swapTargetCharacteristic: Characteristic;
   @observable currentRoll: number = 2;
   currentRollChanged(newValue: number, oldValue: number) {
@@ -19,14 +20,22 @@ export class SelectCharacteristics {
   }
   currentManualIndex: number = 0;
 
-  @computedFrom('isDoneAdding', 'character', 'character.UseRandomRolls')
-  get showAddForm(): boolean {
-    return !this.character.UseRandomRolls && !this.isDoneAdding;
+  @computedFrom('allCharacteristicsAllocated')
+  get disableConfirm(): boolean {      
+    return !this.allCharacteristicsAllocated;
   }
   
   @computedFrom('currentManualIndex')
   get isDoneAdding(): boolean {
-    return this.currentManualIndex === 10;
+    return this.currentManualIndex === 10 || this.character.UseRandomRolls;
+  }
+  
+  get totalAdvances(): number {
+      let currentAdvances:number = 0;
+      this.character.Characteristics.forEach((s) => {
+          currentAdvances += Number.parseInt(s.Advances.toString());
+      });
+      return currentAdvances;
   }
   
   constructor(public dialogController: DialogController) {
@@ -57,6 +66,31 @@ export class SelectCharacteristics {
     this.currentManualIndex++;
     this.currentRoll = 2;
   }
+
+    updateAdvances(index: number) {
+        let characteristic = this.character.Characteristics[index];
+        let currentAdvances = 0;
+        this.character.Characteristics.forEach((c) => {
+            if (c != characteristic)
+                currentAdvances += Number.parseInt(c.Advances.toString());
+        });
+
+        if (characteristic.Advances > 5)
+            characteristic.Advances = 5;
+        else if (characteristic.Advances < 0)
+            characteristic.Advances = 0;
+        else
+            characteristic.Advances = Number.parseInt(characteristic.Advances.toString());
+
+        let remainingAdvances = 5 - currentAdvances;
+        if (remainingAdvances > 5)
+            remainingAdvances = 5;
+
+        if (characteristic.Advances > remainingAdvances)
+            characteristic.Advances = remainingAdvances;
+
+        this.allCharacteristicsAllocated = characteristic.Advances + currentAdvances === 5;
+    }
   
   list: HTMLElement;
   itemDraggedTo: Characteristic;

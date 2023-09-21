@@ -1,13 +1,19 @@
 export interface ITalent {
-  Description: string;
+    Name: string;
+    Description: string;
+    ShortDescription: string;
 }
 
 export class Talent {
-  Description: string;
+    Name: string;
+    Description: string;
+    ShortDescription: string;
 
-  constructor();
-  constructor(obj: ITalent);
-  constructor(obj: ITalent = {} as ITalent) {
-    this.Description = obj.Description || "";
-  }
+    constructor();
+    constructor(obj: ITalent);
+    constructor(obj: ITalent = {} as ITalent) {
+        this.Name = obj.Name || "";
+        this.Description = obj.Description || "";
+        this.ShortDescription = obj.ShortDescription || "";
+    }
 }

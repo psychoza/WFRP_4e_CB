@@ -28,6 +28,8 @@
             <th scope="col">Roll</th>
             <th scope="col">+</th>
             <th scope="col">${character.Species.Description}</th>
+            <th scope="col">+</th>
+            <th scope="col"><mark>${5 - totalAdvances}</mark>/5 Advances </th>
             <th scope="col">=</th>
             <th scope="col">Total</th>
           </tr>
@@ -44,17 +46,28 @@
                 </dragzone>              
             </td>
             <td>+</td>
-            <td>${characteristic.SpeciesScore}</td>
+            <td class="text-center">${characteristic.SpeciesScore}</td>
+            <td>+</td>
+            <td class="text-center">
+                <span show.bind="!characteristic.CanBeAdvanced" class="pr-3">0</span>
+                <input class="form-control text-center" attach-focus.bind="$index == 0" 
+                       type="number" min="0" max="5"
+                       value.bind="characteristic.Advances" change.delegate="updateAdvances($index)"
+                       show.bind="characteristic.CanBeAdvanced" />
+            </td>
             <td>=</td>
-            <td>${characteristic.InitialScore} <span class="fa fa-skull-crossbones fa-xs"
+            <td>${characteristic.TotalScore} <span class="fa fa-skull-crossbones fa-xs"
                 show.bind="characteristic.CanBeAdvanced"></span></td>
           </tr>
         </tbody>
       </table>
     </ux-dialog-body>
     <ux-dialog-footer>
-      <button type="button" class="btn btn-success" click.trigger="dialogController.ok()" disabled.bind="showAddForm">Confirm
-        Characteristics</button>
+      <button type="button" class="btn btn-success" click.trigger="dialogController.ok()" 
+              disabled.bind="disableConfirm" show.bind="isDoneAdding" 
+              data-toggle="tooltip" data-placement="top" title="Allocate your advances.">
+          Confirm Characteristics
+      </button>
     </ux-dialog-footer>
   </ux-dialog>
 </template>

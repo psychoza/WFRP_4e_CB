@@ -33,7 +33,10 @@ export class Characteristic {
 
   @computedFrom('StartingScore','SpeciesScore','Advances')
   get TotalScore(): number {
-    return this.StartingScore + this.SpeciesScore + this.Advances;
+    let num1 = Number.parseInt(this.StartingScore.toString()); 
+    let num2 = Number.parseInt(this.SpeciesScore.toString()); 
+    let num3 = Number.parseInt(this.Advances.toString());
+    return num1 + num2 + num3;
   };
 
   @computedFrom('TotalScore')
