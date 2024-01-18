@@ -3,6 +3,8 @@
   modifierGroup: ModifierGroup;
   description: string;
   modifier: number;
+  isSelected: boolean = false;
+  style: string = '';
 
   constructor(type: ActionType, group: ModifierGroup, desc: string, mod: number) {
     this.actionType = type;
@@ -71,7 +73,5 @@ export class Challenges {
     new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeOffhand, 'Using a weapon in your offhand.', -20),
     new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleePolearm, 'Fighting in an enclosed space with a weapon with a Length longer than Medium.', -20),
     new Challenge(ActionType.MeleeAttack, ModifierGroup.MeleeDarkness, 'Close combat in darkness.', -20),
-
   ];
-
 }

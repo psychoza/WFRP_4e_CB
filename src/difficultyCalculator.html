@@ -1,50 +1,77 @@
 ﻿<template>
-  <div class="form-row">
-    <div class="form-group col">
-      <select id="actionTypes" class="form-control" value.bind="actionType">
-        <option model.bind="null">Select action</option>
-        <option model.bind="0">Melee Attack</option>
-        <option model.bind="1">Ranged Attack</option>
-      </select>
+    <div class="${challengeStyle}" role="alert">
+        <h3 class="alert-heading text-center mb-0"><span class="strong">${challengeDescription} (${challengeScore >= 0 ? '+' :
+            ''}${challengeScore})</span></h3>
     </div>
-    <div class="form-group col">
-      <select id="difficultyChallenges" class="form-control" value.bind="selectedChallenge">
-        <option repeat.for="challenge of availableChallenges" model.bind="challenge">
-          ${challenge.description}
-        </option>
-      </select>
-    </div>
-    <div class="form-group col">
-      <button id="addRanged" type="button" class="btn btn-success"
-              click.delegate="selectChallenge(selectedChallenge)">
-        Add
-      </button>
-    </div>
-  </div>
 
-  <div class="${challengeStyle}" role="alert">
-    <h3 class="alert-heading text-center mb-0">${challengeDescription} ${challengeScore > 0 ? '+' : ''}${challengeScore}</h3>
-  </div>  
-  
-  <table class="table">
-    <thead>
-    <tr>
-      <th scope="col">Modifier</th>
-      <th scope="col">Description</th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr repeat.for="challenge of selectedChallenges">
-      <td>${challenge.modifier}</td>
-      <td>${challenge.description}</td>
-      <td>
-        <button type="button" class="btn btn-outline-danger"
-                click.delegate="removeChallenge(challenge)">
-          <i class="fas fa-times"></i>
-        </button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+    <div class="form-row">
+        <div class="form-group col">
+            <h3>
+                What type of action are you performing?
+            </h3>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="actionTypes" id="actionTypeMelee" value.bind="0"
+                       checked.bind="actionType">
+                <label class="form-check-label" for="actionTypeMelee">
+                    Melee attack
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="actionTypes" id="actionTypeRanged" value.bind="1"
+                       checked.bind="actionType">
+                <label class="form-check-label" for="actionTypeRanged">
+                    Ranged attack
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-row" if.bind="actionType !== null">
+        <div class="form-group col">
+            <h3>
+                What conditions describe the attack?
+            </h3>
+            <div class="form-check ${challenge.style}" repeat.for="challenge of availableChallenges">
+                <hr if.bind="challenge.style !== ''" />
+                <input class="form-check-input"
+                       type="checkbox"
+                       value.bind="challenge"
+                       id="challenge${challenge.actionType}${challenge.modifierGroup}${challenge.modifier}"
+                       checked.bind="challenge.isSelected"
+                       change.delegate="challengeOnChanged(challenge)">
+                <label class="form-check-label"
+                       for="challenge${challenge.actionType}${challenge.modifierGroup}${challenge.modifier}">
+                    ${challenge.description}
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <table class="table" if.bind="actionType !== null && selectedChallenges.length > 0">
+        <thead>
+        <tr>
+            <th scope="col">Modifier</th>
+            <th scope="col">Description</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr repeat.for="challenge of selectedChallenges">
+            <td>${challenge.modifier}</td>
+            <td>${challenge.description}</td>
+            <td>
+                <button type="button" class="btn btn-outline-danger"
+                        click.delegate="removeChallenge(challenge)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="${challengeStyle}" role="alert">
+        <h3 class="alert-heading text-center mb-0"><span class="strong">${challengeDescription} (${challengeScore >= 0 ? '+' :
+            ''}${challengeScore})</span></h3>
+    </div>
+
 </template>

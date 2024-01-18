@@ -28,7 +28,7 @@ export class App {
         route: '/difficultyCalculator',
         name: 'difficultyCalculator',
         moduleId: PLATFORM.moduleName('difficultyCalculator'),
-        title: 'Difficulty Calculator',
+        title: 'Combat Difficulty Calculator',
         nav: true,
       },
     ]);
